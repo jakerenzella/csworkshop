@@ -161,6 +161,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     background: white;
   }
 
+  paper-card {
+    width: 100%;
+    height: 100%;
+
+    .cafe-header {
+      @apply(--paper-font-headline);
+    }
+    .cafe-light {
+      color: var(--paper-grey-600);
+    }
+    .cafe-location {
+      float: right;
+      font-size: 20px;
+      vertical-align: middle;
+    }
+    .cafe-reserve {
+      color: var(--google-blue-500);
+    }
+    iron-icon.star {
+      --iron-icon-width: 14px;
+      --iron-icon-height: 14px;
+      color: var(--paper-amber-500);
+    }
+    iron-icon.star:last-of-type {
+      color: var(--paper-grey-500);
+    }
+  }
+
   #toast .toast-hide-button {
     color: #eeff41;
     margin: 10px;
