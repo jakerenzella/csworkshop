@@ -135,7 +135,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     them live.</p>
                 </paper-material>
 
-                <paper-card image="http://placehold.it/350x150/FFC107/000000">
+                <paper-card preloadImage="true" fadeImage="true" image="http://placehold.it/1200x300/FFC107/000000">
                   <div class="card-content">
                     <div class="cafe-header">Cave Escape.
                       <div class="cafe-location cafe-light">
@@ -152,6 +152,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     </div>
                     <p>Games programming in Pascal</p>
                     <p class="cafe-light">An introduction into the world of simple games programming.  </div>
+                </paper-card>
+
+                <paper-card preloadImage="true" fadeImage="true" image="http://placehold.it/1060x300/FFC107/000000">
+                  <div class="card-content">
+                    <div class="cafe-header">Hardware Project.
+                      <div class="cafe-location cafe-light">
+                        <iron-icon icon="communication:location-on"></iron-icon>
+                        <span>Day 1</span>
+                      </div>
+                    </div>
+                    <div class="cafe-rating">
+                      <iron-icon class="star" icon="star"></iron-icon>
+                      <iron-icon class="star" icon="star"></iron-icon>
+                      <iron-icon class="star" icon="star"></iron-icon>
+                      <iron-icon class="star" icon="star"></iron-icon>
+                      <iron-icon class="star" icon="star"></iron-icon>
+                    </div>
+                    <p>Games programming in Pascal</p>
+                    <p class="cafe-light">An introduction into the world of simple games programming.  </div>
+                </paper-card>
+
+                <paper-card>
+                  <google-youtube height="500ox"
+                    video-id="8maOxNc0Aio"
+                    height="100%"
+                    width="100%"
+                    rel="0"
+                    start="10"
+                    autoplay="0">
+                  </google-youtube>
                 </paper-card>
 
                 <paper-material elevation="1">
@@ -206,8 +236,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
       </paper-toast>
 
-      <!-- Uncomment next block to enable Service Worker support (1/2) -->
-      <!--
+      <!-- Uncomment next block to enable Service Worker support (1/2) --> -->
+
     <paper-toast id="caching-complete"
                  duration="6000"
                  text="Caching complete! This app will work offline.">
@@ -222,7 +252,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                          cache-config-file="cache-config.json">
       </platinum-sw-cache>
     </platinum-sw-register>
-    -->
+
 
     </template>
 
