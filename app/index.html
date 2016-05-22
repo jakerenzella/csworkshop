@@ -21,7 +21,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <!-- Place favicon.ico in the `app/` directory -->
 
     <!-- Chrome for Android theme color -->
-    <meta name="theme-color" content="#2E3AA1">
+    <meta name="theme-color" content="#039BE5">
 
     <!-- Web Application Manifest -->
     <link rel="manifest" href="manifest.json">
@@ -37,7 +37,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
+    <meta name="apple-mobile-web-app-title" content="Swinburne CS4HS 16">
     <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
 
     <!-- Tile icon for Win8 (144x144) -->
@@ -57,7 +57,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <!-- For shared styles, shared-styles.html import in elements.html -->
     <style is="custom-style" include="shared-styles"></style>
-  </head>
+
 
   <body unresolved>
     <!-- build:remove -->
@@ -68,7 +68,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <paper-drawer-panel id="paperDrawerPanel">
         <!-- Drawer Scroll Header Panel -->
-        <paper-scroll-header-panel drawer fixed>
+        <paper-scroll-header-panel drawer condenses>
 
           <!-- Drawer Toolbar -->
           <paper-toolbar id="drawerToolbar">
@@ -82,9 +82,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <span>Home</span>
             </a>
 
-            <a data-route="users" href="{{baseUrl}}users">
+            <a data-route="presenters" href="{{baseUrl}}presenters">
               <iron-icon icon="info"></iron-icon>
-              <span>Users</span>
+              <span>presenters</span>
             </a>
 
             <a data-route="contact" href="{{baseUrl}}contact">
@@ -98,13 +98,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header>
           <!-- Main Toolbar -->
           <paper-toolbar id="mainToolbar" class="tall">
+
             <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
 
             <span class="space"></span>
-
-            <!-- Toolbar icons -->
-            <!-- <paper-icon-button icon="refresh"></paper-icon-button>
-            <paper-icon-button icon="search"></paper-icon-button> -->
 
             <!-- Application name -->
             <div class="middle middle-container">
@@ -113,7 +110,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <!-- Application sub title -->
             <div class="bottom bottom-container">
-              <div class="bottom-title">The future of the web today</div>
+              <div class="bottom-title">Run by Swinburne University.</div>
             </div>
           </paper-toolbar>
 
@@ -121,21 +118,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <div class="content">
             <iron-pages attr-for-selected="data-route" selected="{{route}}">
               <section data-route="home" tabindex="-1">
+                <main-content class="page-title" tabindex="-1"></main-content>
 
-                <my-timer> </my-timer>
-
-                <paper-material elevation="1">
-                  <my-greeting></my-greeting>
-
-                  <p class="subhead">You now have:</p>
-                  <my-list name="exactline"> </my-list>
-
-                  <p>Looking for more Web App layouts? Check out our
-                    <a href="https://github.com/PolymerElements/app-layout-templates">layouts</a>
-                    collection. You can also
-                    <a href="http://polymerelements.github.io/app-layout-templates/">preview</a>
-                    them live.</p>
-                </paper-material>
+                <my-timer></my-timer>
 
                 <paper-card preloadImage="true" fadeImage="true" image="http://placehold.it/1200x300/FFC107/000000">
                   <div class="card-content">
@@ -153,105 +138,89 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <iron-icon class="star" icon="star"></iron-icon>
                     </div>
                     <p>Games programming in Pascal</p>
-                    <p class="cafe-light">An introduction into the world of simple games programming.  </div>
-                </paper-card>
+                    <p class="cafe-light">An introduction into the world of simple games programming.
+                    </div>
+                  </paper-card>
 
-                <paper-card preloadImage="true" fadeImage="true" image="http://placehold.it/1060x300/FFC107/000000">
-                  <div class="card-content">
-                    <div class="cafe-header">Hardware Project.
-                      <div class="cafe-location cafe-light">
-                        <iron-icon icon="communication:location-on"></iron-icon>
-                        <span>Day 1</span>
+                  <paper-card preloadImage="true" fadeImage="true" image="http://placehold.it/1060x300/FFC107/000000">
+                    <div class="card-content">
+                      <div class="cafe-header">Hardware Project.
+                        <div class="cafe-location cafe-light">
+                          <iron-icon icon="communication:location-on"></iron-icon>
+                          <span>Day 1</span>
+                        </div>
                       </div>
-                    </div>
-                    <div class="cafe-rating">
-                      <iron-icon class="star" icon="star"></iron-icon>
-                      <iron-icon class="star" icon="star"></iron-icon>
-                      <iron-icon class="star" icon="star"></iron-icon>
-                      <iron-icon class="star" icon="star"></iron-icon>
-                      <iron-icon class="star" icon="star"></iron-icon>
-                    </div>
-                    <p>Games programming in Pascal</p>
-                    <p class="cafe-light">An introduction into the world of simple games programming.  </div>
-                </paper-card>
+                      <div class="cafe-rating">
+                        <iron-icon class="star" icon="star"></iron-icon>
+                        <iron-icon class="star" icon="star"></iron-icon>
+                        <iron-icon class="star" icon="star"></iron-icon>
+                        <iron-icon class="star" icon="star"></iron-icon>
+                        <iron-icon class="star" icon="star"></iron-icon>
+                      </div>
+                      <p>Games programming in Pascal</p>
+                      <p class="cafe-light">An introduction into the world of simple games programming.
+                      </div>
+                    </paper-card>
 
-                <paper-card>
-                  <div class="card-title">
-                    <p>
-                      Check out the Swinburne Codecasts series, a completely free series on the concepts of procedural programming.
-                    </p>
-                    <google-youtube
-                      chromeless="true"
-                      video-id="8maOxNc0Aio"
-                      fluid = "true"
-                      rel="0"
-                      start="10"
-                      autoplay="0">
-                    </google-youtube>
-                  </div>
-                </paper-card>
+                    <paper-card>
+                      <div class="card-title">
+                        <p>
+                          Check out the Swinburne Codecasts series, a completely free series on the concepts of procedural programming.
+                        </p>
+                        <google-youtube chromeless="true" video-id="8maOxNc0Aio" fluid="true" rel="0" start="10" autoplay="0"></google-youtube>
+                      </div>
+                    </paper-card>
 
+                  </section>
 
-              </section>
+                  <section data-route="presenters" tabindex="-1">
+                    <paper-material elevation="1">
+                      <h1 class="page-title" tabindex="-1">presenters</h1>
+                      <p>This is the presenters section</p>
+                      <a href$="{{baseUrl}}presenters/Addy">Addy</a><br>
+                      <a href$="{{baseUrl}}presenters/Rob">Rob</a><br>
+                      <a href$="{{baseUrl}}presenters/Chuck">Chuck</a><br>
+                      <a href$="{{baseUrl}}presenters/Sam">Sam</a>
+                    </paper-material>
+                  </section>
 
-              <section data-route="users" tabindex="-1">
-                <paper-material elevation="1">
-                  <h1 class="page-title" tabindex="-1">Users</h1>
-                  <p>This is the users section</p>
-                  <a href$="{{baseUrl}}users/Addy">Addy</a><br>
-                  <a href$="{{baseUrl}}users/Rob">Rob</a><br>
-                  <a href$="{{baseUrl}}users/Chuck">Chuck</a><br>
-                  <a href$="{{baseUrl}}users/Sam">Sam</a>
-                </paper-material>
-              </section>
+                  <section data-route="presenter-info" tabindex="-1">
+                    <paper-material elevation="-1">
+                      <h1 class="page-title" tabindex="-1">Presenter:
+                        {{params.name}}</h1>
+                      <div>This is
+                        {{params.name}}'s section</div>
+                    </paper-material>
+                  </section>
 
-              <section data-route="user-info" tabindex="-1">
-                <paper-material elevation="-1">
-                  <h1 class="page-title" tabindex="-1">User:
-                    {{params.name}}</h1>
-                  <div>This is
-                    {{params.name}}'s section</div>
-                </paper-material>
-              </section>
+                  <section data-route="contact" tabindex="-1">
+                    <paper-material elevation="1">
+                      <h1 class="page-title" tabindex="-1">Contact</h1>
+                      <p>This is the contact section</p>
+                    </paper-material>
+                  </section>
+                </iron-pages>
+              </div>
+            </paper-scroll-header-panel>
+          </paper-drawer-panel>
 
-              <section data-route="contact" tabindex="-1">
-                <paper-material elevation="1">
-                  <h1 class="page-title" tabindex="-1">Contact</h1>
-                  <p>This is the contact section</p>
-                </paper-material>
-              </section>
-            </iron-pages>
-          </div>
-        </paper-scroll-header-panel>
-      </paper-drawer-panel>
+          <paper-toast id="toast">
+            <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
+          </paper-toast>
 
-      <paper-toast id="toast">
-        <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
-      </paper-toast>
+          <!-- Uncomment next block to enable Service Worker support (1/2) -->
 
-      <!-- Uncomment next block to enable Service Worker support (1/2) --> -->
+          <paper-toast id="caching-complete" duration="6000" text="Caching complete! This app will work offline."></paper-toast>
 
-    <paper-toast id="caching-complete"
-                 duration="6000"
-                 text="Caching complete! This app will work offline.">
-    </paper-toast>
+          <platinum-sw-register auto-register clients-claim skip-waiting base-uri="bower_components/platinum-sw/bootstrap" on-service-worker-installed="displayInstalledToast">
+            <platinum-sw-cache default-cache-strategy="fastest" cache-config-file="cache-config.json"></platinum-sw-cache>
+          </platinum-sw-register>
 
-    <platinum-sw-register auto-register
-                          clients-claim
-                          skip-waiting
-                          base-uri="bower_components/platinum-sw/bootstrap"
-                          on-service-worker-installed="displayInstalledToast">
-      <platinum-sw-cache default-cache-strategy="fastest"
-                         cache-config-file="cache-config.json">
-      </platinum-sw-cache>
-    </platinum-sw-register>
+        </template>
 
+        <!-- build:js scripts/app.js -->
+        <script src="scripts/app.js"></script>
+        <!-- endbuild-->
+      </body>
 
-    </template>
-
-    <!-- build:js scripts/app.js -->
-    <script src="scripts/app.js"></script>
-    <!-- endbuild-->
-  </body>
-
-</html>
+    </html>

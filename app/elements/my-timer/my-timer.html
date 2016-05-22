@@ -4,7 +4,7 @@
 
 <dom-module id="my-timer">
   <template>
-    <style include="iron-flex iron-flex-alignment">
+    <style>
 
       timer-days {
         box-shadow: 0 0px 0px #333;
@@ -13,13 +13,14 @@
         --timer-days-hover-background-color: transparent;
         --timer-days-hover-border-color: transparent;
         --timer-days-hover-font-color: var(--accent-color);
-        --timer-days-font-color: var(--primary-text-color);
-        --timer-days-font-number-size: 120px;
-      }
+        --timer-days-font-color: var(--accent-color);
+        --timer-days-font-number-size: 5em;
+        font-family: 'Share Tech Mono';
+        letter-spacing: 1.25em;
 
-      paper-icon-button {
-        width: 100px;
-        height: 100px;
+        width: 100%;
+        height: 100%;
+        margin: 16px auto;
       }
 
       :host {
@@ -27,10 +28,14 @@
 
     </style>
 
-    <timer-days target-date="2016-11-13T16:40:00"> </timer-days>
-    <a href$="{{baseUrl}}users/Rob" tabindex="-1">
-    <paper-icon-button icon="expand-more"></paper-icon-button>
-  </a>
+    <paper-card>
+      <div class="card-content">
+        <timer-days target-date="2016-11-13T16:40:00"></timer-days>
+      </div>
+      <div class="card-actions">
+        <p>Swinburne CS4HS is back! Join us for two days of sharing, learning and networking with fellow educators.</p>
+      </div>
+    </paper-card>
 
   </template>
 
