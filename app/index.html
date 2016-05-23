@@ -87,6 +87,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <span>Presenters</span>
             </a>
 
+            <a data-route="past-content" href="{{baseUrl}}past-content">
+              <iron-icon icon="redeem"></iron-icon>
+              <span>Past Content</span>
+            </a>
+
             <a data-route="contact" href="{{baseUrl}}contact">
               <iron-icon icon="mail"></iron-icon>
               <span>Contact</span>
@@ -162,11 +167,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       </div>
                     </paper-card>
 
-                    <paper-card>
-                      <div class="card-title">
-                        <p>
-                          Check out the Swinburne Codecasts series, a completely free series on the concepts of procedural programming.
-                        </p>
+                    <paper-card heading="Swinburne CodeCasts">
+                      <div class="card-content">
                         <google-youtube chromeless="true" video-id="8maOxNc0Aio" fluid="true" rel="0" start="10" autoplay="0"></google-youtube>
                       </div>
                     </paper-card>
@@ -190,6 +192,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         {{params.name}}</h1>
                       <div>This is
                         {{params.name}}'s section</div>
+                    </paper-material>
+                  </section>
+
+                  <section data-route="past-content" tabindex="-1">
+                    <paper-material elevation="1">
+                      <h1 class="page-title" tabindex="-1">Past Content</h1>
+                      <p>This is the Past Content section</p>
                     </paper-material>
                   </section>
 
