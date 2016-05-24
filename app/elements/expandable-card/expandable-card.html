@@ -1,0 +1,111 @@
+<dom-module id="expandable-card">
+  <template>
+    <style>
+      paper-card {
+        width: 100%;
+        height: 100%;
+        margin: 16px auto;
+      }
+
+      iron-icon.star {
+        --iron-icon-width: 16px;
+        --iron-icon-height: 16px;
+        color: var(--paper-amber-500);
+      }
+
+      .card-light { color: var(--paper-grey-600); }
+
+      .card-header { @apply(--paper-font-headline); }
+
+      .card-title {
+        margin: 4px;
+        font-size: 16px;
+      }
+
+      .event-day {
+        float: right;
+        font-size: 20px;
+        vertical-align: middle;
+      }
+
+      iron-icon.star:last-of-type {
+        color: var(--paper-grey-500);
+      }
+    </style>
+    <!-- ../images/placeholder-image.png -->
+    <paper-card preloadImage$="[[preloadImage]]" fadeImage$="[[fadeImage]]" image$="[[image]]" pdf$="[[pdf]]" description$="[[description]]" day$="[[day]]">
+      <div class="card-content">
+        <div class="card-header">[[name]]
+          <div class="event-day">
+            <iron-icon icon="communication:location-on"></iron-icon>
+            <span>Day 1</span>
+          </div>
+        </div>
+        <div class="cafe-rating">
+          <iron-icon class="star" icon="star"></iron-icon>
+          <iron-icon class="star" icon="star"></iron-icon>
+          <iron-icon class="star" icon="star"></iron-icon>
+          <iron-icon class="star" icon="star"></iron-icon>
+          <iron-icon class="star" icon="star"></iron-icon>
+        </div>
+        <p class="card-light">[[description]]</p>
+        </div>
+        <paper-content>
+
+        <div class="card-actions">
+          <paper-button on-click="toggle">Explore!</paper-button>
+
+          <iron-collapse id="collapse">
+            <pdf-element></pdf-element>
+          </iron-collapse>
+        </div>
+      </paper-card>
+
+    <content> </content>
+
+  </template>
+  <script>
+    Polymer({
+      is: 'expandable-card',
+      properties: {
+        image: {
+          type: String,
+          value: ''
+        },
+        name: {
+          type: String,
+          value: ''
+        },
+        description: {
+          type: String,
+          value: ''
+        },
+        pdf: {
+          type: String,
+          value: ''
+        },
+        description: {
+          type: String,
+          value: ''
+        },
+        day: {
+          type: String,
+          value: ''
+        },
+        preloadImage: {
+          type: Boolean,
+          value: true
+        },
+        fadeImage: {
+          type: Boolean,
+          value: true
+        }
+      },
+
+      toggle: function() {
+        this.$.collapse.toggle();
+      }
+
+    });
+  </script>
+</dom-module>
