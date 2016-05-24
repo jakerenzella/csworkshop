@@ -13,9 +13,15 @@
     }
 
     .description {
-      margin-left: 70px;
+      margin-left: 12px;
       left: 20px;
-      font-size: 14px;
+      font-size: 18px;
+    }
+
+    a:link, a:visited {
+    color: var(--primary-text-color);
+    text-decoration: underline;
+    cursor: auto;
     }
 
     iron-image {
@@ -33,7 +39,7 @@
     <div class="content">
       <iron-image hidden$="[[!image]]" src="[[image]]" preload$="[[preloadImage]]" fade$="[[fadeImage]]"></iron-image>
       <div class= "name">[[name]]</div>
-      <div class= "description">[[description]]</div>
+      <a class= "description" href="mailto:[[description]]" target="_top">[[description]]</a>
     </div>
     <br>
 
