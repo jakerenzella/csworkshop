@@ -1,20 +1,35 @@
 <dom-module id="presenter-card">
   <template>
     <style>
-      paper-card
-      {
-        width: 10%;
-      }
 
-      :host {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-          -ms-flex-align: center;
-              align-items: center;
+    .name{
+      padding-left: 20px;
+      font-weight: bold;
+      display: inline-block;
+      vertical-align:top;
+    }
+
+    .description {
+      padding-left: 20px;
+      display: block;
+      font-weight: bold;
+      vertical-align:inline-bottom;
+    }
+
+    iron-image {
+      width: 60px;
+      height: 60px;
+    }
+
+    :host {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     }
     :host::content > img {
       width: 50px;
@@ -33,14 +48,28 @@
       display: none;
     }
     </style>
-    <content></content>
+
+    <div class="content">
+      <iron-image hidden$="[[!image]]" src="[[image]]" preload$="[[preloadImage]]" fade$="[[fadeImage]]"></iron-image>
+      <div class= "name">Jake Renzella</div>
+      <div class= "description">Jake Renzella</div>
+    </div>
+
+    <content> </content>
+
   </template>
   <script>
     Polymer({
       is: 'presenter-card',
       properties: {
-        name: String
-      }
+        name: String,
+        value: ''
+        },
+        image: {
+          type: String,
+          value: ''
+        },
+
     });
   </script>
 </dom-module>
