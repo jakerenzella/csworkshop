@@ -74,6 +74,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     app.$.headerPanelMain.scrollToTop(true);
   };
 
+  app.toggle = function() {
+  this.$.collapse.toggle();
+  };
+
   app.closeDrawer = function() {
     app.$.paperDrawerPanel.closeDrawer();
   };
