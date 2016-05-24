@@ -38,7 +38,7 @@
         <div class="card-header">[[name]]
           <div class="event-day">
             <iron-icon icon="communication:location-on"></iron-icon>
-            <span>Day 1</span>
+            <span>[[day]]</span>
           </div>
         </div>
         <div class="cafe-rating">
@@ -53,10 +53,10 @@
         <paper-content>
 
         <div class="card-actions">
-          <paper-button on-click="toggle">Explore!</paper-button>
+          <paper-button on-click="toggle">{{exploreButton}}</paper-button>
 
           <iron-collapse id="collapse">
-            <pdf-element></pdf-element>
+            <pdf-object file="[[pdf]]" height="600"></pdf-object>
           </iron-collapse>
         </div>
       </paper-card>
@@ -99,11 +99,24 @@
         fadeImage: {
           type: Boolean,
           value: true
+        },
+        exploreButton: {
+          type: String,
+          value: 'Show PDF!'
         }
       },
 
       toggle: function() {
         this.$.collapse.toggle();
+
+        if (this.$.collapse.opened)
+        {
+          this.exploreButton = "Hide PDF";
+        }
+        else
+        {
+          this.exploreButton = "Show!";
+        }
       }
 
     });
