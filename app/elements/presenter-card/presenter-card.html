@@ -3,20 +3,23 @@
     <style>
 
     .name{
-      padding-left: 20px;
+      margin-left: 70px;
       font-size: 24px;
       font-weight: bold;
       vertical-align:top;
     }
 
     .description {
-      padding-left: 20px;
+      margin-left: 70px;
+      left: 20px;
+      font-size: 14px;
     }
 
     iron-image {
       float: left;
       width: 60px;
       height: 60px;
+      border-radius: 50%;
     }
 
     [hidden] {
@@ -29,6 +32,7 @@
       <div class= "name">[[name]]</div>
       <div class= "description">[[description]]</div>
     </div>
+    <br>
 
     <content> </content>
 
@@ -48,6 +52,19 @@
         description: {
           type: String,
           value: ''
+        },
+        preloadImage: {
+          type: Boolean,
+          value: true
+        },
+
+        /**
+         * When `preloadImage` is true, setting `fadeImage` to true will cause the
+         * image to fade into place.
+         */
+        fadeImage: {
+          type: Boolean,
+          value: true
         }
       }
 
