@@ -110,7 +110,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <!-- Application name -->
             <div class="middle middle-container">
-              <div class="app-name">Swinburne CS4HS 2016</div>
+              <div class="app-name">Swinburne CS4HS</div>
             </div>
 
             <!-- Application sub title -->
@@ -147,81 +147,88 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   pdf="https://www.polyu.edu.hk/iaee/files/pdf-sample.pdf">
                 </expandable-card>
 
-                    <paper-card heading="Swinburne CodeCasts">
-                      <div class="card-content">
-                        <google-youtube video-id="8maOxNc0Aio" fluid="true" rel="0" start="10" autoplay="0"></google-youtube>
-                      </div>
-                    </paper-card>
+                <paper-card heading="Swinburne CodeCasts">
+                  <div class="card-content">
+                    <google-youtube video-id="8maOxNc0Aio" fluid="true" rel="0" start="10" autoplay="0"></google-youtube>
+                  </div>
+                </paper-card>
 
-                  </section>
+                <footer style="bottom:0">
+                    <div class="card-content">
+                      <paper-fab icon="favorite"></paper-fab>
+                      <iron-image src="images/GoogleLogo.svg"></iron-image>
+                    </div>
+                </footer>
 
-                  <section data-route="presenters" tabindex="-1">
-                    <paper-material elevation="1">
-                      <h1 class="page-title" tabindex="-1">Your Presenters for CS4HS 2016:</h1>
-                      <presenter-card image="../images/placeholder-image.png" name="Therese Keane" description="tkeane@swin.edu.au"> </presenter-card>
-                      <presenter-card image="../images/placeholder-image.png" name="Reuben Wilson" description="rwilson@swin.edu.au"> </presenter-card>
-                      <presenter-card image="../images/placeholder-image.png" name="Jake Renzella" description="jrenzella@swin.edu.au"> </presenter-card>
-                      <presenter-card image="../images/placeholder-image.png" name="Cliff Warren" description="cwarren@swin.edu.au"> </presenter-card>
-                      <presenter-card image="../images/placeholder-image.png" name="Charlotte Pierce" description="cpierce@swin.edu.au"> </presenter-card>
-                    </paper-material>
-                  </section>
+              </section>
 
-                  <section data-route="presenter-info" tabindex="-1">
-                    <paper-material elevation="-1">
-                      <h1 class="page-title" tabindex="-1">Presenter:
-                        {{params.name}}</h1>
-                      <div>This is
-                        {{params.name}}'s section</div>
-                    </paper-material>
-                  </section>
+              <section data-route="presenters" tabindex="-1">
+                <paper-material elevation="1">
+                  <h1 class="page-title" tabindex="-1">Your Presenters for CS4HS 2016:</h1>
+                  <presenter-card image="../images/placeholder-image.png" name="Therese Keane" description="tkeane@swin.edu.au"> </presenter-card>
+                  <presenter-card image="../images/placeholder-image.png" name="Reuben Wilson" description="rwilson@swin.edu.au"> </presenter-card>
+                  <presenter-card image="../images/placeholder-image.png" name="Jake Renzella" description="jrenzella@swin.edu.au"> </presenter-card>
+                  <presenter-card image="../images/placeholder-image.png" name="Cliff Warren" description="cwarren@swin.edu.au"> </presenter-card>
+                  <presenter-card image="../images/placeholder-image.png" name="Charlotte Pierce" description="cpierce@swin.edu.au"> </presenter-card>
+                </paper-material>
+              </section>
 
-                  <section data-route="past-content" tabindex="-1">
-                    <paper-material elevation="1">
-                      <h1 class="page-title" tabindex="-1">Past Content</h1>
-                      <p>We're making available all of our content developed for previous year's CS4HS! Download below!</p>
+              <section data-route="presenter-info" tabindex="-1">
+                <paper-material elevation="-1">
+                  <h1 class="page-title" tabindex="-1">Presenter:
+                    {{params.name}}</h1>
+                  <div>This is
+                    {{params.name}}'s section</div>
+                </paper-material>
+              </section>
 
-                      <div role="listbox">
-                        <a class="paper-item-link" href="#inbox" tabindex="-1">
-                          <paper-item>Bug Splat!</paper-item>
-                        </a>
-                        <a class="paper-item-link" href="#starred" tabindex="-1">
-                          <paper-item>Android</paper-item>
-                        </a>
-                        <a class="paper-item-link" href="#sent" tabindex="-1">
-                          <paper-item>Sent mail</paper-item>
-                        </a>
-                      </div>
-                    </paper-material>
-                  </section>
+              <section data-route="past-content" tabindex="-1">
+                <paper-material elevation="1">
+                  <h1 class="page-title" tabindex="-1">Past Content</h1>
+                  <p>We're making available all of our content developed for previous year's CS4HS! Download below!</p>
 
-                  <section data-route="contact" tabindex="-1">
-                    <paper-material elevation="1">
-                      <h1 class="page-title" tabindex="-1">Contact</h1>
-                      <p>This is the contact section</p>
-                    </paper-material>
-                  </section>
-                </iron-pages>
-              </div>
-            </paper-scroll-header-panel>
-          </paper-drawer-panel>
+                  <div role="listbox">
+                    <a class="paper-item-link" href="#inbox" tabindex="-1">
+                      <paper-item>Bug Splat!</paper-item>
+                    </a>
+                    <a class="paper-item-link" href="#starred" tabindex="-1">
+                      <paper-item>Android</paper-item>
+                    </a>
+                    <a class="paper-item-link" href="#sent" tabindex="-1">
+                      <paper-item>Sent mail</paper-item>
+                    </a>
+                  </div>
+                </paper-material>
+              </section>
 
-          <paper-toast id="toast">
-            <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
-          </paper-toast>
+              <section data-route="contact" tabindex="-1">
+                <paper-material elevation="1">
+                  <h1 class="page-title" tabindex="-1">Contact</h1>
+                  <p>This is the contact section</p>
+                </paper-material>
+              </section>
 
-          <!-- Uncomment next block to enable Service Worker support (1/2) -->
+            </iron-pages>
+          </div>
+        </paper-scroll-header-panel>
+      </paper-drawer-panel>
 
-          <paper-toast id="caching-complete" duration="6000" text="Caching complete! This app will work offline."></paper-toast>
+      <paper-toast id="toast">
+        <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
+      </paper-toast>
 
-          <platinum-sw-register auto-register clients-claim skip-waiting base-uri="bower_components/platinum-sw/bootstrap" on-service-worker-installed="displayInstalledToast">
-            <platinum-sw-cache default-cache-strategy="fastest" cache-config-file="cache-config.json"></platinum-sw-cache>
-          </platinum-sw-register>
+      <paper-toast id="caching-complete" duration="6000" text="Caching complete! This app will work offline."></paper-toast>
 
-        </template>
+      <platinum-sw-register auto-register clients-claim skip-waiting base-uri="bower_components/platinum-sw/bootstrap" on-service-worker-installed="displayInstalledToast">
+        <platinum-sw-cache default-cache-strategy="fastest" cache-config-file="cache-config.json"></platinum-sw-cache>
+      </platinum-sw-register>
 
-        <!-- build:js scripts/app.js -->
-        <script src="scripts/app.js"></script>
-        <!-- endbuild-->
-      </body>
+    </template>
 
-    </html>
+    <!-- build:js scripts/app.js -->
+    <script src="scripts/app.js"></script>
+
+    <!-- endbuild-->
+  </body>
+
+</html>

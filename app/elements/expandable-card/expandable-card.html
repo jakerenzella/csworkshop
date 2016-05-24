@@ -106,15 +106,7 @@
 
       toggle: function() {
         this.$.collapse.toggle();
-
-        if (this.$.collapse.opened)
-        {
-          this.exploreButton = "Hide PDF";
-        }
-        else
-        {
-          this.exploreButton = "Show PDF!";
-        }
+        this.exploreButton =  this.$.collapse.opened ? "Hide PDF" : "Show PDF!"
       }
 
     });
