@@ -1,33 +1,31 @@
 <dom-module id="expandable-card">
   <template>
     <style>
+    paper-button {
+      color: var(--accent-color);
+      font-weight: bold;
+    }
       paper-card {
         width: 100%;
         height: 100%;
         margin: 16px auto;
       }
-
       iron-icon.star {
         --iron-icon-width: 16px;
         --iron-icon-height: 16px;
         color: var(--paper-amber-500);
       }
-
       .card-light { color: var(--paper-grey-600); }
-
       .card-header { @apply(--paper-font-headline); }
-
       .card-title {
         margin: 4px;
         font-size: 16px;
       }
-
       .event-day {
         float: right;
         font-size: 20px;
         vertical-align: middle;
       }
-
       iron-icon.star:last-of-type {
         color: var(--paper-grey-500);
       }
@@ -115,7 +113,7 @@
         }
         else
         {
-          this.exploreButton = "Show!";
+          this.exploreButton = "Show PDF!";
         }
       }
 
