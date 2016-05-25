@@ -48,6 +48,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     /* paper-menu */
     --paper-menu-background-color: #fff;
     --menu-link-color: #111111;
+
+    --google-map-iframe-height: 400px;
+    --google-map-iframe-width: 100%;
   }
 
   /* General styles */
@@ -153,9 +156,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       float: right;
   }
   paper-card iframe {
-      height: 400px;
-      width: 100%;
+      height: var(--google-map-iframe-height);
+      width: var(--google-map-iframe-width);
   }
+
+  .overlay {
+   background:transparent;
+   position:relative;
+   width:640px;
+   height:480px; /* your iframe height */
+   top:480px;  /* your iframe height */
+   margin-top:-480px;  /* your iframe height */
+}
 
   section[data-route="home"] paper-material {
     @apply(--paper-font-body2);
