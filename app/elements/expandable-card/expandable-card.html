@@ -1,10 +1,10 @@
 <dom-module id="expandable-card">
   <template>
     <style>
-    paper-button {
-      color: var(--accent-color);
-      font-weight: bold;
-    }
+      paper-button {
+        color: var(--accent-color);
+        font-weight: bold;
+      }
       paper-card {
         width: 100%;
         height: 100%;
@@ -30,7 +30,7 @@
         color: var(--paper-grey-500);
       }
     </style>
-    <!-- ../images/placeholder-image.png -->
+
     <paper-card preloadImage$="[[preloadImage]]" fadeImage$="[[fadeImage]]" image$="[[image]]" pdf$="[[pdf]]" description$="[[description]]" day$="[[day]]">
       <div class="card-content">
         <div class="card-header">[[name]]
@@ -54,7 +54,7 @@
           <paper-button on-click="toggle">{{exploreButton}}</paper-button>
 
           <iron-collapse id="collapse">
-            <pdf-object file="[[pdf]]" height="600"></pdf-object>
+            <pdf-object file="[[pdf]]" height="600px"></pdf-object>
           </iron-collapse>
         </div>
       </paper-card>
