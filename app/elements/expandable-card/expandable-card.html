@@ -23,7 +23,7 @@
       }
       .event-day {
         float: right;
-        font-size: 20px;
+        font-size: 15px;
         vertical-align: middle;
       }
       iron-icon.star:last-of-type {
@@ -34,9 +34,9 @@
     <paper-card preloadImage$="[[preloadImage]]" fadeImage$="[[fadeImage]]" image$="[[image]]" pdf$="[[pdf]]" description$="[[description]]" day$="[[day]]" download$="[[download]]">
       <div class="card-content">
         <div class="card-header">[[name]]
-          <div class="event-day">
+          <div class="event-day card-light">
             <iron-icon icon="communication:location-on"></iron-icon>
-            <span>[[day]]</span>
+            <span style="vertical-align:middle;"> <iron-icon icon="date-range"></iron-icon> [[day]]</span>
           </div>
         </div>
         <div class="card-rating">
@@ -48,12 +48,15 @@
         </div>
         <p class="card-light">[[description]]</p>
         </div>
+
         <paper-content>
 
         <div class="card-actions">
-          <paper-button on-click="toggle">{{exploreButton}}</paper-button>
-          <a hidden$="[[!download]]" href="[[download]]">
-            <paper-button style="float: right;" href="[[download]]"> <iron-icon icon="file-download"></iron-icon> </paper-button>
+          <paper-button on-click="toggle"><paper-icon-button icon="[[arrowIcon]]"></paper-icon-button>[[exploreButton]]</paper-button> 
+          <a hidden$="[[!download]]" href="[[download]]" style="float: right;">
+            <paper-button href="[[download]]">
+              <paper-icon-button icon="file-download"></paper-icon-button>
+            </paper-button>
           </a>
 
           <iron-collapse id="collapse">
@@ -107,13 +110,18 @@
         },
         exploreButton: {
           type: String,
-          value: 'Show PDF!'
+          value: 'Show PDF'
+        },
+        arrowIcon: {
+          type: String,
+          value: 'expand-more'
         }
       },
 
       toggle: function() {
         this.$.collapse.toggle();
-        this.exploreButton = this.$.collapse.opened ? "Hide PDF" : "Show PDF!"
+        this.exploreButton = this.$.collapse.opened ? "Hide PDF" : "Show PDF"
+        this.arrowIcon = this.$.collapse.opened ? "expand-less" : "expand-more"
       }
 
     });
