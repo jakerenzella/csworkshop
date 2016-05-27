@@ -31,7 +31,7 @@
       }
     </style>
 
-    <paper-card preloadImage$="[[preloadImage]]" fadeImage$="[[fadeImage]]" image$="[[image]]" pdf$="[[pdf]]" description$="[[description]]" day$="[[day]]">
+    <paper-card preloadImage$="[[preloadImage]]" fadeImage$="[[fadeImage]]" image$="[[image]]" pdf$="[[pdf]]" description$="[[description]]" day$="[[day]]" download$="[[download]]">
       <div class="card-content">
         <div class="card-header">[[name]]
           <div class="event-day">
@@ -39,7 +39,7 @@
             <span>[[day]]</span>
           </div>
         </div>
-        <div class="cafe-rating">
+        <div class="card-rating">
           <iron-icon class="star" icon="star"></iron-icon>
           <iron-icon class="star" icon="star"></iron-icon>
           <iron-icon class="star" icon="star"></iron-icon>
@@ -52,6 +52,9 @@
 
         <div class="card-actions">
           <paper-button on-click="toggle">{{exploreButton}}</paper-button>
+          <a hidden$="[[!download]]" href="[[download]]">
+            <paper-button style="float: right;" href="[[download]]"> <iron-icon icon="file-download"></iron-icon> </paper-button>
+          </a>
 
           <iron-collapse id="collapse">
             <pdf-object file="[[pdf]]" height="600px"></pdf-object>
@@ -98,6 +101,10 @@
           type: Boolean,
           value: true
         },
+        download: {
+          type: String,
+          value: ''
+        },
         exploreButton: {
           type: String,
           value: 'Show PDF!'
@@ -106,7 +113,7 @@
 
       toggle: function() {
         this.$.collapse.toggle();
-        this.exploreButton =  this.$.collapse.opened ? "Hide PDF" : "Show PDF!"
+        this.exploreButton = this.$.collapse.opened ? "Hide PDF" : "Show PDF!"
       }
 
     });

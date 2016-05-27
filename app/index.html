@@ -165,7 +165,7 @@
 
               <section data-route="presenters" tabindex="-1">
                 <paper-material elevation="1">
-                  <h1 class="page-title" tabindex="-1">Your Presenters for CS4HS 2016:</h1>
+                  <h1 class="page-title" tabindex="-1">Presenters:</h1>
                   <presenter-card image="images/therese.jpeg" name="Therese Keane" description="tkeane@swin.edu.au"> </presenter-card>
                   <presenter-card image="images/placeholder-image.png" name="Reuben Wilson" description="rwilson@swin.edu.au"> </presenter-card>
                   <presenter-card image="images/placeholder-image.png" name="Jake Renzella" description="jrenzella@swin.edu.au"> </presenter-card>
@@ -184,28 +184,38 @@
               </section>
 
               <section data-route="past-content" tabindex="-1">
-                <paper-material elevation="1">
-                  <h1 class="page-title" tabindex="-1">Past Content</h1>
-                  <p>We're making available all of our content developed for previous year's CS4HS! Download below!</p>
+                <h1 class="page-title" tabindex="-1"></h1>
 
-                  <div role="listbox">
-                    <a class="paper-item-link" href="#inbox" tabindex="-1">
-                      <paper-item>Bug Splat!</paper-item>
-                    </a>
-                    <a class="paper-item-link" href="#starred" tabindex="-1">
-                      <paper-item>Android</paper-item>
-                    </a>
-                    <a class="paper-item-link" href="#sent" tabindex="-1">
-                      <paper-item>Sent mail</paper-item>
-                    </a>
-                  </div>
-                </paper-material>
+                  <expandable-card
+                    preloadImage="true"
+                    fadeImage="true"
+                    image="images/placeholder-image.png"
+                    name="Bug Splat!"
+                    description="Using Swingame, we develop a game insipred from the hit mobile game, Flappy Bird!"
+                    day="2014"
+                    pdf="https://www.polyu.edu.hk/iaee/files/pdf-sample.pdf">
+                  </expandable-card>
+
+                  <expandable-card
+                    preloadImage="true"
+                    fadeImage="true"
+                    image="images/placeholder-image.png"
+                    name="Arduino Tutorials"
+                    description="Using Swingame, we develop a game insipred from the hit mobile game, Flappy Bird!"
+                    day="2015"
+                    pdf="https://www.polyu.edu.hk/iaee/files/pdf-sample.pdf"
+                    download="https://www.polyu.edu.hk/iaee/files/pdf-sample.pdf">
+                  </expandable-card>
+
+
               </section>
 
               <section data-route="contact" tabindex="-1">
                 <paper-material elevation="1">
                   <h1 class="page-title" tabindex="-1">Contact</h1>
-                  <p>This is the contact section</p>
+                  <form is="iron-form" id="contactForm" method="post" action="/form/handler">
+                    <!-- CONTACT FORM -->
+                  </form>
                 </paper-material>
               </section>
 
