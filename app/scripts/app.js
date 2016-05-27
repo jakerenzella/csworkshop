@@ -33,7 +33,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
   app.addEventListener('dom-change', function() {
-    console.log('Welcome to CS4HS 2016 ;) Good on you for being inquisitive!');
+    console.log('Welcome to CS4HS 2016 ;)');
   });
 
   // See https://github.com/Polymer/polymer/issues/1381
