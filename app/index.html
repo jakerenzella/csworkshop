@@ -6,7 +6,10 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Polymer Starter Kit">
+    <meta name="generator" content="Swinburne CS4HS">
+
+    <base href="/">
+
     <title>CS4HS16</title>
 
     <!-- Place favicon.ico in the `app/` directory -->
@@ -226,10 +229,9 @@
         <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
       </paper-toast>
 
-      <paper-toast id="caching-complete" duration="6000" text="Caching complete! This app will work offline."></paper-toast>
-
-      <platinum-sw-register auto-register clients-claim skip-waiting base-uri="bower_components/platinum-sw/bootstrap" on-service-worker-installed="displayInstalledToast">
-        <platinum-sw-cache default-cache-strategy="fastest" cache-config-file="cache-config.json"></platinum-sw-cache>
+      <paper-toast id="caching-complete"  duration="6000" text="Caching complete! This app will work offline."></paper-toast>
+      <platinum-sw-register base-uri="bower_components/platinum-sw/bootstrap" auto-register clients-claim skip-waiting on-service-worker-installed="displayInstalledToast">
+        <platinum-sw-cache default-cache-strategy="networkFirst" cache-config-file="cache-config.json"></platinum-sw-cache>
       </platinum-sw-register>
 
     </template>

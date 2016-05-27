@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "swinburnecs4hs",
+    "swinburnecs4hs": "swinburnecs4hs"
+  }
+}

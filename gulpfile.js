@@ -60,6 +60,9 @@ var styleTask = function(stylesPath, srcs) {
     .pipe($.size({title: stylesPath}));
 };
 
+var swBootstrap = gulp.src(['bower_components/platinum-sw/bootstrap/*.js'])
+    .pipe(gulp.dest('dist/elements/bootstrap'));
+
 var imageOptimizeTask = function(src, dest) {
   return gulp.src(src)
     .pipe($.imagemin({
