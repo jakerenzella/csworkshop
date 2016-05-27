@@ -166,7 +166,7 @@
               <section data-route="presenters" tabindex="-1">
                 <paper-material elevation="1">
                   <h1 class="page-title" tabindex="-1">Presenters:</h1>
-                  <presenter-card image="images/therese.jpeg" name="Therese Keane" description="tkeane@swin.edu.au"> </presenter-card>
+                  <presenter-card image="images/therese.jpeg" name="Dr. Therese Keane" description="tkeane@swin.edu.au"> </presenter-card>
                   <presenter-card image="images/placeholder-image.png" name="Reuben Wilson" description="rwilson@swin.edu.au"> </presenter-card>
                   <presenter-card image="images/placeholder-image.png" name="Jake Renzella" description="jrenzella@swin.edu.au"> </presenter-card>
                   <presenter-card image="images/placeholder-image.png" name="Cliff Warren" description="cwarren@swin.edu.au"> </presenter-card>
@@ -174,19 +174,19 @@
                 </paper-material>
               </section>
 
-              <section data-route="presenter-info" tabindex="-1">
+              <!-- <section data-route="presenter-info" tabindex="-1">
                 <paper-material elevation="-1">
                   <h1 class="page-title" tabindex="-1">Presenter:
                     {{params.name}}</h1>
                   <div>This is
                     {{params.name}}'s section</div>
                 </paper-material>
-              </section>
+              </section> -->
 
               <section data-route="past-content" tabindex="-1">
-                <h1 class="page-title" tabindex="-1"></h1>
+                <div class="page-title" tabindex="-1"></div>
 
-                  <expandable-card
+                  <expandable-card style="margin-top: 0px;"
                     preloadImage="true"
                     fadeImage="true"
                     image="images/placeholder-image.png"
@@ -206,8 +206,6 @@
                     pdf="https://www.polyu.edu.hk/iaee/files/pdf-sample.pdf"
                     download="https://www.polyu.edu.hk/iaee/files/pdf-sample.pdf">
                   </expandable-card>
-
-
               </section>
 
               <section data-route="contact" tabindex="-1">
