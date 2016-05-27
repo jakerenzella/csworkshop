@@ -121,8 +121,8 @@
 
           <!-- Main Content -->
           <div class="content">
-            <iron-pages attr-for-selected="data-route" selected="{{route}}">
-              <section data-route="home" tabindex="-1">
+            <neon-animated-pages attr-for-selected="data-route" selected="{{route}}" entry-animation="slide-from-bottom-animation" exit-animation="fade-out-animation">
+              <neon-animatable data-route="home">
                 <main-content class="page-title" tabindex="-1"></main-content>
 
                 <my-timer></my-timer>
@@ -164,9 +164,9 @@
                   <iron-image src="images/GoogleLogo.svg"></iron-image>
                 </footer>
 
-              </section>
+              </neon-animatable>
 
-              <section data-route="presenters" tabindex="-1">
+              <neon-animatable data-route="presenters" tabindex="-1">
                 <paper-material elevation="1">
                   <h1 class="page-title" tabindex="-1">Presenters:</h1>
                   <presenter-card image="images/therese.jpeg" name="Dr. Therese Keane" description="tkeane@swin.edu.au"> </presenter-card>
@@ -175,7 +175,7 @@
                   <presenter-card image="images/placeholder-image.png" name="Cliff Warren" description="cwarren@swin.edu.au"> </presenter-card>
                   <presenter-card image="images/placeholder-image.png" name="Charlotte Pierce" description="cpierce@swin.edu.au"> </presenter-card>
                 </paper-material>
-              </section>
+              </neon-animatable>
 
               <!-- <section data-route="presenter-info" tabindex="-1">
                 <paper-material elevation="-1">
@@ -186,7 +186,7 @@
                 </paper-material>
               </section> -->
 
-              <section data-route="past-content" tabindex="-1">
+              <neon-animatable data-route="past-content">
                 <div class="page-title" tabindex="-1"></div>
 
                   <expandable-card style="margin-top: 0px;"
@@ -209,18 +209,18 @@
                     pdf="https://firebasestorage.googleapis.com/v0/b/swinburnecs4hs.appspot.com/o/examplePdf.pdf?alt=media&token=611cd993-f851-475d-b759-ea452dd16b51"
                     download="https://firebasestorage.googleapis.com/v0/b/swinburnecs4hs.appspot.com/o/examplePdf.pdf?alt=media&token=611cd993-f851-475d-b759-ea452dd16b51f">
                   </expandable-card>
-              </section>
+              </neon-animatable>
 
-              <section data-route="contact" tabindex="-1">
+              <neon-animatable data-route="contact">
                 <paper-material elevation="1">
                   <h1 class="page-title" tabindex="-1">Contact</h1>
                   <p>
                     Please report any bugs found regarding the site to <a class="mailto" href="mailto:j@kerenzella.com?subject=feedback">j@kerenzella.com</a>
                   </p>
                 </paper-material>
-              </section>
+              </neon-animatable>
 
-            </iron-pages>
+            </neon-animated-pages>
           </div>
         </paper-scroll-header-panel>
       </paper-drawer-panel>
