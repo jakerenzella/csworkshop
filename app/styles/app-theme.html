@@ -49,8 +49,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     --paper-menu-background-color: #fff;
     --menu-link-color: #111111;
 
-    --google-map-iframe-height: 400px;
     --google-map-iframe-width: 100%;
+    --google-map-iframe-height: 400px;
+
   }
 
   /* General styles */
@@ -157,8 +158,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   }
 
   paper-card iframe {
-      height: var(--google-map-iframe-height);
       width: var(--google-map-iframe-width);
+      height: var(--google-map-iframe-height);
   }
 
   .mailto {
@@ -168,12 +169,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   }
 
   .overlay {
-   background:transparent;
-   position:relative;
-   width:640px;
-   height:480px; /* your iframe height */
-   top:480px;  /* your iframe height */
-   margin-top:-480px;  /* your iframe height */
+   background: transparent;
+   position: relative;
+   width: var(--google-map-iframe-width);
+   height: var(--google-map-iframe-height);
+   top: var(--google-map-iframe-height);
+   margin-top: -400px;
   }
 
   neon-animatable[data-route="home"] paper-material {
