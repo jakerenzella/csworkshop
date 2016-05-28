@@ -163,12 +163,12 @@
                 <footer style="bottom:0">
                   <iron-image src="images/GoogleLogo.svg"></iron-image>
                 </footer>
-
               </neon-animatable>
 
-              <neon-animatable data-route="presenters" tabindex="-1">
+              <neon-animatable data-route="presenters">
+                <div class="page-title" tabindex="-1"></div>
                 <paper-material elevation="1">
-                  <h1 class="page-title" tabindex="-1">Presenters:</h1>
+                  <h1>Presenters:</h1>
                   <presenter-card image="images/therese.jpeg" name="Dr. Therese Keane" description="tkeane@swin.edu.au"> </presenter-card>
                   <presenter-card image="images/placeholder-image.png" name="Reuben Wilson" description="rwilson@swin.edu.au"> </presenter-card>
                   <presenter-card image="images/placeholder-image.png" name="Jake Renzella" description="jrenzella@swin.edu.au"> </presenter-card>
@@ -176,15 +176,6 @@
                   <presenter-card image="images/placeholder-image.png" name="Charlotte Pierce" description="cpierce@swin.edu.au"> </presenter-card>
                 </paper-material>
               </neon-animatable>
-
-              <!-- <section data-route="presenter-info" tabindex="-1">
-                <paper-material elevation="-1">
-                  <h1 class="page-title" tabindex="-1">Presenter:
-                    {{params.name}}</h1>
-                  <div>This is
-                    {{params.name}}'s section</div>
-                </paper-material>
-              </section> -->
 
               <neon-animatable data-route="past-content">
                 <div class="page-title" tabindex="-1"></div>
@@ -212,8 +203,9 @@
               </neon-animatable>
 
               <neon-animatable data-route="contact">
+                <div class="page-title" tabindex="-1"></div>
                 <paper-material elevation="1">
-                  <h1 class="page-title" tabindex="-1">Contact</h1>
+                  <h1>Contact</h1>
                   <p>
                     Please report any bugs found regarding the site to <a class="mailto" href="mailto:j@kerenzella.com?subject=feedback">j@kerenzella.com</a>
                   </p>
