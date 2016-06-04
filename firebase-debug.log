@@ -1,0 +1,17 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/Cellar/node/5.11.0/bin/node /usr/local/bin/firebase open
+[debug] CLI Version:  3.0.0
+[debug] Platform:     darwin
+[debug] Node Version: v5.11.0
+[debug] Time:         Sat May 28 2016 14:40:32 GMT+1000 (AEST)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/swinburnecs4hs 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/swinburnecs4hs/tokens 
+[debug] <<< HTTP RESPONSE 200
+[info] Tip: You can also run firebase open hosting:site
+[info] 
+[info] Opening Hosting: Deployed Site link in your default browser:
+[info] https://swinburnecs4hs.firebaseapp.com

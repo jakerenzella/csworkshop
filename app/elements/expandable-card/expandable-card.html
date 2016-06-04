@@ -1,6 +1,18 @@
 <dom-module id="expandable-card">
   <template>
     <style>
+
+      iron-image {
+        min-height: 20em;
+
+        width: 100%;
+        --iron-image-width: 100%;
+        pointer-events: none;
+
+        @apply(--paper-card-header-image);
+      }
+
+
       paper-button {
         color: var(--accent-color);
         font-weight: bold;
@@ -30,7 +42,10 @@
       }
     </style>
 
-    <paper-card preloadImage$="[[preloadImage]]" fadeImage$="[[fadeImage]]" image$="[[image]]" pdf$="[[pdf]]" description$="[[description]]" day$="[[day]]" download$="[[download]]">
+    <paper-card description$="[[description]]">
+
+      <iron-image hidden$="[[!image]]" placeholder$="[[placeholder]]" src="[[image]]" sizing="cover" preload fade ></iron-image>
+
       <div class="card-content">
         <div class="card-header">[[name]]
           <div class="event-day card-light">
@@ -64,8 +79,6 @@
         </div>
       </paper-card>
 
-    <content> </content>
-
   </template>
   <script>
     Polymer({
@@ -75,11 +88,11 @@
           type: String,
           value: ''
         },
-        name: {
+        placeholder: {
           type: String,
           value: ''
         },
-        description: {
+        name: {
           type: String,
           value: ''
         },
@@ -94,14 +107,6 @@
         day: {
           type: String,
           value: ''
-        },
-        preloadImage: {
-          type: Boolean,
-          value: true
-        },
-        fadeImage: {
-          type: Boolean,
-          value: true
         },
         download: {
           type: String,
