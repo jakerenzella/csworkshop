@@ -54,7 +54,7 @@
 
     </style>
 
-    <paper-card class="noselect">
+    <paper-card elevation="5" class="noselect">
       <paper-ripple id="ripple" style="pointer-events: none;"></paper-ripple>
       <div class="card-content">
         <timer-days target-date="2016-09-13T08:30:00"></timer-days>
@@ -88,8 +88,9 @@
               "#9C27B0",
               "#E91E63",
               "#607D8B",
-              "#FF9800",
-              "#00BCD4"
+              "#00BCD4",
+              "#006064",
+              "#283593"
             ]
           }
         }
@@ -103,6 +104,7 @@
           this.customStyle['--timer-text-color'] = this.customStyle['--new-timer-text-color'];
           this.customStyle['--new-timer-text-color'] = this.colours[Math.floor(Math.random()*this.colours.length)];
           this.updateStyles();
+          console.log("RAINBOW");
         },
 
     });
