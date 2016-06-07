@@ -9,6 +9,7 @@
     :host {
        --timer-text-color: var(--accent-color);
        --new-timer-text-color: var(--accent-color);
+       cursor: pointer;
      }
 
      .noselect {
@@ -19,13 +20,15 @@
         -ms-user-select: none;       /* Internet Explorer/Edge */
         user-select: none;           /* Non-prefixed version, currently
                                         not supported by any browser */
-        cursor: default;
       }
+
+      p {color: var(--timer-text-color);}
 
       paper-card {
         width: 100%;
         margin: 16px auto;
       }
+
 
       paper-ripple {
         color: var(--new-timer-text-color);
@@ -51,10 +54,10 @@
 
     </style>
 
-    <paper-card>
+    <paper-card class="noselect">
       <paper-ripple id="ripple" style="pointer-events: none;"></paper-ripple>
       <div class="card-content">
-        <timer-days class="noselect" target-date="2016-09-13T08:30:00"></timer-days>
+        <timer-days target-date="2016-09-13T08:30:00"></timer-days>
       </div>
       <div class="card-actions">
         <p>Swinburne CS4HS is back! Join us for two days of sharing, learning and networking with fellow educators.</p>
@@ -84,7 +87,9 @@
               "#673AB7",
               "#9C27B0",
               "#E91E63",
-              "#607D8B"
+              "#607D8B",
+              "#FF9800",
+              "#00BCD4"
             ]
           }
         }
