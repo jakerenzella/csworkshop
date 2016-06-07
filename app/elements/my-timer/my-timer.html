@@ -6,9 +6,29 @@
   <template>
     <style>
 
+    :host {
+       --timer-text-color: var(--accent-color);
+       --new-timer-text-color: var(--accent-color);
+     }
+
+     .noselect {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none;   /* Chrome/Safari/Opera */
+        -khtml-user-select: none;    /* Konqueror */
+        -moz-user-select: none;      /* Firefox */
+        -ms-user-select: none;       /* Internet Explorer/Edge */
+        user-select: none;           /* Non-prefixed version, currently
+                                        not supported by any browser */
+        cursor: default;
+      }
+
       paper-card {
         width: 100%;
         margin: 16px auto;
+      }
+
+      paper-ripple {
+        color: var(--new-timer-text-color);
       }
 
       timer-days {
@@ -17,8 +37,8 @@
         --timer-days-background-color: transparent;
         --timer-days-hover-background-color: transparent;
         --timer-days-hover-border-color: transparent;
-        --timer-days-hover-font-color: var(--accent-color);
-        --timer-days-font-color: var(--accent-color);
+        --timer-days-hover-font-color: var(--timer-text-color);
+        --timer-days-font-color: var(--timer-text-color);
         --timer-days-font-number-size: 5em;
         font-family: 'Share Tech Mono', 'Roboto', 'Sans-Serif';
         letter-spacing: 1.25em;
@@ -32,8 +52,9 @@
     </style>
 
     <paper-card>
+      <paper-ripple id="ripple" style="pointer-events: none;"></paper-ripple>
       <div class="card-content">
-        <timer-days target-date="2016-09-13T08:30:00"></timer-days>
+        <timer-days class="noselect" target-date="2016-09-13T08:30:00"></timer-days>
       </div>
       <div class="card-actions">
         <p>Swinburne CS4HS is back! Join us for two days of sharing, learning and networking with fellow educators.</p>
@@ -49,8 +70,37 @@
       'use strict';
 
       Polymer({
-        is: 'my-timer'
-      });
-    })();
-  </script>
+        is: 'my-timer',
+
+        properties: {
+          colours: {
+          type: Array,
+          value: function() {
+            return [
+              "#F44336",
+              "#009688",
+              "#4CAF50",
+              "#FF5722",
+              "#673AB7",
+              "#9C27B0",
+              "#E91E63",
+              "#607D8B"
+            ]
+          }
+        }
+      },
+
+        listeners: {
+          'down' : 'downAction'
+        },
+
+        downAction: function(e) {
+          this.customStyle['--timer-text-color'] = this.customStyle['--new-timer-text-color'];
+          this.customStyle['--new-timer-text-color'] = this.colours[Math.floor(Math.random()*this.colours.length)];
+          this.updateStyles();
+        },
+
+    });
+  })();
+</script>
 </dom-module>
