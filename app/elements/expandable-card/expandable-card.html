@@ -1,133 +1,55 @@
+<link rel="import" href="/bower_components/iron-media-query/iron-media-query.html">
+
 <dom-module id="expandable-card">
   <template>
     <style>
 
-      iron-image {
-        min-height: 20em;
-
-        width: 100%;
-        --iron-image-width: 100%;
-        pointer-events: none;
-
-        @apply(--paper-card-header-image);
-      }
-
-
-      paper-button {
-        color: var(--accent-color);
-        font-weight: bold;
-      }
       paper-card {
-        width: 100%;
         margin: 16px auto;
       }
-      iron-icon.star {
-        --iron-icon-width: 16px;
-        --iron-icon-height: 16px;
-        color: var(--paper-amber-500);
+
+      .card-container[wide-layout] {
+        @apply(--layout-horizontal);
+        @apply(--layout-justified);
       }
-      .card-light { color: var(--paper-grey-600); }
-      .card-header { @apply(--paper-font-headline); }
-      .card-title {
-        margin: 4px;
-        font-size: 16px;
-      }
-      .event-day {
-        float: right;
-        font-size: 15px;
-        vertical-align: middle;
-      }
-      iron-icon.star:last-of-type {
-        color: var(--paper-grey-500);
-      }
+
+      .card-content {
+         @apply(--paper-font-headline);
+         text-align: center;
+         color: white;
+        }
+
+        .left[wide-layout] {
+          margin-right: 16px;
+        }
+
+        .right[wide-layout] {
+          margin-left: 16px;
+        }
     </style>
 
-    <paper-card description$="[[description]]">
+    <iron-media-query query="(min-width: 600px)" query-matches="{{wide}}"></iron-media-query>
 
-      <iron-image hidden$="[[!image]]" placeholder$="[[placeholder]]" src="[[image]]" sizing="cover" preload fade ></iron-image>
+    <div class="card-container" wide-layout$="{{wide}}">
 
-      <div class="card-content">
-        <div class="card-header">[[name]]
-          <div class="event-day card-light">
-            <iron-icon icon="communication:location-on"></iron-icon>
-            <span style="vertical-align:middle;"> <iron-icon icon="date-range"></iron-icon> [[day]]</span>
-          </div>
-        </div>
-        <div class="card-rating">
-          <iron-icon class="star" icon="star"></iron-icon>
-          <iron-icon class="star" icon="star"></iron-icon>
-          <iron-icon class="star" icon="star"></iron-icon>
-          <iron-icon class="star" icon="star"></iron-icon>
-          <iron-icon class="star" icon="star"></iron-icon>
-        </div>
-        <p class="card-light">[[description]]</p>
-        </div>
-
-        <paper-content>
-
-        <div class="card-actions">
-          <paper-button on-click="toggle"><paper-icon-button icon="[[arrowIcon]]"></paper-icon-button>[[exploreButton]]</paper-button>
-          <a hidden$="[[!download]]" href="[[download]]" style="float: right;">
-            <paper-button href="[[download]]">
-              <paper-icon-button icon="file-download"></paper-icon-button>
-            </paper-button>
-          </a>
-
-          <iron-collapse id="collapse">
-            <pdf-object file="[[pdf]]" height="600px"></pdf-object>
-          </iron-collapse>
-        </div>
+      <paper-card class="left" wide-layout$="{{wide}}" style="background-color: #303F9F;" fadeImage image="images/arduinos.png">
+        <div class="card-content"> Hardware Project </div>
       </paper-card>
+
+      <paper-card  style="background-color: #455A64;" fadeImage image="images/programming.png">
+        <div class="card-content"> Programming Project </div>
+      </paper-card>
+
+      <paper-card class="right" wide-layout$="{{wide}}" style="background-color: #303F9F;" fadeImage image="images/arduinos.png">
+        <div class="card-content"> Registration <iron-icon icon="open-in-new"></iron-icon> </div>
+      </paper-card>
+    </div>
+
 
   </template>
   <script>
     Polymer({
-      is: 'expandable-card',
-      properties: {
-        image: {
-          type: String,
-          value: ''
-        },
-        placeholder: {
-          type: String,
-          value: ''
-        },
-        name: {
-          type: String,
-          value: ''
-        },
-        pdf: {
-          type: String,
-          value: ''
-        },
-        description: {
-          type: String,
-          value: ''
-        },
-        day: {
-          type: String,
-          value: ''
-        },
-        download: {
-          type: String,
-          value: ''
-        },
-        exploreButton: {
-          type: String,
-          value: 'Show PDF'
-        },
-        arrowIcon: {
-          type: String,
-          value: 'expand-more'
-        }
-      },
-
-      toggle: function() {
-        this.$.collapse.toggle();
-        this.exploreButton = this.$.collapse.opened ? "Hide PDF" : "Show PDF"
-        this.arrowIcon = this.$.collapse.opened ? "expand-less" : "expand-more"
-      }
-
+      is: 'expandable-card'
     });
   </script>
 </dom-module>
