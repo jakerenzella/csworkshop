@@ -1,0 +1,68 @@
+<link rel="import" href="/bower_components/iron-media-query/iron-media-query.html">
+
+<dom-module id="cs4hs-app">
+  <template>
+    <style>
+
+      paper-card {
+        margin: 16px auto;
+      }
+
+      .card-container[wide-layout] {
+        @apply(--layout-horizontal);
+        @apply(--layout-justified);
+        margin-left: auto;
+      }
+
+      .card-content {
+         @apply(--paper-font-headline);
+         text-align: center;
+         color: white;
+        }
+
+        .left[wide-layout] {
+          margin-right: 8px;
+        }
+
+        .right[wide-layout] {
+          margin-left: 8px;
+        }
+
+        .center[wide-layout] {
+          margin-left: 5px;
+          margin-right: 5px;
+
+        }
+    </style>
+
+    <my-timer> </my-timer>
+
+    <iron-media-query query="(min-width: 890px)" query-matches="{{wide}}"></iron-media-query>
+
+    <div class="card-container" wide-layout$="{{wide}}">
+
+      <a href="{{baseUrl}}presenters">
+        <paper-card class="left" wide-layout$="{{wide}}" style="background-color: #303F9F;" fade-image image="images/arduinos.png">
+          <div class="card-content"> Hardware Project </div>
+        </paper-card>
+      </a>
+
+      <a href="{{baseUrl}}presenters">
+        <paper-card class="center" wide-layout$="{{wide}}" style="background-color: #455A64;" fade-image image="images/programming.png">
+          <div class="card-content"> Programming Project </div>
+        </paper-card>
+      </a>
+
+      <a href="{{baseUrl}}presenters">
+        <paper-card class="right" wide-layout$="{{wide}}" style="background-color: #2E7D32;" fade-image image="images/registration.png">
+          <div class="card-content"> Registration <iron-icon icon="open-in-new"></iron-icon> </div>
+        </paper-card>
+      </a>
+
+    </div>
+
+  </template>
+  <script>
+    Polymer({ is: 'cs4hs-app' });
+  </script>
+</dom-module>
