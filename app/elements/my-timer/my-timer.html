@@ -18,6 +18,7 @@
         -ms-user-select: none;       /* Internet Explorer/Edge */
         user-select: none;           /* Non-prefixed version, currently
                                         not supported by any browser */
+        cursor: default;
       }
 
       p {color: var(--timer-text-color);}
@@ -30,16 +31,18 @@
         --timer-days-hover-border-color: transparent;
         --timer-days-hover-font-color: var(--timer-text-color);
         --timer-days-font-color: var(--timer-text-color);
-        --timer-days-font-number-size: 5em;
+        --timer-days-font-number-size: 6em;
+        --timer-days-font-text-size: 2em;
         font-family: 'Share Tech Mono', 'Roboto', 'Sans-Serif';
         letter-spacing: 1.25em;
         margin: 16px auto;
         min-width: 0px;
+        margin-bottom: 64px;
       }
     </style>
 
       <iron-media-query query="(min-width: 890px)" query-matches="{{wide}}"></iron-media-query>
-      <timer-days target-date="2016-09-13T08:30:00"></timer-days>
+      <timer-days class="noselect" target-date="2016-09-13T08:30:00"></timer-days>
 
   </template>
 

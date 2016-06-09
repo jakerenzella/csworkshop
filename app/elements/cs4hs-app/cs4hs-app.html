@@ -1,3 +1,5 @@
+
+
 <dom-module id="cs4hs-app">
   <template>
     <style>
@@ -13,52 +15,45 @@
 
       .card-content {
          @apply(--paper-font-headline);
-         font-size: 16px;
          font-weight: bold;
          text-align: center;
          color: white;
         }
-
-        .left[wide-layout] {
-          margin-right: 8px;
-        }
-
-        .right[wide-layout] {
-          margin-left: 8px;
-        }
-
-        .center[wide-layout] {
-          margin-left: 5px;
-          margin-right: 5px;
-
-        }
     </style>
+    <iron-media-query query="(min-width: 890px)" query-matches="{{wide}}"></iron-media-query>
 
     <my-timer> </my-timer>
 
-    <iron-media-query query="(min-width: 890px)" query-matches="{{wide}}"></iron-media-query>
-
     <div class="card-container" wide-layout$="{{wide}}">
 
-      <a data-route="home" href="{{baseUrl}}hardware-project">
-        <paper-card class="left" wide-layout$="{{wide}}" style="background-color: #303F9F;" fade-image image="images/arduinos.png">
-          <div class="card-content">Hardware Project</div>
-        </paper-card>
-      </a>
-
-      <a data-route="home" href="{{baseUrl}}programming-project">
-        <paper-card class="center" wide-layout$="{{wide}}" style="background-color: #455A64;" fade-image image="images/programming.png">
-          <div class="card-content">Programming Project</div>
-        </paper-card>
-      </a>
-
-      <a target="_blank" href="https://www.swinburne.edu.au/events/forms/departments/health-arts-design/2016/september/cs4hs--programming/">
-        <paper-card class="right" wide-layout$="{{wide}}" style="background-color: #2E7D32;" fade-image image="images/registration.png">
-          <div class="card-content">Registration</div>
-        </paper-card>
-      </a>
-
+      <grid-element ghi gs="15px">
+        <grid-col s="3">
+          <a data-route="home" href="{{baseUrl}}hardware-project">
+          <paper-card wide-layout$="{{wide}}" style="background-color: #303F9F;" fade-image image="images/arduinos.png">
+            <div class="card-content">Hardware Project</div>
+          </paper-card>
+        </a>
+        </grid-col>
+        <grid-col s="3">
+          <a data-route="home" href="{{baseUrl}}programming-project">
+            <paper-card wide-layout$="{{wide}}" style="background-color: #455A64;" fade-image image="images/programming.png">
+              <div class="card-content">Game Project</div>
+            </paper-card>
+          </a>
+        </grid-col>
+        <grid-col s="2">
+          <a target="_blank" href="https://www.swinburne.edu.au/events/forms/departments/health-arts-design/2016/september/cs4hs--programming/">
+            <paper-card wide-layout$="{{wide}}" style="background-color: #558B2F;" fade-image image="images/registration.png">
+              <div class="card-content">Registration</div>
+            </paper-card>
+          </a>
+        </grid-col>
+      </grid-element>
     </div>
+
+    <paper-material>
+      <google-youtube video-id="8maOxNc0Aio" fluid="true" rel="0" start="10" autoplay="0"></google-youtube>
+    </paper-material>
 
   </template>
   <script>

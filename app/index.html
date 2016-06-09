@@ -59,9 +59,9 @@
 
     <template is="dom-bind" id="app">
 
-      <paper-drawer-panel id="paperDrawerPanel">
+      <paper-drawer-panel force-narrow id="paperDrawerPanel">
         <!-- Drawer Scroll Header Panel -->
-        <paper-scroll-header-panel drawer condenses>
+        <paper-scroll-header-panel drawer >
 
           <!-- Drawer Toolbar -->
           <paper-toolbar id="drawerToolbar">
@@ -103,13 +103,15 @@
           <!-- Main Toolbar -->
           <paper-toolbar id="mainToolbar" class="tall">
 
-            <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+            <paper-icon-button on-tap="toggleDrawer" id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
 
             <span class="space"></span>
 
             <!-- Application name -->
             <div class="middle middle-container">
-              <div class="app-name">Swinburne CS4HS</div>
+              <a class="nostyle" data-route="home" href="{{baseUrl}}">
+              <div class="app-name"> Swinburne CS4HS</div>
+            </a>
             </div>
 
             <!-- Application sub title -->
@@ -120,17 +122,11 @@
 
           <!-- Main Content -->
           <div class="content">
-            <neon-animated-pages attr-for-selected="data-route" selected="{{route}}" entry-animation="slide-from-bottom-animation" exit-animation="fade-out-animation">
+            <neon-animated-pages attr-for-selected="data-route" selected="{{route}}" entry-animation="fade-in-animation" exit-animation="fade-out-animation">
               <neon-animatable data-route="home">
                 <main-content class="page-title" tabindex="-1"></main-content>
 
                 <cs4hs-app> </cs4hs-app>
-
-                <paper-card heading="Swinburne CodeCasts">
-                  <div class="card-content">
-                    <google-youtube video-id="8maOxNc0Aio" fluid="true" rel="0" start="10" autoplay="0"></google-youtube>
-                  </div>
-                </paper-card>
 
                 <paper-card>
                   <div class="card-content">
@@ -160,11 +156,8 @@
                 <div class="page-title" tabindex="-1"></div>
                 <paper-material elevation="1">
                   <h1>Hardware Project:</h1>
-                  <presenter-card image="images/therese.jpeg" name="Dr. Therese Keane" description="tkeane@swin.edu.au"> </presenter-card>
-                  <presenter-card image="images/placeholder-image.png" name="Reuben Wilson" description="rwilson@swin.edu.au"> </presenter-card>
-                  <presenter-card image="images/placeholder-image.png" name="Jake Renzella" description="jrenzella@swin.edu.au"> </presenter-card>
-                  <presenter-card image="images/placeholder-image.png" name="Cliff Warren" description="cwarren@swin.edu.au"> </presenter-card>
-                  <presenter-card image="images/placeholder-image.png" name="Charlotte Pierce" description="cpierce@swin.edu.au"> </presenter-card>
+
+
                 </paper-material>
               </neon-animatable>
 
@@ -172,11 +165,8 @@
                 <div class="page-title" tabindex="-1"></div>
                 <paper-material elevation="1">
                   <h1>Programming Project:</h1>
-                  <presenter-card image="images/therese.jpeg" name="Dr. Therese Keane" description="tkeane@swin.edu.au"> </presenter-card>
-                  <presenter-card image="images/placeholder-image.png" name="Reuben Wilson" description="rwilson@swin.edu.au"> </presenter-card>
-                  <presenter-card image="images/placeholder-image.png" name="Jake Renzella" description="jrenzella@swin.edu.au"> </presenter-card>
-                  <presenter-card image="images/placeholder-image.png" name="Cliff Warren" description="cwarren@swin.edu.au"> </presenter-card>
-                  <presenter-card image="images/placeholder-image.png" name="Charlotte Pierce" description="cpierce@swin.edu.au"> </presenter-card>
+                  <pdf-object>
+                  </pdf-object>
                 </paper-material>
               </neon-animatable>
 

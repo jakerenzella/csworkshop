@@ -51,8 +51,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     --google-map-iframe-width: 100%;
     --google-map-iframe-height: 400px;
-
   }
+
+  a.nostyle:link {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+a.nostyle:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
 
   /* General styles */
 
@@ -88,6 +99,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       background: var(--primary-color);
     }
   }
+
+  #paperToggle {
+  display: inline-block !important;
+}
 
   paper-menu iron-icon {
     margin-right: 33px;

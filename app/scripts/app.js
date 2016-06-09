@@ -78,4 +78,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     app.$.paperDrawerPanel.closeDrawer();
   };
 
+  app.toggleDrawer = function() {
+  var panel = app.$.paperDrawerPanel;
+  var responsiveWidth = parseInt(panel.responsiveWidth);
+  if (window.innerWidth > responsiveWidth) {
+    if (panel.forceNarrow) {
+      panel.forceNarrow = false;
+      panel.togglePanel();
+    } else {
+      panel.forceNarrow = true;
+      panel.togglePanel();
+    }
+  }
+}
+
 })(document);
