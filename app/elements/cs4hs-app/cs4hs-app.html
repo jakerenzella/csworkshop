@@ -1,9 +1,6 @@
-<link rel="import" href="/bower_components/iron-media-query/iron-media-query.html">
-
 <dom-module id="cs4hs-app">
   <template>
     <style>
-
       paper-card {
         margin: 16px auto;
       }
@@ -16,6 +13,8 @@
 
       .card-content {
          @apply(--paper-font-headline);
+         font-size: 16px;
+         font-weight: bold;
          text-align: center;
          color: white;
         }
@@ -41,21 +40,21 @@
 
     <div class="card-container" wide-layout$="{{wide}}">
 
-      <a href="{{baseUrl}}presenters">
+      <a data-route="home" href="{{baseUrl}}hardware-project">
         <paper-card class="left" wide-layout$="{{wide}}" style="background-color: #303F9F;" fade-image image="images/arduinos.png">
-          <div class="card-content"> Hardware Project </div>
+          <div class="card-content">Hardware Project</div>
         </paper-card>
       </a>
 
-      <a href="{{baseUrl}}presenters">
+      <a data-route="home" href="{{baseUrl}}programming-project">
         <paper-card class="center" wide-layout$="{{wide}}" style="background-color: #455A64;" fade-image image="images/programming.png">
-          <div class="card-content"> Programming Project </div>
+          <div class="card-content">Programming Project</div>
         </paper-card>
       </a>
 
-      <a href="{{baseUrl}}presenters">
+      <a target="_blank" href="https://www.swinburne.edu.au/events/forms/departments/health-arts-design/2016/september/cs4hs--programming/">
         <paper-card class="right" wide-layout$="{{wide}}" style="background-color: #2E7D32;" fade-image image="images/registration.png">
-          <div class="card-content"> Registration <iron-icon icon="open-in-new"></iron-icon> </div>
+          <div class="card-content">Registration</div>
         </paper-card>
       </a>
 

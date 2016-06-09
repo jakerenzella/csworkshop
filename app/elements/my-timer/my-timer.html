@@ -8,8 +8,6 @@
 
     :host {
        --timer-text-color: var(--accent-color);
-       --new-timer-text-color: var(--accent-color);
-       cursor: pointer;
      }
 
      .noselect {
@@ -23,16 +21,6 @@
       }
 
       p {color: var(--timer-text-color);}
-
-      paper-card {
-        width: 100%;
-        margin: 16px auto;
-        background-color: var(--background-card-color)
-      }
-
-      paper-ripple {
-        color: var(--new-timer-text-color);
-      }
 
       timer-days {
         box-shadow: 0 0px 0px #333;
@@ -48,65 +36,18 @@
         margin: 16px auto;
         min-width: 0px;
       }
-
-      :host {
-      }
-
     </style>
 
-    <paper-card class="noselect">
-      <paper-ripple id="ripple" style="pointer-events: none;"></paper-ripple>
-      <div class="card-content">
-        <timer-days target-date="2016-09-13T08:30:00"></timer-days>
-      </div>
-      <div class="card-actions">
-        <p>Swinburne CS4HS is back! Join us for two days of sharing, learning and networking with fellow educators.</p>
-
-        <p>View specific information regarding the day, as well as gaining access to all of our past materials in the past-content page.</p>
-      </div>
-    </paper-card>
+      <iron-media-query query="(min-width: 890px)" query-matches="{{wide}}"></iron-media-query>
+      <timer-days target-date="2016-09-13T08:30:00"></timer-days>
 
   </template>
 
   <script>
     (function() {
       'use strict';
-
       Polymer({
-        is: 'my-timer',
-
-        properties: {
-          colours: {
-          type: Array,
-          value: function() {
-            return [
-              "#F44336",
-              "#009688",
-              "#4CAF50",
-              "#FF5722",
-              "#673AB7",
-              "#9C27B0",
-              "#E91E63",
-              "#607D8B",
-              "#00BCD4",
-              "#006064",
-              "#283593"
-            ]
-          }
-        }
-      },
-
-        listeners: {
-          'down' : 'downAction'
-        },
-
-        downAction: function(e) {
-          this.customStyle['--timer-text-color'] = this.customStyle['--new-timer-text-color'];
-          this.customStyle['--new-timer-text-color'] = this.colours[Math.floor(Math.random()*this.colours.length)];
-
-          this.updateStyles();
-          console.log("RAINBOW");
-        }
+        is: 'my-timer'
     });
   })();
 </script>
