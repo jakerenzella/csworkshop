@@ -99,11 +99,12 @@
         </paper-scroll-header-panel>
 
         <!-- Main Area -->
-        <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header>
+        <paper-scroll-header-panel main id="headerPanelMain" fixed keep-condensed-header>
           <!-- Main Toolbar -->
-          <paper-toolbar id="mainToolbar" class="tall">
+          <paper-toolbar id="mainToolbar" >
 
             <paper-icon-button on-tap="toggleDrawer" id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+
 
             <span class="space"></span>
 
@@ -115,9 +116,9 @@
             </div>
 
             <!-- Application sub title -->
-            <div class="bottom bottom-container">
+            <!-- <div class="bottom bottom-container">
               <div class="bottom-title">Run by Swinburne University.</div>
-            </div>
+            </div> -->
           </paper-toolbar>
 
           <!-- Main Content -->
@@ -154,20 +155,46 @@
 
               <neon-animatable data-route="hardware-project">
                 <div class="page-title" tabindex="-1"></div>
-                <paper-material elevation="1">
-                  <h1>Hardware Project:</h1>
 
+                  <paper-material elevation="1">
+                    <h1>Hardware Project</h1>
+                    <p> The 2016 Hardware Project ...</p>
+                      <pdf-object height="700px" file="https://www.polyu.edu.hk/iaee/files/pdf-sample.pdf" ></pdf-object>
+                  </paper-material>
 
-                </paper-material>
               </neon-animatable>
 
               <neon-animatable data-route="programming-project">
                 <div class="page-title" tabindex="-1"></div>
+
                 <paper-material elevation="1">
-                  <h1>Programming Project:</h1>
-                  <pdf-object>
-                  </pdf-object>
+                  <h1>Games Programming Project</h1>
+                  <p> The 2016 Games Programming project involves recreating the cult classic game Flappy Bird!</p>
+                  <pdf-object width="100%" height="700px" file="https://www.polyu.edu.hk/iaee/files/pdf-sample.pdf" ></pdf-object>
                 </paper-material>
+
+                <grid-element ghi gs="15px">
+                  <grid-col s="4">
+                    <paper-card wide-layout$="{{wide}}" fade-image>
+                      <div class="card-content">
+                      <google-youtube video-id="nenwDRVXw5Q" fluid="true" rel="0" start="10" autoplay="0"></google-youtube></div>
+                    </paper-card>
+                  </grid-col>
+
+                  <grid-col s="4">
+                    <paper-card wide-layout$="{{wide}}" fade-image>
+                      <div class="card-content">
+                      <google-youtube video-id="CaAQ8oJvdjY" fluid="true" rel="0" start="10" autoplay="0"></google-youtube></div>
+                    </paper-card>
+                  </grid-col>
+
+                  <grid-col s="4">
+                    <paper-card wide-layout$="{{wide}}" fade-image>
+                      <div class="card-content">
+                      <google-youtube video-id="W_av5wwDCt4" fluid="true" rel="0" start="10" autoplay="0"></google-youtube></div>
+                    </paper-card>
+                  </grid-col>
+                </grid-element>
               </neon-animatable>
 
               <neon-animatable data-route="past-content">
