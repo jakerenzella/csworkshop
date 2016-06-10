@@ -18,6 +18,8 @@
          font-weight: bold;
          text-align: center;
          color: white;
+         overflow: hidden;
+         height: 55px;
         }
     </style>
     <iron-media-query query="(min-width: 890px)" query-matches="{{wide}}"></iron-media-query>
@@ -30,30 +32,30 @@
         <grid-col s="3">
           <a data-route="home" href="{{baseUrl}}hardware-project">
           <paper-card wide-layout$="{{wide}}" style="background-color: #303F9F;" fade-image image="images/arduinos.png">
-            <div class="card-content">Hardware Project</div>
+            <div class="card-content">2016 Hardware Project</div>
           </paper-card>
         </a>
         </grid-col>
         <grid-col s="3">
           <a data-route="home" href="{{baseUrl}}programming-project">
             <paper-card wide-layout$="{{wide}}" style="background-color: #455A64;" fade-image image="images/programming.png">
-              <div class="card-content">Game Project</div>
+              <div class="card-content">2016 Software Project</div>
             </paper-card>
           </a>
         </grid-col>
         <grid-col s="2">
           <a target="_blank" href="https://www.swinburne.edu.au/events/forms/departments/health-arts-design/2016/september/cs4hs--programming/">
             <paper-card wide-layout$="{{wide}}" style="background-color: #558B2F;" fade-image image="images/registration.png">
-              <div class="card-content">Registration</div>
+              <div class="card-content">2016 Registration</div>
             </paper-card>
           </a>
         </grid-col>
       </grid-element>
     </div>
-
+<!-- 
     <paper-material>
       <google-youtube video-id="8maOxNc0Aio" fluid="true" rel="0" start="10" autoplay="0"></google-youtube>
-    </paper-material>
+    </paper-material> -->
 
   </template>
   <script>

@@ -85,9 +85,9 @@
               <span>Past Content</span>
             </a>
 
-            <a data-route="contact" href="{{baseUrl}}contact">
+            <a data-route="about" href="{{baseUrl}}about">
               <iron-icon icon="mail"></iron-icon>
-              <span>Contact</span>
+              <span>About</span>
             </a>
 
             <a style="float: left" target="_blank" href="https://www.swinburne.edu.au/events/forms/departments/health-arts-design/2016/september/cs4hs--programming/">
@@ -111,8 +111,8 @@
             <!-- Application name -->
             <div class="middle middle-container">
               <a class="nostyle" data-route="home" href="{{baseUrl}}">
-              <div class="app-name"> Swinburne CS4HS</div>
-            </a>
+                <div class="app-name"> Swinburne CS4HS </div>
+              </a>
             </div>
 
             <!-- Application sub title -->
@@ -159,8 +159,11 @@
                   <paper-material elevation="1">
                     <h1>Hardware Project</h1>
                     <p> The 2016 Hardware Project ...</p>
-                      <pdf-object height="700px" file="https://www.polyu.edu.hk/iaee/files/pdf-sample.pdf" ></pdf-object>
+
                   </paper-material>
+
+                  <iframe src="https://docs.google.com/gview?url=http://example.com/mypdf.pdf&embedded=true" style="width:718px; height:700px;" frameborder="0"></iframe>
+
 
               </neon-animatable>
 
@@ -200,10 +203,27 @@
               <neon-animatable data-route="past-content">
                 <div class="page-title" tabindex="-1"></div>
 
-                  <paper-card>
-                    <div class="card-content">WIP</div>
-                    <div class="card-actions"></div>
-                  </paper-card>
+                <h1>Past Content</h1>
+
+                <grid-element ghi gs="15px">
+                  <grid-col s="4">
+                    <paper-material style="height: 400px;">
+                      <google-youtube video-id="8maOxNc0Aio" fluid="true" rel="0" start="10" autoplay="0"></google-youtube>
+                    </paper-material>
+                  </grid-col>
+
+                  <grid-col s="4">
+                    <paper-card>
+                      <div class="card-content">
+                        <h1>Bug Hunter</h1>
+                        <p>Bug Hunter was the program developed for CS4HS 2014 and 2015!</p>
+                      </div>
+                      <div class="card-actions">Download</div>
+                    </paper-card>
+                  </grid-col>
+                </grid-element>
+
+
 
                   <expandable-card style="margin-top: 0px;"
                     preloadImage="true"
@@ -227,14 +247,13 @@
                   </expandable-card>
               </neon-animatable>
 
-              <neon-animatable data-route="contact">
+              <neon-animatable data-route="about">
                 <div class="page-title" tabindex="-1"></div>
                 <paper-material elevation="1">
-                  <h1>Contact</h1>
-                  <p>
-                    Please report any bugs found regarding the site to <a class="mailto" href="mailto:j@kerenzella.com?subject=feedback">j@kerenzella.com</a>.
-                  </p>
-                  <p>This page is open source at <a target="_blank" href="https://github.com/jakerenzella/swinburne-cs4hs">GitHub</a> </p>
+                  <h1>About Swinburne CS4HS</h1>
+                  <p>Google CS4HS ........</p>
+                  <p> Please report any queries or bugs found regarding the site to <a class="mailto" href="mailto:j@kerenzella.com?subject=feedback">j@kerenzella.com</a>. </p>
+                  <p>This site is open source at <a target="_blank" href="https://github.com/jakerenzella/swinburne-cs4hs">GitHub</a> </p>
                 </paper-material>
               </neon-animatable>
 
