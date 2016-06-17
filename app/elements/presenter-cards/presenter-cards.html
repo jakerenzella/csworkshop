@@ -1,0 +1,108 @@
+<dom-module id="presenter-cards">
+  <template>
+    <style>
+
+    paper-card {
+      margin: 16px auto;
+      min-width: 200px;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+
+    h1 iron-icon {
+      float: right;
+    }
+
+    a:link, a:visited {
+    color: var(--primary-text-color);
+    text-decoration: underline;
+    cursor: auto;
+    }
+
+    [hidden] {
+      display: none;
+    }
+
+    .card-content {
+      min-height: 90px;
+    }
+
+    .card-container[wide-layout] {
+      @apply(--layout-horizontal);
+      @apply(--layout-justified);
+      margin-left: auto;
+    }
+
+    .card-actions iron-icon{
+      float: right;
+    }
+
+    </style>
+
+      <grid-element ghi gs="25px">
+        <grid-col>
+          <paper-card image="images/therese.jpeg">
+            <div class="card-content">
+              Dr. Therese Keane title.
+            </div>
+            <div class="card-actions">
+              Therese Keane <a href="mailto:tkeane@swin.edu.au?subject=CS4HS"> <iron-icon icon="mail"></iron-icon></a>
+            </div>
+          </paper-card>
+        </grid-col>
+
+        <grid-col>
+          <paper-card image="images/jake.jpg">
+            <div class="card-content">
+              Jake Renzella is a Computer Science student, and programming tutor at Swinburne.
+            </div>
+            <div class="card-actions">
+                Jake Renzella <a href="mailto:jrenzella@swin.edu.au?subject=CS4HS"> <iron-icon icon="mail"></iron-icon></a>
+            </div>
+          </paper-card>
+        </grid-col>
+
+        <grid-col>
+          <paper-card image="images/placeholder-image.png">
+            <div class="card-content">
+              Cliff Warren is a Biomedical Engineering student, and programming tutor at Swinburne.
+            </div>
+            <div class="card-actions">
+                Jake Renzella <a href="mailto:jrenzella@swin.edu.au?subject=CS4HS"> <iron-icon icon="mail"></iron-icon></a>
+            </div>
+          </paper-card>
+        </grid-col>
+
+        <grid-col>
+          <paper-card image="images/reuben.jpg">
+            <div class="card-content">
+              Reuben Wilson is a Computer Science student, and programming tutor at Swinburne.
+            </div>
+            <div class="card-actions">
+                Jake Renzella <a href="mailto:jrenzella@swin.edu.au?subject=CS4HS"> <iron-icon icon="mail"></iron-icon></a>
+            </div>
+          </paper-card>
+        </grid-col>
+
+        <grid-col>
+          <paper-card image="images/placeholder-image.png">
+            <div class="card-content">
+              Charlotte Pierce is a Computer Science PhD Candidate, and programming tutor at Swinburne.
+            </div>
+            <div class="card-actions">
+                Jake Renzella <a href="mailto:jrenzella@swin.edu.au?subject=CS4HS"> <iron-icon icon="mail"></iron-icon></a>
+            </div>
+          </paper-card>
+        </grid-col>
+      </grid-element>
+
+
+  </template>
+  <script>
+    Polymer({
+      is: 'presenter-cards'
+    });
+  </script>
+</dom-module>
