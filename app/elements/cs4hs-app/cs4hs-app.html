@@ -5,12 +5,6 @@
         margin: 16px auto;
       }
 
-      .card-container[wide-layout] {
-        @apply(--layout-horizontal);
-        @apply(--layout-justified);
-        margin-left: auto;
-      }
-
       .card-content {
          @apply(--paper-font-headline);
          font-weight: bold;
@@ -18,32 +12,31 @@
          color: white;
          overflow: hidden;
          height: 55px;
+         margin-left: auto;
         }
+
     </style>
-    <iron-media-query query="(min-width: 890px)" query-matches="{{wide}}"></iron-media-query>
 
     <my-timer> </my-timer>
-
-    <div class="card-container" wide-layout$="{{wide}}">
 
       <grid-element ghi gs="15px">
         <grid-col s="3">
           <a data-route="home" href="{{baseUrl}}hardware-project">
-          <paper-card wide-layout$="{{wide}}" style="background-color: #303F9F;" fadeImage image="images/arduinos.png">
+          <paper-card style="background-color: #303F9F;" fade-image image="images/arduinos.png">
             <div class="card-content">Hardware Project</div>
           </paper-card>
         </a>
         </grid-col>
         <grid-col s="3">
           <a data-route="home" href="{{baseUrl}}programming-project">
-            <paper-card wide-layout$="{{wide}}" style="background-color: #455A64;" fade-image image="images/programming.png">
+            <paper-card style="background-color: #455A64;" fade-image image="images/programming.png">
               <div class="card-content">Software Project</div>
             </paper-card>
           </a>
         </grid-col>
         <grid-col s="2">
           <a target="_blank" href="https://www.swinburne.edu.au/events/forms/departments/health-arts-design/2016/september/cs4hs--programming/">
-            <paper-card wide-layout$="{{wide}}" style="background-color: #558B2F;" fade-image image="images/registration.png">
+            <paper-card style="background-color: #558B2F;" fade-image image="images/registration.png">
               <div class="card-content">Registration <iron-icon icon="open-in-new"></iron-icon> </div>
             </paper-card>
           </a>
