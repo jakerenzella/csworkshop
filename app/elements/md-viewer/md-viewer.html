@@ -21,28 +21,21 @@
       border-style: dashed;
       padding: 12px;
     }
-
     </style>
 
     <iron-ajax
       auto
       on-response="handleResponse"
-      url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/Introduction%20to%20Games%20Programming%20C%2B%2B.md"
+      url="[[url]]"
       handle-as="text">
     </iron-ajax>
 
     <paper-material elevation="1">
       <prism-highlighter></prism-highlighter>
-      <div class="card">
-        <marked-element markdown="{{markdown}}">
+        <marked-element markdown="[[markdown]]">
           <div class="markdown-html"></div>
         </marked-element>
     </paper-material>
-
-
-
-
-      </div>
 
   </template>
 
@@ -53,9 +46,7 @@
         is: 'md-viewer',
 
         properties: {
-          routeData: Object,
-          route: Object,
-          message: Object,
+          url: String,
           markdown: String
         },
 
