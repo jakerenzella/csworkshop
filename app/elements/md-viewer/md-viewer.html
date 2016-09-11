@@ -1,0 +1,68 @@
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../../bower_components/marked-element/marked-element.html">
+<link rel="import" href="../../bower_components/prism-element/prism-highlighter.html">
+<link rel="import" href="../../bower_components/prism-element/prism-theme-default.html">
+
+<dom-module id="md-viewer">
+  <template>
+    <style is "app-theme">
+
+    paper-material {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    pre.style-scope.md-viewer {
+      border-color: var(--paper-blue-500);
+      elevation: 4;
+      border-width: 5px;
+      border-style: dashed;
+      padding: 12px;
+    }
+
+    </style>
+
+    <iron-ajax
+      auto
+      on-response="handleResponse"
+      url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/Introduction%20to%20Games%20Programming%20C%2B%2B.md"
+      handle-as="text">
+    </iron-ajax>
+
+    <paper-material elevation="1">
+      <prism-highlighter></prism-highlighter>
+      <div class="card">
+        <marked-element markdown="{{markdown}}">
+          <div class="markdown-html"></div>
+        </marked-element>
+    </paper-material>
+
+
+
+
+      </div>
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+      Polymer({
+        is: 'md-viewer',
+
+        properties: {
+          routeData: Object,
+          route: Object,
+          message: Object,
+          markdown: String
+        },
+
+        handleResponse: function(e, request) {
+           this.markdown = request.response;
+         }
+    });
+  })();
+</script>
+</dom-module>
