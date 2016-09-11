@@ -1,13 +1,21 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+
 
 <dom-module id="tutorial-viewer">
   <template>
     <style is "app-theme">
 
+    :root {
+           --my-custom-color: red;
+           --paper-tab-ink: var(--paper-red-200);
+           }
+
+
     pre.style-scope.md-viewer {
       border-color: var(--paper-blue-500);
       elevation: 4;
-      border-width: 5px;
+      border-width: 4px;
       border-style: dashed;
       padding: 12px;
     }
@@ -28,8 +36,6 @@
     <paper-material elevation="1">
       <md-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/preperation.md"> </md-viewer>
     </paper-material>
-
-
 
     <paper-tabs scrollable fit-container selected="{{tabSelected}}">
       <paper-tab>Iteration 1</paper-tab>
