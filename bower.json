@@ -11,7 +11,9 @@
     "pdf-object": "^1.0.0",
     "pdf-element": "^1.0.13",
     "prism-element": "^1.1.1",
-    "marked-element": "^1.2.0"
+    "marked-element": "^1.2.0",
+    "paper-tabs": "^1.6.2",
+    "iron-pages": "^1.0.8"
   },
   "devDependencies": {},
   "ignore": []

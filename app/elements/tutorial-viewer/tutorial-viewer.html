@@ -1,0 +1,83 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="tutorial-viewer">
+  <template>
+    <style is "app-theme">
+
+    pre.style-scope.md-viewer {
+      border-color: var(--paper-blue-500);
+      elevation: 4;
+      border-width: 5px;
+      border-style: dashed;
+      padding: 12px;
+    }
+
+    paper-material {
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    paper-tabs {
+       background-color: var(--paper-blue-900);
+       color: #fff;
+       --paper-tabs-selection-bar-color: var(--paper-red-700);
+     }
+
+    </style>
+
+    <paper-material elevation="1">
+      <md-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/preperation.md"> </md-viewer>
+    </paper-material>
+
+
+
+    <paper-tabs scrollable fit-container selected="{{tabSelected}}">
+      <paper-tab>Iteration 1</paper-tab>
+      <paper-tab>Iteration 2</paper-tab>
+      <paper-tab>Iteration 3</paper-tab>
+      <paper-tab>Iteration 4</paper-tab>
+      <paper-tab>Iteration 5</paper-tab>
+      <paper-tab>Iteration 6</paper-tab>
+      <paper-tab>Iteration 7</paper-tab>
+      <paper-tab>Iteration 8</paper-tab>
+      <paper-tab>Iteration 9</paper-tab>
+      <paper-tab>Iteration 10</paper-tab>
+      <paper-tab>Iteration 11</paper-tab>
+    </paper-tabs>
+
+    <paper-material elevation="1">
+      <iron-pages selected="{{tabSelected}}">
+        <div><md-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/iteration1.md"> </md-viewer></div>
+        <div><md-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/iteration2.md"> </md-viewer></div>
+        <div><md-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/iteration3.md"> </md-viewer></div>
+        <div><md-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/iteration4.md"> </md-viewer></div>
+        <div><md-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/iteration5.md"> </md-viewer></div>
+        <div><md-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/iteration6.md"> </md-viewer></div>
+        <div><md-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/iteration7.md"> </md-viewer></div>
+        <div><md-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/iteration8.md"> </md-viewer></div>
+        <div><md-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/iteration9.md"> </md-viewer></div>
+        <div><md-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/iteration10.md"> </md-viewer></div>
+        <div><md-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/iteration11.md"> </md-viewer></div>
+      </iron-pages>
+    </paper-material>
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+      Polymer({
+
+        is: 'tutorial-viewer',
+
+        properties: {
+          tabSelected: Number
+        },
+
+        ready: function() {
+          this.tabSelected = 0;
+        }
+    });
+  })();
+</script>
+</dom-module>

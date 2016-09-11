@@ -9,11 +9,6 @@
   <template>
     <style is "app-theme">
 
-    paper-material {
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-
     pre.style-scope.md-viewer {
       border-color: var(--paper-blue-500);
       elevation: 4;
@@ -30,12 +25,12 @@
       handle-as="text">
     </iron-ajax>
 
-    <paper-material elevation="1">
+
       <prism-highlighter></prism-highlighter>
         <marked-element markdown="[[markdown]]">
           <div class="markdown-html"></div>
         </marked-element>
-    </paper-material>
+
 
   </template>
 
