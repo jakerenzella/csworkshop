@@ -29,13 +29,20 @@
        --paper-tabs-selection-bar-color: var(--paper-red-700);
      }
 
+     paper-fab {
+       float: right;
+        background-color: var(--paper-blue-900);
+        color: white;
+        margin-bottom: 40px;
+     }
+
     </style>
 
     <paper-material elevation="1">
       <md-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/preperation.md"> </md-viewer>
     </paper-material>
 
-    <paper-tabs scrollable fit-container selected="{{tabSelected}}">
+    <paper-tabs scrollable fit-container selected="{{tabSelected}}" id="mySelector">
       <paper-tab>Iteration 1</paper-tab>
       <paper-tab>Iteration 2</paper-tab>
       <paper-tab>Iteration 3</paper-tab>
@@ -63,6 +70,8 @@
         <div><md-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/iteration10.md"> </md-viewer></div>
         <div><md-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/iteration11.md"> </md-viewer></div>
       </iron-pages>
+      <paper-fab on-tap="handleTap" icon="chevron-right"></paper-fab>
+      <!-- <button id="nextButton" type="button"  name="button"></button> -->
     </paper-material>
 
   </template>
@@ -80,6 +89,10 @@
 
         ready: function() {
           this.tabSelected = 0;
+        },
+        handleTap: function() {
+          this.$.mySelector.selectNext();
+          app.scrollPageToTop();
         }
     });
   })();
