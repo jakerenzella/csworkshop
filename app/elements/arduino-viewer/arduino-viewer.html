@@ -12,6 +12,9 @@
       padding: 12px;
     }
 
+    :root {
+           --paper-tab-ink: var(--paper-red-200);
+           }
 
     paper-material {
       padding: 16px;
@@ -23,10 +26,16 @@
        --paper-tabs-selection-bar-color: var(--paper-red-700);
      }
 
+     paper-fab {
+       float: right;
+        background-color: var(--paper-blue-900);
+        color: white;
+     }
+
     </style>
 
 
-    <paper-tabs scrollable fit-container selected="{{tabSelected}}">
+    <paper-tabs id="mySelector" scrollable fit-container selected="{{tabSelected}}">
       <paper-tab>1. Digital I/O</paper-tab>
       <paper-tab>2. Analogue I/O</paper-tab>
       <paper-tab>3. Movers, Shakers and Noise Makers</paper-tab>
@@ -40,6 +49,7 @@
         <div><md-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/arduino3.md"> </md-viewer></div>
         <div><md-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/arduino4.md"> </md-viewer></div>
       </iron-pages>
+      <paper-fab on-tap="handleTap" icon="chevron-right"></paper-fab>
     </paper-material>
 
   </template>
@@ -57,6 +67,10 @@
 
         ready: function() {
           this.tabSelected = 0;
+        },
+        handleTap: function() {
+          this.$.mySelector.selectNext();
+          app.scrollPageToTop();
         }
     });
   })();
