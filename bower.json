@@ -24,7 +24,8 @@
     "prism-element": "polymerElements/prism-element#^1.2.0",
     "paper-tabs": "polymerElements/paper-tabs#^1.8.0",
     "paper-fab": "polymerElements/paper-fab#^1.2.1",
-    "iron-ajax": "polymerElements/iron-ajax#^1.4.3"
+    "iron-ajax": "polymerElements/iron-ajax#^1.4.3",
+    "iron-icons": "polymerElements/iron-icons#^1.2.0"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"
