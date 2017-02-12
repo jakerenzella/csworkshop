@@ -1,3 +1,4 @@
+
 node_modules
 dist
 bower_components
@@ -17,10 +18,6 @@ _data/versions
 .bundle
 summit/dist
 
-# Created by https://www.gitignore.io/api/visualstudiocode,macos
-
-### macOS ###
-*.DS_Store
 .AppleDouble
 .LSOverride
 
@@ -47,11 +44,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-### VisualStudioCode ###
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 
-# End of https://www.gitignore.io/api/visualstudiocode,macos
