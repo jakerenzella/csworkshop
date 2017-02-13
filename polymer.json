@@ -3,9 +3,9 @@
   "shell": "src/my-app.html",
   "fragments": [
     "src/cs4hs-home.html",
-    "src/my-view2.html",
-    "src/my-view3.html",
-    "src/my-view404.html"
+    "src/cs4hs-software.html",
+    "src/cs4hs-hardware.html",
+    "src/cs4hs-view404.html"
   ],
   "sourceGlobs": [
     "src/**/*",

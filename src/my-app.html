@@ -19,8 +19,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-route/app-route.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-icons/hardware-icons.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-menu/paper-menu.html">
 <link rel="import" href="../bower_components/paper-material/paper-material.html">
+
 <link rel="import" href="my-icons.html">
 
 <dom-module id="my-app">
@@ -30,6 +34,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         --app-primary-color: #4285f4;
         --app-secondary-color: black;
         display: block;
+      }
+      
+      paper-menu iron-icon {
+        margin-right: 33px;
+        opacity: 0.54;
+      }
+      
+      .paper-item-link {
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+      
+      paper-menu a {
+        @apply(--layout-horizontal);
+        @apply(--layout-center);
+        text-decoration: none;
+        color: var(--menu-link-color);
+        font-family: 'Roboto', 'Noto', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        min-height: 48px;
+        padding: 0 16px;
       }
       
       app-header {
@@ -53,6 +82,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         line-height: 40px;
       }
       
+      .app-menu {
+        --paper-menu-selected-item: {
+          color: #fff;
+          background-color: #123123;
+        }
+      }
+      
       .drawer-list a.iron-selected {
         color: black;
         font-weight: bold;
@@ -67,9 +103,39 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <app-drawer id="drawer">
         <app-toolbar>Menu</app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="home" href="/home">Home</a>
-          <a name="software" href="/software">Software Project</a>
-          <a name="hardware" href="/hardware">Hardware Project</a>
+          <paper-menu class="app-menu" attr-for-selected="data-route" selected="[[route]]">
+
+            <a name="home" href="/home">
+              <iron-icon icon="home"></iron-icon>
+              <span>Home</span>
+            </a>
+
+            <a name="software" href="/software">
+              <iron-icon icon="home"></iron-icon>
+              <span>Software Project</span>
+            </a>
+
+            <a name="hardware" href="/hardware">
+              <iron-icon icon="hardware:developer-board"></iron-icon>
+              <span>Hardware Project</span>
+            </a>
+
+            <a name="presenters" href="/presenters">
+              <iron-icon icon="face"></iron-icon>
+              <span>Presenters</span>
+            </a>
+
+            <a name="about" href="/about">
+              <iron-icon icon="mail"></iron-icon>
+              <span>About</span>
+            </a>
+
+            <a style="float: left" target="_blank" href="https://www.swinburne.edu.au/events/forms/departments/health-arts-design/2016/september/cs4hs--programming/">
+              <iron-icon icon="create"></iron-icon>
+              <span>Registration</span>
+              <iron-icon style="float: right" icon="open-in-new"></iron-icon>
+            </a>
+          </paper-menu>
         </iron-selector>
       </app-drawer>
 
@@ -79,7 +145,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <app-header condenses reveals effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
-            <div main-title>Swinburne CS4hS</div>
+            <div main-title>Swinburne CS4HS</div>
           </app-toolbar>
         </app-header>
 
@@ -87,7 +153,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <cs4hs-home name="home"></cs4hs-home>
           <cs4hs-software name="software"></cs4hs-software>
           <cs4hs-hardware name="hardware"></cs4hs-hardware>
-          <my-view404 name="view404"></my-view404>
+          <cs4hs-view404 name="view404"></cs4hs-view404>
         </iron-pages>
       </app-header-layout>
     </app-drawer-layout>
