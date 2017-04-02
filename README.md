@@ -33,8 +33,8 @@ First, install [Polymer CLI](https://github.com/Polymer/polymer-cli) using
 
 ##### Initialize project from template
 
-    mkdir my-app
-    cd my-app
+    mkdir cs4hs-app
+    cd cs4hs-app
     polymer init starter-kit
 
 ### Start the development server

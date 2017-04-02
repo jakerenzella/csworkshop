@@ -7,7 +7,7 @@
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 
 <dom-module id="md-viewer">
-  <template>
+  <template id="t">
     <style is "app-theme" include="prism-theme-default">
       pre {
         border-width: 4px;
@@ -29,7 +29,7 @@
       }
     </style>
 
-    <iron-ajax auto on-response="handleResponse" url="[[url]]" handle-as="text">
+    <iron-ajax id="dataAjax" on-response="handleResponse" url="[[url]]" handle-as="text">
     </iron-ajax>
 
     <prism-highlighter></prism-highlighter>
@@ -46,7 +46,19 @@
 
         properties: {
           url: String,
-          markdown: String
+          markdown: String,
+          activated: {
+            type: Boolean,
+            value: false,
+            observer: '_activatedChanged'
+          }
+        },
+
+        _activatedChanged: function (newval, oldval) {
+          if (newval) {
+            var ajaxRequest = this.$$('#dataAjax');
+            ajaxRequest.generateRequest()
+          }
         },
 
         handleResponse: function (e, request) {

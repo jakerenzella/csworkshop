@@ -1,6 +1,6 @@
 {
   "entrypoint": "index.html",
-  "shell": "src/my-app.html",
+  "shell": "src/cs4hs-app.html",
   "fragments": [
     "src/cs4hs-home.html",
     "src/cs4hs-software.html",

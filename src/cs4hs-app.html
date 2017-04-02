@@ -10,6 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-scrollpos-control/app-scrollpos-control.html">
 <link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
 <link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
 <link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
@@ -18,6 +19,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-route/app-location.html">
 <link rel="import" href="../bower_components/app-route/app-route.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animated-pages.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animatable.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../bower_components/iron-icons/hardware-icons.html">
@@ -27,25 +31,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="my-icons.html">
 
-<dom-module id="my-app">
+<dom-module id="cs4hs-app">
   <template>
     <style>
-      :host {
+       :host {
         --app-primary-color: #4285f4;
         --app-secondary-color: black;
         display: block;
       }
-      
+
+
+
+
       paper-menu iron-icon {
         margin-right: 33px;
         opacity: 0.54;
       }
-      
+
+
+
+
       .paper-item-link {
         color: var(--primary-color);
         text-decoration: none;
       }
-      
+
+
+
+
       paper-menu a {
         @apply(--layout-horizontal);
         @apply(--layout-center);
@@ -60,20 +73,44 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         min-height: 48px;
         padding: 0 16px;
       }
-      
+
+
+
+
       app-header {
         color: #fff;
         background-color: var(--app-primary-color);
       }
-      
+
+
+
+
       app-header paper-icon-button {
         --paper-icon-button-ink-color: white;
       }
-      
+
+
+
+
+      app-header paper-toolbar a {
+        display: block;
+        padding: 0 16px;
+        text-decoration: none;
+        color: var(--app-secondary-color);
+        line-height: 40px;
+      }
+
+
+
+
       .drawer-list {
         margin: 0 20px;
       }
-      
+
+
+
+
+
       .drawer-list a {
         display: block;
         padding: 0 16px;
@@ -81,14 +118,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: var(--app-secondary-color);
         line-height: 40px;
       }
-      
+
+
+
+
+
+
+
       .app-menu {
         --paper-menu-selected-item: {
           color: #fff;
           background-color: #123123;
         }
       }
-      
+
       .drawer-list a.iron-selected {
         color: black;
         font-weight: bold;
@@ -99,69 +142,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <app-route route="{{route}}" pattern="/:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
 
     <app-drawer-layout fullbleed>
-      <!-- Drawer content -->
-      <app-drawer id="drawer">
-        <app-toolbar>Menu</app-toolbar>
-        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <paper-menu class="app-menu" attr-for-selected="data-route" selected="[[route]]">
-
-            <a name="home" href="/home">
-              <iron-icon icon="home"></iron-icon>
-              <span>Home</span>
-            </a>
-
-            <a name="software" href="/software">
-              <iron-icon icon="home"></iron-icon>
-              <span>Software Project</span>
-            </a>
-
-            <a name="hardware" href="/hardware">
-              <iron-icon icon="hardware:developer-board"></iron-icon>
-              <span>Hardware Project</span>
-            </a>
-
-            <a name="presenters" href="/presenters">
-              <iron-icon icon="face"></iron-icon>
-              <span>Presenters</span>
-            </a>
-
-            <a name="about" href="/about">
-              <iron-icon icon="mail"></iron-icon>
-              <span>About</span>
-            </a>
-
-            <a style="float: left" target="_blank" href="https://www.swinburne.edu.au/events/forms/departments/health-arts-design/2016/september/cs4hs--programming/">
-              <iron-icon icon="create"></iron-icon>
-              <span>Registration</span>
-              <iron-icon style="float: right" icon="open-in-new"></iron-icon>
-            </a>
-          </paper-menu>
-        </iron-selector>
-      </app-drawer>
-
       <!-- Main content -->
       <app-header-layout id="main-containter" has-scrolling-region>
 
         <app-header condenses reveals effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
-            <div main-title>Swinburne CS4HS</div>
+            <a data-route="home" href="{{baseUrl}}home">
+              <div main-title>
+                <iron-icon icon="home"></iron-icon>
+                Swinburne CS4HS
+              </div>
+            </a>
           </app-toolbar>
         </app-header>
 
-        <iron-pages selected="[[page]]" attr-for-selected="name" fallback-selection="view404" role="main">
+        <neon-animated-pages class="flex" entry-animation="fade-in-animation" exit-animation="fade-out-animation" selected="[[page]]"
+          attr-for-selected="name" fallback-selection="view404" role="main">
           <cs4hs-home name="home"></cs4hs-home>
           <cs4hs-software name="software"></cs4hs-software>
           <cs4hs-hardware name="hardware"></cs4hs-hardware>
           <cs4hs-view404 name="view404"></cs4hs-view404>
-        </iron-pages>
+          <neon-animated-pages>
       </app-header-layout>
     </app-drawer-layout>
   </template>
 
   <script>
     Polymer({
-      is: 'my-app',
+      is: 'cs4hs-app',
 
       properties: {
         page: {
@@ -177,10 +186,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       _routePageChanged: function (page) {
         this.page = page || 'home';
-
-        if (!this.$.drawer.persistent) {
-          this.$.drawer.close();
-        }
       },
 
       _pageChanged: function (page) {

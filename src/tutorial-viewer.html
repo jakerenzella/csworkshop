@@ -18,17 +18,20 @@
       :host {
         --paper-tab-ink: var(--paper-red-200);
       }
+      
       paper-material {
         padding: 16px;
         border-radius: 2px;
         margin: auto auto 16px auto;
         background: white;
       }
+      
       paper-tabs {
         background-color: var(--paper-blue-900);
         color: #fff;
         --paper-tabs-selection-bar-color: var(--paper-red-700);
       }
+      
       paper-fab {
         float: right;
         background-color: var(--paper-blue-900);
@@ -37,53 +40,56 @@
       }
     </style>
 
-    <iron-ajax auto on-response="handleResponse" url="[[url]]" handle-as="text">
+    <iron-ajax auto loading="{{loading}}" on-response="handleResponse" url="[[url]]" handle-as="text">
     </iron-ajax>
 
-    <paper-material elevation="1">
-      <h1>{{data.title}}</h1>
-      <md-viewer url="{{data.url}}"></md-viewer>
-    </paper-material>
+    <template is="dom-if" if="{{!loading}}">
 
-    <paper-tabs scrollable fit-container selected="{{tabSelected}}" id="mySelector">
-      <template is="dom-repeat" items="{{data.pages}}">
-        <paper-tab>{{item.title}}</paper-tab>
-      </template>
-    </paper-tabs>
+      <paper-material elevation="1">
+        <h1>{{data.title}}</h1>
+        <md-viewer url="{{data.url}}"></md-viewer>
+      </paper-material>
 
-    <paper-material elevation="1">
-      <iron-pages selected="{{tabSelected}}">
+      <paper-tabs scrollable fit-container selected="{{tabSelected}}" id="mySelector">
         <template is="dom-repeat" items="{{data.pages}}">
-          <div>
-            <md-viewer url="{{item.url}}"></md-viewer>
-          </div>
+          <paper-tab>{{item.title}}</paper-tab>
         </template>
-      </iron-pages>
-      <paper-fab on-tap="handleTap" icon="chevron-right"></paper-fab>
-    </paper-material>
+      </paper-tabs>
 
+      <paper-material elevation="1">
+        <iron-pages selected-attribute="activated" selected="{{tabSelected}}">
+          <template is="dom-repeat" items="{{data.pages}}">
+            <md-viewer id="{{item.title}}" url="{{item.url}}"></md-viewer>
+          </template>
+        </iron-pages>
+        <paper-fab on-tap="handleTap" icon="chevron-right"></paper-fab>
+      </paper-material>
+    </template>
   </template>
 
   <script>
     Polymer({
       is: 'tutorial-viewer',
       properties: {
-        tabSelected: Number,
-        url: String
-      },
-      ready: function () {
-        this.tabSelected = 0;
+        tabSelected: {
+          type: Number,
+          value: 0,
+          loading: {
+            type: Boolean,
+            readOnly: true,
+            notify: true,
+            value: false
+          }
+        },
+        url: String,
+        ready: false
       },
       handleResponse: function (e, request) {
         this.data = JSON.parse(request.response);
       },
-
       handleTap: function () {
-        this.$.mySelector.selectNext();
-
-        var scaffold = document.querySelector('core-scaffold');
-        var scrollArea = scaffold.shadowRoot.querySelector('core-header-panel');
-        scrollArea.scroller.scrollTop = 0; // Scroll to top
+        var tab = this.$$("#mySelector");
+        tab.selectNext();
       }
     });
   </script>

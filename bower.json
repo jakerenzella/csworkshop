@@ -26,7 +26,8 @@
     "paper-fab": "polymerElements/paper-fab#^1.2.1",
     "iron-ajax": "polymerElements/iron-ajax#^1.4.3",
     "iron-icons": "polymerElements/iron-icons#^1.2.0",
-    "paper-menu": "polymerElements/paper-menu#^1.2.2"
+    "paper-menu": "polymerElements/paper-menu#^1.2.2",
+    "neon-animation": "polymerElements/neon-animated-pages#^1.2.4"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"
