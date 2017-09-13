@@ -1,6 +1,6 @@
 {
-  "name": "Swinburne CS4HS Page",
-  "short_name": "Swin CS4HS",
+  "name": "Deakin CS4HS Page",
+  "short_name": "Deakin CS4HS",
   "start_url": "/?homescreen=1",
   "display": "standalone",
   "theme_color": "#3f51b5",
