@@ -1,0 +1,113 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/timer-days/timer-days.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+
+<dom-module id="event-countdown">
+  <template>
+    <style include="shared-styles">
+      paper-card {
+        color: #fff;
+        background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+        background-size: 400% 400%;
+        -webkit-animation: Gradient 15s ease infinite;
+        -moz-animation: Gradient 15s ease infinite;
+        animation: Gradient 15s ease infinite;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: default;
+      }
+
+      @-webkit-keyframes Gradient {
+        0% {
+          background-position: 0% 50%
+        }
+        50% {
+          background-position: 100% 50%
+        }
+        100% {
+          background-position: 0% 50%
+        }
+      }
+
+      @-moz-keyframes Gradient {
+        0% {
+          background-position: 0% 50%
+        }
+        50% {
+          background-position: 100% 50%
+        }
+        100% {
+          background-position: 0% 50%
+        }
+      }
+
+      @keyframes Gradient {
+        0% {
+          background-position: 0% 50%
+        }
+        50% {
+          background-position: 100% 50%
+        }
+        100% {
+          background-position: 0% 50%
+        }
+      }
+
+      h1 {
+        font-family: 'Open Sans';
+        font-weight: 100;
+        text-align: center;
+        /* position: absolute; */
+        top: 45%;
+        right: 0;
+        left: 0;
+        color: white;
+      }
+
+       :host {}
+
+      paper-card {
+        width: 100%;
+      }
+
+      paper-card p {
+        text-align: center;
+      }
+
+      timer-days {
+        box-shadow: 0 0px 0px #333;
+        --timer-days-border-color: transparent;
+        --timer-days-background-color: transparent;
+        --timer-days-hover-background-color: transparent;
+        --timer-days-hover-border-color: transparent;
+        --timer-days-hover-font-color: white;
+        --timer-days-font-color: white;
+        --timer-days-font-number-size: 5em;
+        font-family: 'Share Tech Mono', 'Roboto';
+        letter-spacing: 1.25em;
+        margin: 16px auto;
+        min-width: 0px;
+      }
+    </style>
+
+    <paper-card>
+      <div class="card-content">
+        <h1>Join us for two days of sharing, learning and networking with fellow educators.</h1>
+        <timer-days target-date="2018-09-13T16:40:00"></timer-days>
+      </div>
+    </paper-card>
+
+  </template>
+
+  <script>
+    (function () {
+      'use strict';
+      Polymer({
+        is: 'event-countdown'
+      });
+    })();
+  </script>
+</dom-module>

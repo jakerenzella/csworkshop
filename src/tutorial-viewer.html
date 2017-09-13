@@ -16,7 +16,7 @@
 <dom-module id="tutorial-viewer">
   <template>
     <style include="shared-styles">
-      :host {
+       :host {
         --paper-tab-ink: var(--paper-red-200);
       }
 
@@ -37,7 +37,6 @@
         background-color: var(--paper-blue-900);
         color: white;
         margin-bottom: 40px;
-
       }
 
       #rightButton {
@@ -61,10 +60,10 @@
 
     <template is="dom-if" if="{{!loading}}">
 
-        <paper-material elevation="1">
+      <paper-material elevation="1">
         <marked-element markdown="[[data.title]]"></marked-element>
-          <md-viewer id="{{data.title}}" url="{{data.url}}"></md-viewer>
-        </paper-material>
+        <md-viewer id="{{data.title}}" url="{{data.url}}"></md-viewer>
+      </paper-material>
 
       <paper-tabs scrollable fit-container selected="{{tabSelected}}" id="mySelector">
         <template is="dom-repeat" items="{{data.pages}}">
@@ -72,7 +71,7 @@
         </template>
       </paper-tabs>
 
-       <paper-material elevation="1">
+      <paper-material elevation="1">
         <iron-pages selected-attribute="activated" selected="{{tabSelected}}">
           <template is="dom-repeat" items="{{data.pages}}">
             <md-viewer id="{{item.title}}" url="{{item.url}}"></md-viewer>
@@ -80,7 +79,7 @@
         </iron-pages>
         <paper-fab id="leftButton" disabled="[[disableLeftButton]]" on-tap="handleLeftTap" icon="chevron-left"></paper-fab>
         <paper-fab id="rightButton" disabled="[[disableRightButton]]" on-tap="handleRightTap" icon="chevron-right"></paper-fab>
-      </paper-material> 
+      </paper-material>
     </template>
   </template>
 
@@ -108,7 +107,7 @@
       },
       updateButtonDisable: function () {
 
-        this.debounce('tab', function() {
+        this.debounce('tab', function () {
           var tab = this.$$("#mySelector");
           if (tab.selected == 0) {
             this.disableLeftButton = true;
