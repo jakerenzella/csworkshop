@@ -3,31 +3,34 @@
 
 <dom-module id="cs4hs-mylogin">
     <template>
-        <firebase-app 
-        name:"firebase"
-        auth-Domain:"csworkshop-b5ac0.firebaseapp.com"
-        database-URL:"https://csworkshop-b5ac0.firebaseio.com"
-        api-key:"AIzaSyCzGFV33wkVtDA3XVixSdOxsIgoaiTDENA">
-    </firebase-app>
-    <cs4hs-loginauth></cs4hs-loginauth>
+        <firebase-app
+            api-key="AIzaSyCzGFV33wkVtDA3XVixSdOxsIgoaiTDENA"
+            auth-domain="csworkshop-b5ac0.firebaseapp.com"
+            database-url="https://csworkshop-b5ac0.firebaseio.com"
+            storage-bucket="csworkshop-b5ac0.appspot.com"
+            messagingSenderId="760171755934">
+        </firebase-app>
+        <cs4hs-loginauth></cs4hs-loginauth>
     </template>
     <script>
         Polymer({
             is: 'cs4hs-mylogin'
         });
     </script>
-    
-<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCzGFV33wkVtDA3XVixSdOxsIgoaiTDENA",
-    authDomain: "csworkshop-b5ac0.firebaseapp.com",
-    databaseURL: "https://csworkshop-b5ac0.firebaseio.com",
-    projectId: "csworkshop-b5ac0",
-    storageBucket: "csworkshop-b5ac0.appspot.com",
-    messagingSenderId: "760171755934"
-  };
-  firebase.initializeApp(config);
-</script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<!-- Moved to cs4hs-app.html
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCzGFV33wkVtDA3XVixSdOxsIgoaiTDENA",
+        authDomain: "csworkshop-b5ac0.firebaseapp.com",
+        databaseURL: "https://csworkshop-b5ac0.firebaseio.com",
+        projectId: "csworkshop-b5ac0",
+        storageBucket: "csworkshop-b5ac0.appspot.com",
+        messagingSenderId: "760171755934"
+      };
+      firebase.initializeApp(config);
+    </script>
+-->
 </dom-module>

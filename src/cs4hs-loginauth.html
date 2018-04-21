@@ -1,5 +1,5 @@
 <link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
-<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <dom-module id="cs4hs-loginauth">
     <template>
         <firebase-auth
@@ -7,12 +7,15 @@
             user="{{user}}"
             status-known="{{statusKnown}}"
             provider="google"></firebase-auth>
-        
+
         <template is="dom-if" if="[[user]]">
-            <h1>Welcome [[user.displayName]]</h1>
+            Welcome [[user.displayName]]
+            <paper-icon-button icon="account-circle" class="giant" on-click="logout"></paper-icon-button>
         </template>
-        <paper-button raised on-tap="login" hidden$="[[user]]">Sign in</paper-button>
-        <paper-button raised on-tap="logout" hidden$="[[!user]]">Sign out</paper-button>
+        <template is="dom-if" if="[[!user]]">
+            Sign In
+            <paper-icon-button icon="account-circle" class="giant" on-click="login"></paper-icon-button>
+        </template>
     </template>
     <script>
         Polymer({
