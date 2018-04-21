@@ -5,6 +5,8 @@
     "src/cs4hs-home.html",
     "src/cs4hs-software.html",
     "src/cs4hs-hardware.html",
+	"src/cs4hs-loginauth.html",
+	"src/cs4hs-mylogin.html",
     "src/cs4hs-view404.html"
   ],
   "sourceGlobs": [
