@@ -29,7 +29,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-menu/paper-menu.html">
 <link rel="import" href="../bower_components/paper-material/paper-material.html">
 <link rel="import" href="../bower_components/timer-days/timer-days.html">
-
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
 <link rel="import" href="my-icons.html">
 
 <dom-module id="cs4hs-app">
@@ -87,9 +88,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         text-decoration: none;
       }
 
-      paper-menu a {
-        @apply(--layout-horizontal);
-        @apply(--layout-center);
+       paper-menu a {
+        @apply (--layout-horizontal);
+        @apply (--layout-center);
         text-decoration: none;
         color: var(--menu-link-color);
         font-family: 'Roboto', 'Noto', sans-serif;
@@ -173,7 +174,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: black;
         font-weight: bold;
       }
-    </style>
+   	  ul {
+                position: sticky;
+                list-style-type: none;
+                overflow: hidden;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+
+            li {
+                display: inline;
+                float: right;
+                padding: 4px;
+            }
+
+            a {
+                display: block;
+                padding: 8px;
+            }
+
+            a:hover {
+                font-weight: bold;
+            }
+
+        </style>
 
     <app-location route="{{route}}"></app-location>
     <app-route route="{{route}}" pattern="/:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
@@ -184,7 +209,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <app-header condenses reveals effects="waterfall">
           <app-toolbar>
-            <a data-route="home" href="{{baseUrl}}home">
+            <a data-route="home" href="/">
               <div main-title>
                 <iron-icon icon="home"></iron-icon>
                 Deakin CS4HS
@@ -192,14 +217,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <!-- <h1>Join us for two days of sharing, learning and networking with fellow educators.</h1>
               <timer-days target-date="2018-09-13T16:40:00"></timer-days> -->
             </a>
+			<ul>
+                            <li><a data-route="home" href="{{baseUrl}}contact">Contact Us</a></li>
+
+                        </ul>
           </app-toolbar>
         </app-header>
-
+        
         <neon-animated-pages class="flex" entry-animation="fade-in-animation" exit-animation="fade-out-animation" selected="[[page]]"
           attr-for-selected="name" fallback-selection="view404" role="main">
           <cs4hs-home name="home"></cs4hs-home>
+          <cs4hs-loginauth name="loginauth"></cs4hs-loginauth>
+          <cs4hs-mylogin name="mylogin"></cs4hs-mylogin>
           <cs4hs-software name="software"></cs4hs-software>
           <cs4hs-hardware name="hardware"></cs4hs-hardware>
+          <cs4hs-registration name="registration"></cs4hs-registration>
           <cs4hs-view404 name="view404"></cs4hs-view404>
           <neon-animated-pages>
       </app-header-layout>
