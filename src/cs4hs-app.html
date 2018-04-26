@@ -1,13 +1,3 @@
-<!--
-@license
-Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
 <link rel="import" href="../bower_components/app-layout/app-scrollpos-control/app-scrollpos-control.html">
@@ -34,149 +24,150 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="my-icons.html">
 
 <dom-module id="cs4hs-app">
-  <template>
-    <style>
-      @-webkit-keyframes Gradient {
-        0% {
-          background-position: 0% 50%
-        }
-        50% {
-          background-position: 100% 50%
-        }
-        100% {
-          background-position: 0% 50%
-        }
-      }
+    <template>
+        <style>
+            @-webkit-keyframes Gradient {
+                0% {
+                    background-position: 0% 50%
+                }
+                50% {
+                    background-position: 100% 50%
+                }
+                100% {
+                    background-position: 0% 50%
+                }
+            }
 
-      @-moz-keyframes Gradient {
-        0% {
-          background-position: 0% 50%
-        }
-        50% {
-          background-position: 100% 50%
-        }
-        100% {
-          background-position: 0% 50%
-        }
-      }
+            @-moz-keyframes Gradient {
+                0% {
+                    background-position: 0% 50%
+                }
+                50% {
+                    background-position: 100% 50%
+                }
+                100% {
+                    background-position: 0% 50%
+                }
+            }
 
-      @keyframes Gradient {
-        0% {
-          background-position: 0% 50%
-        }
-        50% {
-          background-position: 100% 50%
-        }
-        100% {
-          background-position: 0% 50%
-        }
-      }
+            @keyframes Gradient {
+                0% {
+                    background-position: 0% 50%
+                }
+                50% {
+                    background-position: 100% 50%
+                }
+                100% {
+                    background-position: 0% 50%
+                }
+            }
 
-       :host {
-        --app-primary-color: #4285f4;
-        --app-secondary-color: black;
-        --menu-link-color: white;
-        display: block;
-      }
+            :host {
+                --app-primary-color: #4285f4;
+                --app-secondary-color: black;
+                --menu-link-color: white;
+                display: block;
+            }
 
-      paper-menu iron-icon {
-        margin-right: 33px;
-        opacity: 0.54;
-      }
+            paper-menu iron-icon {
+                margin-right: 33px;
+                opacity: 0.54;
+            }
 
-      .paper-item-link {
-        color: var(--primary-color);
-        text-decoration: none;
-      }
+            .paper-item-link {
+                color: var(--primary-color);
+                text-decoration: none;
+            }
 
-       paper-menu a {
-        @apply (--layout-horizontal);
-        @apply (--layout-center);
-        text-decoration: none;
-        color: var(--menu-link-color);
-        font-family: 'Roboto', 'Noto', sans-serif;
-        -webkit-font-smoothing: antialiased;
-        text-rendering: optimizeLegibility;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 24px;
-        min-height: 48px;
-        padding: 0 16px;
-      }
+            paper-menu a {
+                @apply (--layout-horizontal);
+                @apply (--layout-center);
+                text-decoration: none;
+                color: var(--menu-link-color);
+                font-family: 'Roboto', 'Noto', sans-serif;
+                -webkit-font-smoothing: antialiased;
+                text-rendering: optimizeLegibility;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 24px;
+                min-height: 48px;
+                padding: 0 16px;
+            }
 
-      timer-days {
-        box-shadow: 0 0px 0px #333;
-        --timer-days-border-color: transparent;
-        --timer-days-background-color: transparent;
-        --timer-days-hover-background-color: transparent;
-        --timer-days-hover-border-color: transparent;
-        --timer-days-hover-font-color: white;
-        --timer-days-font-color: white;
-        --timer-days-font-number-size: 5em;
-        font-family: 'Share Tech Mono', 'Roboto';
-        letter-spacing: 1.25em;
-        margin: 16px auto;
-        min-width: 0px;
-      }
+            timer-days {
+                box-shadow: 0 0px 0px #333;
+                --timer-days-border-color: transparent;
+                --timer-days-background-color: transparent;
+                --timer-days-hover-background-color: transparent;
+                --timer-days-hover-border-color: transparent;
+                --timer-days-hover-font-color: white;
+                --timer-days-font-color: white;
+                --timer-days-font-number-size: 5em;
+                font-family: 'Share Tech Mono', 'Roboto';
+                letter-spacing: 1.25em;
+                margin: 16px auto;
+                min-width: 0px;
+            }
 
-      app-header {
-        color: #fff;
-        /* background-color: var(--app-primary-color); */
-        color: #fff;
-        background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-        background-size: 400% 400%;
-        -webkit-animation: Gradient 15s ease infinite;
-        -moz-animation: Gradient 15s ease infinite;
-        animation: Gradient 15s ease infinite;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        cursor: default;
-      }
+            app-header {
+                color: #fff;
+                /* background-color: var(--app-primary-color); */
+                color: #fff;
+                background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+                background-size: 400% 400%;
+                -webkit-animation: Gradient 15s ease infinite;
+                -moz-animation: Gradient 15s ease infinite;
+                animation: Gradient 15s ease infinite;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                cursor: default;
+            }
 
-      app-header a {
-        color: white;
-        text-decoration: none;
-      }
+            app-header a {
+                color: white;
+                text-decoration: none;
+            }
 
-      app-header paper-icon-button {
-        --paper-icon-button-ink-color: white;
-      }
+            app-header paper-icon-button {
+                --paper-icon-button-ink-color: white;
+            }
 
-      app-header paper-toolbar a {
-        display: block;
-        padding: 0 16px;
-        text-decoration: none;
-        color: var(--app-secondary-color);
-        line-height: 40px;
-      }
+            app-header paper-toolbar a {
+                display: block;
+                padding: 0 16px;
+                text-decoration: none;
+                color: var(--app-secondary-color);
+                line-height: 40px;
+            }
 
-      .drawer-list {
-        margin: 0 20px;
-      }
+            .drawer-list {
+                margin: 0 20px;
+            }
 
-      .drawer-list a {
-        display: block;
-        padding: 0 16px;
-        text-decoration: none;
-        color: var(--app-secondary-color);
-        line-height: 40px;
-        text-transform: uppercase;
-      }
+            .drawer-list a {
+                display: block;
+                padding: 0 16px;
+                text-decoration: none;
+                color: var(--app-secondary-color);
+                line-height: 40px;
+                text-transform: uppercase;
+            }
 
-      .app-menu {
-        --paper-menu-selected-item: {
-          color: #fff;
-          background-color: #123123;
-        }
-      }
+            .app-menu {
+                --paper-menu-selected-item: {
+                    color: #fff;
+                    background-color: #123123;
+                }
+            }
 
-      .drawer-list a.iron-selected {
-        color: black;
-        font-weight: bold;
-      }
-   	  ul {
+            .drawer-list a.iron-selected {
+                color: black;
+                font-weight: bold;
+            }
+
+            ul {
                 position: sticky;
                 list-style-type: none;
                 overflow: hidden;
@@ -200,109 +191,110 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 font-weight: bold;
             }
 
-      .giant {
-        width: 50px;
-        height: 50px;
-      }
+            .giant {
+                width: 50px;
+                height: 50px;
+            }
 
-      #logo {
-        font-size: 30px;
-        text-rendering: optimizeLegibility;
-        color: #e0dfdc;
-        letter-spacing: .1em;
-        text-shadow: 1px 1px 2px #001230;
-      }
+            #logo {
+                font-size: 30px;
+                text-rendering: optimizeLegibility;
+                color: #e0dfdc;
+                letter-spacing: .1em;
+                text-shadow: 1px 1px 2px #001230;
+            }
 
-      #toggle-icon {
-        background-color: rgba(0, 0, 0, 0.2);
-        margin-right: 8px;
-        margin-left: 0px;
-      }
-    </style>
+            #toggle-icon {
+                background-color: rgba(0, 0, 0, 0.2);
+                margin-right: 8px;
+                margin-left: 0px;
+            }
+        </style>
 
-    <app-location route="{{route}}"></app-location>
-    <app-route route="{{route}}" pattern="/:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
+        <app-location route="{{route}}"></app-location>
+        <app-route route="{{route}}" pattern="/:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
 
-    <app-drawer-layout fullbleed force-narrow>
-      <app-drawer id="drawer" swipe-open="[[narrow]]" no-focus-trap="true">
-        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="home" href="[[rootPath]]" drawer-toggle>Home</a>
-          <a name="hardware" href="[[rootPath]]hardware" drawer-toggle>Hardware Project</a>
-          <a name="software" href="[[rootPath]]software" drawer-toggle>Software Project</a>
-          <a name="registration" href="[[rootPath]]registration" drawer-toggle>Registration</a>
-          <a name="contact" href="[[rootPath]]contact">Contact Us</a>
-          <a name="about" href="[[rootPath]]about">About Us</a>
-        </iron-selector>
-      </app-drawer>
+        <app-drawer-layout fullbleed force-narrow>
+            <app-drawer id="drawer" swipe-open="[[narrow]]" no-focus-trap="true">
+                <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+                    <a name="home" href="[[rootPath]]" drawer-toggle>Home</a>
+                    <a name="hardware" href="[[rootPath]]hardware" drawer-toggle>Hardware Project</a>
+                    <a name="software" href="[[rootPath]]software" drawer-toggle>Software Project</a>
+                    <a name="registration" href="[[rootPath]]registration" drawer-toggle>Registration</a>
+                    <a name="contact" href="[[rootPath]]contact">Contact Us</a>
+                    <a name="about" href="[[rootPath]]about">About Us</a>
+                </iron-selector>
+            </app-drawer>
 
-      <app-header-layout id="main-containter" has-scrolling-region>
-        <app-header condenses reveals effects="waterfall">
-          <app-toolbar>
-            <paper-icon-button icon="menu" class="giant" id="toggle-icon" drawer-toggle></paper-icon-button>
-            <h1 main-title id="logo">CSWorkShop</h1>
-            <cs4hs-mylogin></cs4hs-mylogin>
-            <!-- <paper-icon-button icon="icons:account-circle" class="giant"></paper-icon-button> -->
-          </app-toolbar>
-        </app-header>
+            <app-header-layout id="main-containter" has-scrolling-region>
+                <app-header condenses reveals effects="waterfall">
+                    <app-toolbar>
+                        <paper-icon-button icon="menu" class="giant" id="toggle-icon" drawer-toggle></paper-icon-button>
+                        <h1 main-title id="logo">CSWorkShop</h1>
+                        <cs4hs-mylogin></cs4hs-mylogin>
+                        <!-- <paper-icon-button icon="icons:account-circle" class="giant"></paper-icon-button> -->
+                    </app-toolbar>
+                </app-header>
 
-        <neon-animated-pages class="flex" entry-animation="fade-in-animation" exit-animation="fade-out-animation" selected="[[page]]"
-          attr-for-selected="name" fallback-selection="view404" role="main">
-          <cs4hs-home name="home"></cs4hs-home>
-          <cs4hs-loginauth name="loginauth"></cs4hs-loginauth>
-          <cs4hs-mylogin name="mylogin"></cs4hs-mylogin>
-          <cs4hs-software name="software"></cs4hs-software>
-          <cs4hs-hardware name="hardware"></cs4hs-hardware>
-          <cs4hs-registration name="registration"></cs4hs-registration>
-          <cs4hs-about name="about"></cs4hs-about>
-          <cs4hs-contact name="contact"></cs4hs-contact>
-          <cs4hs-view404 name="view404"></cs4hs-view404>
-        </neon-animated-pages>
-      </app-header-layout>
-    </app-drawer-layout>
-  </template>
+                <neon-animated-pages class="flex" entry-animation="fade-in-animation"
+                                     exit-animation="fade-out-animation" selected="[[page]]"
+                                     attr-for-selected="name" fallback-selection="view404" role="main">
+                    <cs4hs-home name="home"></cs4hs-home>
+                    <cs4hs-loginauth name="loginauth"></cs4hs-loginauth>
+                    <cs4hs-mylogin name="mylogin"></cs4hs-mylogin>
+                    <cs4hs-software name="software"></cs4hs-software>
+                    <cs4hs-hardware name="hardware"></cs4hs-hardware>
+                    <cs4hs-registration name="registration"></cs4hs-registration>
+                    <cs4hs-about name="about"></cs4hs-about>
+                    <cs4hs-contact name="contact"></cs4hs-contact>
+                    <cs4hs-view404 name="view404"></cs4hs-view404>
+                </neon-animated-pages>
+            </app-header-layout>
+        </app-drawer-layout>
+    </template>
 
-  <script>
-    Polymer({
-      is: 'cs4hs-app',
+    <script>
+        Polymer({
+            is: 'cs4hs-app',
 
-      properties: {
-        page: {
-          type: String,
-          reflectToAttribute: true,
-          observer: '_pageChanged',
-        },
-      },
+            properties: {
+                page: {
+                    type: String,
+                    reflectToAttribute: true,
+                    observer: '_pageChanged',
+                },
+            },
 
-      observers: [
-        '_routePageChanged(routeData.page)',
-      ],
+            observers: [
+                '_routePageChanged(routeData.page)',
+            ],
 
-      _routePageChanged: function (page) {
-        this.page = page || 'home';
-      },
+            _routePageChanged: function (page) {
+                this.page = page || 'home';
+            },
 
-      _pageChanged: function (page) {
-        // Load page import on demand. Show 404 page if fails
-        var resolvedPageUrl = this.resolveUrl('cs4hs-' + page + '.html');
-        this.importHref(resolvedPageUrl, null, this._showPage404, true);
-      },
+            _pageChanged: function (page) {
+                // Load page import on demand. Show 404 page if fails
+                var resolvedPageUrl = this.resolveUrl('cs4hs-' + page + '.html');
+                this.importHref(resolvedPageUrl, null, this._showPage404, true);
+            },
 
-      _showPage404: function () {
-        this.page = 'view404';
-      },
-    });
-  </script>
+            _showPage404: function () {
+                this.page = 'view404';
+            },
+        });
+    </script>
 
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyCzGFV33wkVtDA3XVixSdOxsIgoaiTDENA",
-      authDomain: "csworkshop-b5ac0.firebaseapp.com",
-      databaseURL: "https://csworkshop-b5ac0.firebaseio.com",
-      projectId: "csworkshop-b5ac0",
-      storageBucket: "csworkshop-b5ac0.appspot.com",
-      messagingSenderId: "760171755934"
-    };
-    firebase.initializeApp(config);
-  </script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCzGFV33wkVtDA3XVixSdOxsIgoaiTDENA",
+            authDomain: "csworkshop-b5ac0.firebaseapp.com",
+            databaseURL: "https://csworkshop-b5ac0.firebaseio.com",
+            projectId: "csworkshop-b5ac0",
+            storageBucket: "csworkshop-b5ac0.appspot.com",
+            messagingSenderId: "760171755934"
+        };
+        firebase.initializeApp(config);
+    </script>
 </dom-module>
