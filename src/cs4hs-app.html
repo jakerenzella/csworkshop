@@ -32,6 +32,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
 <link rel="import" href="my-icons.html">
+<link rel="import" href="configuration.html">
 
 <dom-module id="cs4hs-app">
   <template>
@@ -227,8 +228,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <app-drawer id="drawer" swipe-open="[[narrow]]" no-focus-trap="true">
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <a name="home" href="[[rootPath]]" drawer-toggle>Home</a>
-          <a name="hardware" href="[[rootPath]]hardware" drawer-toggle>Hardware Project</a>
-          <a name="software" href="[[rootPath]]software" drawer-toggle>Software Project</a>
+          <a name="hardware" href="[[rootPath]]hardware" drawer-toggle>[[anam]]</a>
+          <a name="software" href="[[rootPath]]software" drawer-toggle>[[bnam]]</a>
           <a name="registration" href="[[rootPath]]registration" drawer-toggle>Registration</a>
         </iron-selector>
       </app-drawer>
@@ -266,6 +267,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           type: String,
           reflectToAttribute: true,
           observer: '_pageChanged',
+        },
+        // Contains Course 1 name value from the Configuration.html file.
+        anam: {
+          type: String,
+          value: Config.COURSE1_NAME,
+        },
+        // Contains Course 2 name value from the Configuration.html file. 
+        bnam: {
+          type: String,
+          value: Config.COURSE2_NAME,
         },
       },
 

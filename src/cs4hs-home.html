@@ -18,6 +18,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="./cs4hs-loginauth.html">
 <link rel="import" href="./cs4hs-mylogin.html">
+<link rel="import" href="configuration.html">
 
 <dom-module id="cs4hs-home">
   <template>
@@ -67,14 +68,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <grid-col>
         <a data-route="home" href="{{baseUrl}}hardware">
           <paper-card style="background-color: #303F9F;" fade-image image="images/arduinos.png">
-            <div class="card-content">Hardware Project</div>
+            <div class="card-content">[[anam]]</div>
           </paper-card>
         </a>
       </grid-col>
       <grid-col>
         <a data-route="home" href="{{baseUrl}}software">
           <paper-card style="background-color: #455A64;" fade-image image="images/programming.png">
-            <div class="card-content">Software Project</div>
+            <div class="card-content">[[bnam]]</div>
           </paper-card>
         </a>
       </grid-col>
@@ -103,6 +104,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <script>
     Polymer({
       is: 'cs4hs-home',
+properties: {
+        // Contains Course 1 name value from the Configuration.html file.
+      anam: {
+        type: String,
+        value: Config.COURSE1_NAME,
+      },
+        // Contains Course 2 name value from the Configuration.html file. 
+      bnam: {
+        type: String,
+        value: Config.COURSE2_NAME,
+      },
+    },
     });
   </script>
 </dom-module>

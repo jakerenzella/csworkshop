@@ -1,6 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="tutorial-viewer.html">
 <link rel="import" href="shared-styles.html">
+<link rel="import" href="configuration.html">
 
 <dom-module id="cs4hs-hardware">
   <template>
@@ -10,12 +11,19 @@
         padding: 10px;
       }
     </style>
-    <tutorial-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/data.json"></tutorial-viewer>
+    <tutorial-viewer url="[[aurl]]"></tutorial-viewer>
   </template>
 
   <script>
     Polymer({
       is: 'cs4hs-hardware',
+      properties: {
+        // Contains Course 1 URL value from the Configuration.html file. 
+        aurl: {
+          type: String,
+          value: Config.COURSE1_URL,
+        },
+      },
     });
   </script>
 </dom-module>
