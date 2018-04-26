@@ -109,15 +109,19 @@
             updateButtonDisable: function () {
                 this.debounce('tab', function () {
                     var tab = this.$$("#mySelector");
-                    if (tab.selected == 0) {
+                    if (tab == null) {
                         this.disableLeftButton = true;
                     } else {
-                        this.disableLeftButton = false;
-                    }
-                    if (tab.selected == tab.items.length - 1) {
-                        this.disableRightButton = true;
-                    } else {
-                        this.disableRightButton = false;
+                        if (tab.selected == 0) {
+                            this.disableLeftButton = true;
+                        } else {
+                            this.disableLeftButton = false;
+                        }
+                        if (tab.selected == tab.items.length - 1) {
+                            this.disableRightButton = true;
+                        } else {
+                            this.disableRightButton = false;
+                        }
                     }
                 }, 100);
             },
