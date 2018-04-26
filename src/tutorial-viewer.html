@@ -64,6 +64,8 @@
                 <md-viewer id="{{data.title}}" url="{{data.url}}"></md-viewer>
             </paper-material>
 
+            <div id="page"></div>
+
             <paper-tabs scrollable fit-container selected="{{tabSelected}}" id="mySelector">
                 <template is="dom-repeat" items="{{data.pages}}">
                     <paper-tab>{{item.title}}</paper-tab>
@@ -129,13 +131,15 @@
                 var tab = this.$$("#mySelector");
                 tab.selectPrevious();
                 this.updateButtonDisable();
-                scrollPageToTop();
+                var e = this.$$("#page");
+                e.scrollIntoView();
             },
             handleRightTap: function () {
                 var tab = this.$$("#mySelector");
                 tab.selectNext();
                 this.updateButtonDisable();
-                this.$$("#page").scrollTop = 0;
+                var e = this.$$("#page");
+                e.scrollIntoView();
             }
         });
     </script>
