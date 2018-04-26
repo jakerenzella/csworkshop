@@ -14,126 +14,125 @@
 <link rel="import" href="md-viewer.html">
 
 <dom-module id="tutorial-viewer">
-  <template>
-    <style include="shared-styles">
-       :host {
-        --paper-tab-ink: var(--paper-red-200);
-      }
+    <template>
+        <style include="shared-styles">
+            :host {
+                --paper-tab-ink: var(--paper-red-200);
+            }
 
-      paper-material {
-        padding: 16px;
-        border-radius: 2px;
-        margin: auto auto 16px auto;
-        background: white;
-      }
+            paper-material {
+                padding: 16px;
+                border-radius: 2px;
+                margin: auto auto 16px auto;
+                background: white;
+            }
 
-      paper-tabs {
-        background-color: var(--paper-blue-900);
-        color: #fff;
-        --paper-tabs-selection-bar-color: var(--paper-red-700);
-      }
+            paper-tabs {
+                background-color: var(--paper-blue-900);
+                color: #fff;
+                --paper-tabs-selection-bar-color: var(--paper-red-700);
+            }
 
-      paper-fab {
-        background-color: var(--paper-blue-900);
-        color: white;
-        margin-bottom: 40px;
-      }
+            paper-fab {
+                background-color: var(--paper-blue-900);
+                color: white;
+                margin-bottom: 40px;
+            }
 
-      #rightButton {
-        float: right;
-      }
+            #rightButton {
+                float: right;
+            }
 
-      #leftButton {
-        float: left;
-      }
+            #leftButton {
+                float: left;
+            }
 
-      paper-fab #leftButton {
-        float: left;
-        background-color: var(--paper-blue-900);
-        color: white;
-        margin-bottom: 40px;
-      }
-    </style>
+            paper-fab #leftButton {
+                float: left;
+                background-color: var(--paper-blue-900);
+                color: white;
+                margin-bottom: 40px;
+            }
+        </style>
 
-    <iron-ajax auto loading="{{loading}}" on-response="handleResponse" url="[[url]]" handle-as="text">
-    </iron-ajax>
+        <iron-ajax auto loading="{{loading}}" on-response="handleResponse" url="[[url]]" handle-as="text">
+        </iron-ajax>
 
-    <template is="dom-if" if="{{!loading}}">
-      <paper-material elevation="1">
-        <marked-element markdown="[[data.title]]"></marked-element>
-        <md-viewer id="{{data.title}}" url="{{data.url}}"></md-viewer>
-      </paper-material>
+        <template is="dom-if" if="{{!loading}}">
+            <paper-material elevation="1">
+                <marked-element markdown="[[data.title]]"></marked-element>
+                <md-viewer id="{{data.title}}" url="{{data.url}}"></md-viewer>
+            </paper-material>
 
-      <paper-tabs scrollable fit-container selected="{{tabSelected}}" id="mySelector">
-        <template is="dom-repeat" items="{{data.pages}}">
-          <paper-tab>{{item.title}}</paper-tab>
+            <paper-tabs scrollable fit-container selected="{{tabSelected}}" id="mySelector">
+                <template is="dom-repeat" items="{{data.pages}}">
+                    <paper-tab>{{item.title}}</paper-tab>
+                </template>
+            </paper-tabs>
+
+            <paper-material elevation="1">
+                <iron-pages selected-attribute="activated" selected="{{tabSelected}}">
+                    <template is="dom-repeat" items="{{data.pages}}">
+                        <md-viewer id="{{item.title}}" url="{{item.url}}"></md-viewer>
+                    </template>
+                </iron-pages>
+                <paper-fab id="leftButton" disabled="[[disableLeftButton]]" on-tap="handleLeftTap"
+                           icon="chevron-left"></paper-fab>
+                <paper-fab id="rightButton" disabled="[[disableRightButton]]" on-tap="handleRightTap"
+                           icon="chevron-right"></paper-fab>
+            </paper-material>
         </template>
-      </paper-tabs>
-
-      <paper-material elevation="1">
-        <iron-pages selected-attribute="activated" selected="{{tabSelected}}">
-          <template is="dom-repeat" items="{{data.pages}}">
-            <md-viewer id="{{item.title}}" url="{{item.url}}"></md-viewer>
-          </template>
-        </iron-pages>
-        <paper-fab id="leftButton" disabled="[[disableLeftButton]]" on-tap="handleLeftTap" icon="chevron-left"></paper-fab>
-        <paper-fab id="rightButton" disabled="[[disableRightButton]]" on-tap="handleRightTap" icon="chevron-right"></paper-fab>
-      </paper-material>
     </template>
-  </template>
 
-  <script>
-    Polymer({
-      is: 'tutorial-viewer',
-      properties: {
-        tabSelected: {
-          type: Number,
-          value: 0,
-          loading: {
-            type: Boolean,
-            readOnly: true,
-            notify: true,
-            value: false
-          },
-          observer: "updateButtonDisable"
-        },
-        url: String,
-        ready: false
-      },
-      handleResponse: function (e, request) {
-        this.data = JSON.parse(request.response);
-        this.loading = false;
-      },
-      updateButtonDisable: function () {
-        this.debounce('tab', function () {
-          var tab = this.$$("#mySelector");
-          if (tab.selected == 0) {
-            this.disableLeftButton = true;
-          } else {
-            this.disableLeftButton = false;
-          }
-          if (tab.selected == tab.items.length - 1) {
-            this.disableRightButton = true;
-          } else {
-            this.disableRightButton = false;
-          }
-        }, 100);
-      },
-      handleLeftTap: function () {
-        var tab = this.$$("#mySelector");
-        tab.selectPrevious();
-        this.updateButtonDisable();
-        scrollPageToTop();
-      },
-      handleRightTap: function () {
-        var tab = this.$$("#mySelector");
-        tab.selectNext();
-        this.updateButtonDisable();
-        this.$$("#page").scrollTop = 0;
-      }
-    });
-  </script>
-</dom-module>
-
-</script>
+    <script>
+        Polymer({
+            is: 'tutorial-viewer',
+            properties: {
+                tabSelected: {
+                    type: Number,
+                    value: 0,
+                    loading: {
+                        type: Boolean,
+                        readOnly: true,
+                        notify: true,
+                        value: false
+                    },
+                    observer: "updateButtonDisable"
+                },
+                url: String,
+                ready: false
+            },
+            handleResponse: function (e, request) {
+                this.data = JSON.parse(request.response);
+                this.loading = false;
+            },
+            updateButtonDisable: function () {
+                this.debounce('tab', function () {
+                    var tab = this.$$("#mySelector");
+                    if (tab.selected == 0) {
+                        this.disableLeftButton = true;
+                    } else {
+                        this.disableLeftButton = false;
+                    }
+                    if (tab.selected == tab.items.length - 1) {
+                        this.disableRightButton = true;
+                    } else {
+                        this.disableRightButton = false;
+                    }
+                }, 100);
+            },
+            handleLeftTap: function () {
+                var tab = this.$$("#mySelector");
+                tab.selectPrevious();
+                this.updateButtonDisable();
+                scrollPageToTop();
+            },
+            handleRightTap: function () {
+                var tab = this.$$("#mySelector");
+                tab.selectNext();
+                this.updateButtonDisable();
+                this.$$("#page").scrollTop = 0;
+            }
+        });
+    </script>
 </dom-module>
