@@ -1,40 +1,20 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
 
-        <link rel="stylesheet" href="style.css"/>
-        <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="tutorial-viewer.html">
-<link rel="import" href="shared-styles.html">
+<dom-module id="cs4hs-registration">
+    <template>
+        <style>
+            :host {
+                display: block;
+                padding: 10px 20px;
+            }
+        </style>
 
-            <dom-module id="cs4hs-registration">
-                    <template>
-                            <paper-card>
-        <div class="main-div">
-            <input type="email" placeholder="Email"/>
-            <input type="password" placeholder="password"/>
+        <h1>This is the Registration page</h1>
+    </template>
 
-            <button onclick="login();">Login</button>
-        </div>
-        <div class="loggedin-div">
-            <h3>Welcome user</h3>
-            <button>Logout</button>
-        </div>
-        </paper-card></template>
-<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCzGFV33wkVtDA3XVixSdOxsIgoaiTDENA",
-    authDomain: "csworkshop-b5ac0.firebaseapp.com",
-    databaseURL: "https://csworkshop-b5ac0.firebaseio.com",
-    projectId: "csworkshop-b5ac0",
-    storageBucket: "csworkshop-b5ac0.appspot.com",
-    messagingSenderId: "760171755934"
-  };
-  firebase.initializeApp(config);
-</script>
-<script src="index.js"></script>
-<script>
+    <script>
         Polymer({
-          is: 'cs4hs-registration',
+            is: 'cs4hs-registration',
         });
-      </script>
+    </script>
 </dom-module>
