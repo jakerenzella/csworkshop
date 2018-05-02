@@ -1,105 +1,96 @@
-<!--
-@license
-Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="shared-styles.html">
 <link rel="import" href="../bower_components/grid-element/grid-element.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../bower_components/paper-material/paper-material.html">
 <link rel="import" href="./event-countdown.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="./cs4hs-loginauth.html">
+<link rel="import" href="./cs4hs-mylogin.html">
 
 <dom-module id="cs4hs-home">
-  <template>
-    <style include="shared-styles">
-       :host {
-        display: block;
-        padding: 10px;
-        --google-map-iframe-width: 100%;
-        --google-map-iframe-height: 400px;
-      }
+    <template>
+        <style include="shared-styles">
+            :host {
+                display: block;
+                padding: 10px 30px;
+                --google-map-iframe-width: 100%;
+                --google-map-iframe-height: 400px;
+            }
 
-      iron-image {
-        float: right;
-      }
+            iron-image {
+                float: right;
+            }
 
-      .em {
-        font-style: oblique;
-      }
+            .em {
+                font-style: oblique;
+            }
 
-      paper-card {
-        width: 100%;
-      }
+            paper-card {
+                width: 100%;
+            }
 
-      paper-card iframe {
-        width: var(--google-map-iframe-width);
-        height: var(--google-map-iframe-height);
-      }
+            paper-card iframe {
+                width: var(--google-map-iframe-width);
+                height: var(--google-map-iframe-height);
+            }
 
-      a {
-        color: var(--accent-color);
-        text-decoration: underline;
-        cursor: auto;
-      }
+            a {
+                color: var(--accent-color);
+                text-decoration: underline;
+                cursor: auto;
+            }
 
-      .overlay {
-        background: transparent;
-        position: relative;
-        width: var(--google-map-iframe-width);
-        height: var(--google-map-iframe-height);
-        top: var(--google-map-iframe-height);
-        margin-top: -400px;
-      }
-    </style>
+            .overlay {
+                background: transparent;
+                position: relative;
+                width: var(--google-map-iframe-width);
+                height: var(--google-map-iframe-height);
+                top: var(--google-map-iframe-height);
+                margin-top: -400px;
+            }
+        </style>
 
-    <event-countdown></event-countdown>
+        <event-countdown></event-countdown>
+        <grid-element ghi gs="20px">
+            <grid-col>
+                <a data-route="home" href="{{baseUrl}}hardware">
+                    <paper-card style="background-color: #303F9F;" fade-image image="images/arduinos.png">
+                        <div class="card-content">Hardware Project</div>
+                    </paper-card>
+                </a>
+            </grid-col>
+            <grid-col>
+                <a data-route="home" href="{{baseUrl}}software">
+                    <paper-card style="background-color: #455A64;" fade-image image="images/programming.png">
+                        <div class="card-content">Software Project</div>
+                    </paper-card>
+                </a>
+            </grid-col>
+            <grid-col>
+                <a target="_blank" href="https://google.com">
+                    <paper-card style="background-color: #558B2F;" fade-image image="images/registration.png">
+                        <div class="card-content">Registration
+                            <iron-icon icon="open-in-new"></iron-icon>
+                        </div>
+                    </paper-card>
+                </a>
+            </grid-col>
+        </grid-element>
 
-    <grid-element ghi gs="15px">
-      <grid-col s="3">
-        <a data-route="home" href="{{baseUrl}}hardware">
-          <paper-card style="background-color: #303F9F;" fade-image image="images/arduinos.png">
-            <div class="card-content">Hardware Project</div>
-          </paper-card>
-        </a>
-      </grid-col>
-      <grid-col s="3">
-        <a data-route="home" href="{{baseUrl}}software">
-          <paper-card style="background-color: #455A64;" fade-image image="images/programming.png">
-            <div class="card-content">Software Project</div>
-          </paper-card>
-        </a>
-      </grid-col>
-      <grid-col s="2">
-        <a target="_blank" href="https://google.com">
-          <paper-card style="background-color: #558B2F;" fade-image image="images/registration.png">
-            <div class="card-content">Registration
-              <iron-icon icon="open-in-new"></iron-icon>
+        <paper-card item-height="400px">
+            <div class="card-content">
+                <div class="overlay" onClick="style.pointerEvents='none'"></div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.569104964591!2d145.11097296561158!3d-37.84697227974648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad640592c2ddceb%3A0x805bd52f251bd12!2sDeakin+University!5e0!3m2!1sen!2sau!4v1505304992193"
+                        width="600" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
-          </paper-card>
-        </a>
-      </grid-col>
-    </grid-element>
+        </paper-card>
+    </template>
 
-    <paper-card item-height="400px">
-      <div class="card-content">
-        <div class="overlay" onClick="style.pointerEvents='none'"></div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.569104964591!2d145.11097296561158!3d-37.84697227974648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad640592c2ddceb%3A0x805bd52f251bd12!2sDeakin+University!5e0!3m2!1sen!2sau!4v1505304992193"
-          width="600" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </div>
-    </paper-card>
-
-    <!-- <iron-image src="../images/GoogleLogo.svg"></iron-image> -->
-  </template>
-
-  <script>
-    Polymer({
-      is: 'cs4hs-home',
-    });
-  </script>
+    <script>
+        Polymer({
+            is: 'cs4hs-home',
+        });
+    </script>
 </dom-module>
