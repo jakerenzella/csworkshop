@@ -5,12 +5,13 @@
 <dom-module id="cs4hs-hardware">
   <template>
     <style include="shared-styles">
-       :host {
+      :host {
         display: block;
         padding: 60px;
       }
     </style>
-    <tutorial-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/data.json"></tutorial-viewer>
+    <iron-meta-query id="appconfig" key="config" value="{{appconfig}}"></iron-meta-query>
+    <tutorial-viewer url="{{appconfig.hardware}}"></tutorial-viewer>
   </template>
 
   <script>
