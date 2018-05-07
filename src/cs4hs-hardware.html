@@ -10,8 +10,10 @@
                 padding: 10px;
             }
         </style>
+
+        <iron-meta-query id="appconfig" key="config" value="{{appconfig}}"></iron-meta-query>
         <tutorial-viewer
-                url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/data.json"></tutorial-viewer>
+                url="{{appconfig.hardware}}"></tutorial-viewer>
     </template>
 
     <script>

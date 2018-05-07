@@ -11,7 +11,8 @@
       }
     </style>
 
-    <tutorial-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/data.json"> </tutorial-viewer>
+    <iron-meta-query id="appconfig" key="config" value="{{appconfig}}"></iron-meta-query>
+    <tutorial-viewer url="{{appconfig.software}}"> </tutorial-viewer>
 
   </template>
 
