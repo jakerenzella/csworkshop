@@ -28,65 +28,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-menu/paper-menu.html">
 <link rel="import" href="../bower_components/paper-material/paper-material.html">
-<link rel="import" href="../bower_components/timer-days/timer-days.html">
 
 <link rel="import" href="my-icons.html">
 
 <dom-module id="cs4hs-app">
   <template>
     <style>
-      @-webkit-keyframes Gradient {
-        0% {
-          background-position: 0% 50%
-        }
-        50% {
-          background-position: 100% 50%
-        }
-        100% {
-          background-position: 0% 50%
-        }
-      }
-
-      @-moz-keyframes Gradient {
-        0% {
-          background-position: 0% 50%
-        }
-        50% {
-          background-position: 100% 50%
-        }
-        100% {
-          background-position: 0% 50%
-        }
-      }
-
-      @keyframes Gradient {
-        0% {
-          background-position: 0% 50%
-        }
-        50% {
-          background-position: 100% 50%
-        }
-        100% {
-          background-position: 0% 50%
-        }
-      }
-
        :host {
         --app-primary-color: #4285f4;
         --app-secondary-color: black;
         display: block;
       }
-
       paper-menu iron-icon {
         margin-right: 33px;
         opacity: 0.54;
       }
-
       .paper-item-link {
         color: var(--primary-color);
         text-decoration: none;
       }
-
       paper-menu a {
         @apply(--layout-horizontal);
         @apply(--layout-center);
@@ -101,47 +61,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         min-height: 48px;
         padding: 0 16px;
       }
-
-      timer-days {
-        box-shadow: 0 0px 0px #333;
-        --timer-days-border-color: transparent;
-        --timer-days-background-color: transparent;
-        --timer-days-hover-background-color: transparent;
-        --timer-days-hover-border-color: transparent;
-        --timer-days-hover-font-color: white;
-        --timer-days-font-color: white;
-        --timer-days-font-number-size: 5em;
-        font-family: 'Share Tech Mono', 'Roboto';
-        letter-spacing: 1.25em;
-        margin: 16px auto;
-        min-width: 0px;
-      }
-
       app-header {
         color: #fff;
-        /* background-color: var(--app-primary-color); */
-        color: #fff;
-        background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-        background-size: 400% 400%;
-        -webkit-animation: Gradient 15s ease infinite;
-        -moz-animation: Gradient 15s ease infinite;
-        animation: Gradient 15s ease infinite;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        cursor: default;
+        background-color: var(--app-primary-color);
       }
-
       app-header a {
         color: white;
         text-decoration: none;
       }
-
       app-header paper-icon-button {
         --paper-icon-button-ink-color: white;
       }
-
       app-header paper-toolbar a {
         display: block;
         padding: 0 16px;
@@ -149,11 +79,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: var(--app-secondary-color);
         line-height: 40px;
       }
-
       .drawer-list {
         margin: 0 20px;
       }
-
       .drawer-list a {
         display: block;
         padding: 0 16px;
@@ -161,14 +89,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: var(--app-secondary-color);
         line-height: 40px;
       }
-
       .app-menu {
         --paper-menu-selected-item: {
           color: #fff;
           background-color: #123123;
         }
       }
-
       .drawer-list a.iron-selected {
         color: black;
         font-weight: bold;
@@ -184,13 +110,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <app-header condenses reveals effects="waterfall">
           <app-toolbar>
+            <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
             <a data-route="home" href="{{baseUrl}}home">
               <div main-title>
                 <iron-icon icon="home"></iron-icon>
                 Deakin CS4HS
               </div>
-              <!-- <h1>Join us for two days of sharing, learning and networking with fellow educators.</h1>
-              <timer-days target-date="2018-09-13T16:40:00"></timer-days> -->
             </a>
           </app-toolbar>
         </app-header>

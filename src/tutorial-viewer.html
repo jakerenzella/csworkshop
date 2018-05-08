@@ -59,6 +59,7 @@
     </iron-ajax>
 
     <template is="dom-if" if="{{!loading}}">
+
       <paper-material elevation="1">
         <marked-element markdown="[[data.title]]"></marked-element>
         <md-viewer id="{{data.title}}" url="{{data.url}}"></md-viewer>
@@ -105,6 +106,7 @@
         this.loading = false;
       },
       updateButtonDisable: function () {
+
         this.debounce('tab', function () {
           var tab = this.$$("#mySelector");
           if (tab.selected == 0) {
@@ -123,13 +125,11 @@
         var tab = this.$$("#mySelector");
         tab.selectPrevious();
         this.updateButtonDisable();
-        scrollPageToTop();
       },
       handleRightTap: function () {
         var tab = this.$$("#mySelector");
         tab.selectNext();
         this.updateButtonDisable();
-        this.$$("#page").scrollTop = 0;
       }
     });
   </script>
