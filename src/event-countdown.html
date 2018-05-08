@@ -2,6 +2,7 @@
 <link rel="import" href="../bower_components/paper-styles/typography.html">
 <link rel="import" href="../bower_components/timer-days/timer-days.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="configuration.html">
 
 <dom-module id="event-countdown">
   <template>
@@ -96,7 +97,7 @@
     <paper-card>
       <div class="card-content">
         <h1>Join us for two days of sharing, learning and networking with fellow educators.</h1>
-        <timer-days target-date="2018-09-13T16:40:00"></timer-days>
+        <timer-days target-date="[[edate]]"></timer-days>
       </div>
     </paper-card>
 
@@ -106,7 +107,14 @@
     (function () {
       'use strict';
       Polymer({
-        is: 'event-countdown'
+        is: 'event-countdown',
+      properties: {
+        // Contains course date value from the Configuration.html file. 
+        edate: {
+          type: String,
+          value: Config.COURSE_DATE,
+        },
+      },
       });
     })();
   </script>

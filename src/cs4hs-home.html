@@ -8,6 +8,7 @@
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="./cs4hs-loginauth.html">
 <link rel="import" href="./cs4hs-mylogin.html">
+<link rel="import" href="configuration.html">
 
 <dom-module id="cs4hs-home">
     <template>
@@ -42,6 +43,7 @@
                 cursor: auto;
             }
 
+<<<<<<< HEAD
             .overlay {
                 background: transparent;
                 position: relative;
@@ -51,6 +53,34 @@
                 margin-top: -400px;
             }
         </style>
+=======
+    <event-countdown></event-countdown>
+    <grid-element ghi gs="20px">
+      <grid-col>
+        <a data-route="home" href="{{baseUrl}}hardware">
+          <paper-card style="background-color: #303F9F;" fade-image image="images/arduinos.png">
+            <div class="card-content">[[anam]]</div>
+          </paper-card>
+        </a>
+      </grid-col>
+      <grid-col>
+        <a data-route="home" href="{{baseUrl}}software">
+          <paper-card style="background-color: #455A64;" fade-image image="images/programming.png">
+            <div class="card-content">[[bnam]]</div>
+          </paper-card>
+        </a>
+      </grid-col>
+      <grid-col>
+        <a target="_blank" href="https://google.com">
+          <paper-card style="background-color: #558B2F;" fade-image image="images/registration.png">
+            <div class="card-content">Registration
+              <iron-icon icon="open-in-new"></iron-icon>
+            </div>
+          </paper-card>
+        </a>
+      </grid-col>
+    </grid-element>
+>>>>>>> origin/SIT782-malcolm
 
         <event-countdown></event-countdown>
         <grid-element ghi gs="20px">
@@ -88,9 +118,30 @@
         </paper-card>
     </template>
 
+<<<<<<< HEAD
     <script>
         Polymer({
             is: 'cs4hs-home',
         });
     </script>
 </dom-module>
+=======
+  <script>
+    Polymer({
+      is: 'cs4hs-home',
+properties: {
+        // Contains Course 1 name value from the Configuration.html file.
+      anam: {
+        type: String,
+        value: Config.COURSE1_NAME,
+      },
+        // Contains Course 2 name value from the Configuration.html file. 
+      bnam: {
+        type: String,
+        value: Config.COURSE2_NAME,
+      },
+    },
+    });
+  </script>
+</dom-module>
+>>>>>>> origin/SIT782-malcolm
