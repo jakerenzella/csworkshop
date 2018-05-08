@@ -6,7 +6,8 @@
             id="auth"
             user="{{user}}"
             status-known="{{statusKnown}}"
-            provider="google"></firebase-auth>
+            provider="google">
+		</firebase-auth>
 
         <template is="dom-if" if="[[user]]">
             Welcome [[user.displayName]]
