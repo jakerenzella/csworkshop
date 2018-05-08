@@ -114,6 +114,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: black;
         font-weight: bold;
       }
+
+      #bottom-bar {
+        min-height: 150px;
+        background-color: #fafafa;
+      }
     </style>
 
     <app-location route="{{route}}"></app-location>
@@ -121,13 +126,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <app-drawer-layout fullbleed>
       <!-- Main content -->
-      <app-header-layout id="main-containter" has-scrolling-region>
+      <app-header-layout id="header" id="main-containter" has-scrolling-region>
 
-        <app-header condenses reveals effects="waterfall">
+        <app-header hidden$="[[onHomepage]]" condenses reveals effects="waterfall">
           <app-toolbar>
             <!-- <paper-icon-button icon="../images/icon_white_bg.png" ></paper-icon-button> -->
             <a data-route="home" href="{{baseUrl}}home">
-              <div main-title hidden$="[[onHomepage]]">
+              <div main-title>
                 <iron-image src="../images/icon_white_bg.png" style="width:50px; height:50px;" sizing="cover"></iron-image>
               </div>
             </a>
@@ -173,7 +178,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         var resolvedPageUrl = this.resolveUrl('cs4hs-' + page + '.html');
         this.importHref(resolvedPageUrl, null, this._showPage404, true);
         this.onHomepage = this._shouldHideIcon();
-        console.info(this.onHomepage)
+        this.$.header.resetLayout();
       },
 
       _shouldHideIcon: function () {
