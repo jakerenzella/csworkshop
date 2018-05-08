@@ -18,15 +18,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="cs4hs-home">
   <template>
     <style include="shared-styles">
-       :host {
+      :host {
         display: block;
-        padding: 10px;
+        padding: 60px;
         --google-map-iframe-width: 100%;
         --google-map-iframe-height: 400px;
       }
 
+      p.heading {
+        font-size: 1.3em;
+        margin: 0;
+        margin-bottom: 18px;
+        font-weight: 200;
+      }
+
+      iframe {
+        border-radius: 8px;
+      }
+
       iron-image {
-        float: right;
+        float: left;
       }
 
       .em {
@@ -42,25 +53,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         height: var(--google-map-iframe-height);
       }
 
+      grid-element {
+        margin-bottom: 4px;
+      }
+
       a {
         color: var(--accent-color);
         text-decoration: underline;
         cursor: auto;
       }
-
-      .overlay {
-        background: transparent;
-        position: relative;
-        width: var(--google-map-iframe-width);
-        height: var(--google-map-iframe-height);
-        top: var(--google-map-iframe-height);
-        margin-top: -400px;
-      }
     </style>
 
-    <event-countdown></event-countdown>
+    <grid-element style="margin-bottom: 20px" center ghi gvo gs="10px">
+      <iron-image src="../images/icon_white_bg.png" style="width:300px; height:300px;" sizing="cover"></iron-image>
+      <grid-col s="12">
+        <event-countdown></event-countdown>
+      </grid-col>
+    </grid-element>
 
-    <grid-element ghi gs="15px">
+    <p class="heading">Register & explore</p>
+    <grid-element ghi gs="10px">
       <grid-col s="3">
         <a data-route="home" href="{{baseUrl}}hardware">
           <paper-card style="background-color: #303F9F;" fade-image image="images/arduinos.png">
@@ -86,15 +98,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </grid-col>
     </grid-element>
 
-    <paper-card item-height="400px">
-      <div class="card-content">
-        <div class="overlay" onClick="style.pointerEvents='none'"></div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.569104964591!2d145.11097296561158!3d-37.84697227974648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad640592c2ddceb%3A0x805bd52f251bd12!2sDeakin+University!5e0!3m2!1sen!2sau!4v1505304992193"
-          width="600" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </div>
+    <!-- <p class="heading">Location</p> -->
+    <paper-card item-height="400px" style="height: 400px">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.569104964591!2d145.11097296561158!3d-37.84697227974648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad640592c2ddceb%3A0x805bd52f251bd12!2sDeakin+University!5e0!3m2!1sen!2sau!4v1505304992193"
+        height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
     </paper-card>
 
-    <!-- <iron-image src="../images/GoogleLogo.svg"></iron-image> -->
+    <iron-image src="../images/GoogleLogo.svg"></iron-image>
   </template>
 
   <script>

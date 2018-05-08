@@ -34,19 +34,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="cs4hs-app">
   <template>
     <style>
-       :host {
-        --app-primary-color: #4285f4;
+      :host {
+        --app-primary-color: white;
         --app-secondary-color: black;
         display: block;
       }
+
       paper-menu iron-icon {
         margin-right: 33px;
         opacity: 0.54;
       }
+
       .paper-item-link {
         color: var(--primary-color);
         text-decoration: none;
       }
+
       paper-menu a {
         @apply(--layout-horizontal);
         @apply(--layout-center);
@@ -61,17 +64,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         min-height: 48px;
         padding: 0 16px;
       }
+
       app-header {
-        color: #fff;
+        color: black;
         background-color: var(--app-primary-color);
       }
+
       app-header a {
-        color: white;
+        color: blue;
         text-decoration: none;
       }
+
+      [hidden] {
+        display: none !important;
+      }
+
       app-header paper-icon-button {
         --paper-icon-button-ink-color: white;
       }
+
       app-header paper-toolbar a {
         display: block;
         padding: 0 16px;
@@ -79,9 +90,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: var(--app-secondary-color);
         line-height: 40px;
       }
+
       .drawer-list {
         margin: 0 20px;
       }
+
       .drawer-list a {
         display: block;
         padding: 0 16px;
@@ -89,12 +102,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: var(--app-secondary-color);
         line-height: 40px;
       }
+
       .app-menu {
         --paper-menu-selected-item: {
           color: #fff;
           background-color: #123123;
         }
       }
+
       .drawer-list a.iron-selected {
         color: black;
         font-weight: bold;
@@ -110,11 +125,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <app-header condenses reveals effects="waterfall">
           <app-toolbar>
-            <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
+            <!-- <paper-icon-button icon="../images/icon_white_bg.png" ></paper-icon-button> -->
             <a data-route="home" href="{{baseUrl}}home">
-              <div main-title>
-                <iron-icon icon="home"></iron-icon>
-                Deakin ITCO
+              <div main-title hidden$="[[onHomepage]]">
+                <iron-image src="../images/icon_white_bg.png" style="width:50px; height:50px;" sizing="cover"></iron-image>
               </div>
             </a>
           </app-toolbar>
@@ -141,6 +155,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           reflectToAttribute: true,
           observer: '_pageChanged',
         },
+        onHomepage: {
+          type: Boolean
+        }
       },
 
       observers: [
@@ -155,11 +172,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         // Load page import on demand. Show 404 page if fails
         var resolvedPageUrl = this.resolveUrl('cs4hs-' + page + '.html');
         this.importHref(resolvedPageUrl, null, this._showPage404, true);
+        this.onHomepage = this._shouldHideIcon();
+        console.info(this.onHomepage)
+      },
+
+      _shouldHideIcon: function () {
+        return this.page == "home"
       },
 
       _showPage404: function () {
         this.page = 'view404';
-      },
+      }
     });
   </script>
 </dom-module>
