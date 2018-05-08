@@ -2,6 +2,7 @@
 <link rel="import" href="../bower_components/paper-styles/typography.html">
 <link rel="import" href="../bower_components/timer-days/timer-days.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
+<script src="../bower_components/moment/moment.js"></script>
 
 <dom-module id="event-countdown">
   <template>
@@ -67,7 +68,7 @@
         color: white;
       }
 
-       :host {}
+      :host {}
 
       paper-card {
         width: 100%;
@@ -75,6 +76,10 @@
 
       paper-card p {
         text-align: center;
+      }
+
+      [hidden] {
+        display: none !important;
       }
 
       timer-days {
@@ -92,11 +97,11 @@
         min-width: 0px;
       }
     </style>
-
     <paper-card>
       <div class="card-content">
-        <h1>Join us for two days of sharing, learning and networking with fellow educators.</h1>
-        <timer-days target-date="2018-09-13T16:40:00"></timer-days>
+        <h1 id="welcomeText"></h1>
+        <timer-days hidden$=[[shouldHideCountdown]] target-date="[[targetDate]]"></timer-days>
+
       </div>
     </paper-card>
 
@@ -104,9 +109,47 @@
 
   <script>
     (function () {
-      'use strict';
       Polymer({
-        is: 'event-countdown'
+        is: 'event-countdown',
+
+        properties: {
+          targetDate: {
+            type: String,
+            value: "2018-05-01T16:40:00",
+            observer: 'shouldHideCount'
+          },
+          shouldHideCountdown: {
+            type: Boolean
+          }
+        },
+
+        getWelcomeText: function () {
+          if (moment().isBefore(moment(this.targetDate), 'day')) {
+            return "Join us for two days of sharing, learning and networking with fellow educators."
+          }
+          else if (moment().isSame(moment(this.targetDate), 'day')) {
+            return "Welcome to Deakin ITCO Workshop."
+          }
+          else if (moment().isAfter(moment(this.targetDate), 'day')) {
+            return "Welcome back to Deakin ITCO Workshop."
+          }
+        },
+
+        shouldHideCount: function () {
+          // now in user's local time zone
+          var now = moment();
+
+          // Gets event time zone and sets to Melbourne time zone
+          var eventDate = moment(this.targetDate);
+          eventDate.utcOffset(600);
+
+          return now.isSameOrAfter(eventDate, 'day')
+        },
+
+        ready: function () {
+          this.$.welcomeText.textContent = this.getWelcomeText();
+          this.shouldHideCountdown = this.shouldHideCount();
+        }
       });
     })();
   </script>
