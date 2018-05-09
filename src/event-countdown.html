@@ -142,7 +142,7 @@
         properties: {
           targetDate: {
             type: String,
-            value: "2018-09-11T16:40:00",
+            value: "2018-08-11T16:40:00",
             observer: 'shouldHideCount'
           },
           shouldHideCountdown: {
@@ -173,10 +173,16 @@
           return now.isSameOrAfter(eventDate, 'day')
         },
 
+        getDate: function () {
+          return moment(this.targetDate).utcOffset(600);
+        },
+
         ready: function () {
           this.$.welcomeText.textContent = this.getWelcomeText();
           this.shouldHideCountdown = this.shouldHideCount();
-          var countDown = new IOWA.CountdownTimer.Core(new Date(Date.now() + 10 * 24 * 60 * 60 * 1000), this.$);
+          var test = new Date(Date.now() + 10 * 24 * 60 * 60 * 1000);
+          var test2 = this.getDate().toDate();
+          var countDown = new IOWA.CountdownTimer.Core(test2, this.$);
           countDown.setUp(false);
           countDown.attachEvents();
           countDown.play(false);
