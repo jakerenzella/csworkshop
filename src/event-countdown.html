@@ -19,6 +19,7 @@
         user-select: none;
         cursor: default;
         border-radius: 8px;
+        width: 100%;
       }
 
       @-webkit-keyframes Gradient {
@@ -64,15 +65,7 @@
         top: 45%;
         right: 0;
         left: 0;
-        color: white;
-      }
-
-      paper-card {
-        width: 100%;
-      }
-
-      paper-card p {
-        text-align: center;
+        color: red;
       }
 
       [hidden] {
@@ -85,22 +78,21 @@
         --timer-days-background-color: transparent;
         --timer-days-hover-background-color: transparent;
         --timer-days-hover-border-color: transparent;
-        --timer-days-hover-font-color: white;
-        --timer-days-font-color: white;
+        --timer-days-font-color: red;
+        --timer-days-hover-font-color: var(--timer-days-font-color);
         --timer-days-font-number-size: 5em;
-        font-family: 'Share Tech Mono', 'Roboto';
+        font-family: 'Arvo', 'Share Tech Mono', 'Roboto';
         letter-spacing: 1.25em;
         margin: 16px auto;
         min-width: 0px;
       }
     </style>
-    <paper-card>
-      <div class="card-content">
-        <h1 id="welcomeText"></h1>
-        <timer-days hidden$=[[shouldHideCountdown]] target-date="[[targetDate]]"></timer-days>
 
+      <div>
+        <h1 id="welcomeText"></h1>
+        Hello
+        <timer-days hidden$=[[shouldHideCountdown]] target-date="[[targetDate]]"></timer-days>
       </div>
-    </paper-card>
 
   </template>
 

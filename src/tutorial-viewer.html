@@ -22,15 +22,30 @@
 
       paper-material {
         padding: 16px;
-        border-radius: 2px;
+        border-radius: 8px;
         margin: auto auto 16px auto;
         background: white;
+      }
+
+      paper-material.content {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
       }
 
       paper-tabs {
         background-color: var(--paper-blue-900);
         color: #fff;
         --paper-tabs-selection-bar-color: var(--paper-red-700);
+
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+      }
+
+      paper-material.mini-card {
+        display: inline-block;
+        margin-right: 8px;
       }
 
       paper-fab {
@@ -59,8 +74,12 @@
     </iron-ajax>
 
     <template is="dom-if" if="{{!loading}}">
+      <paper-material class="mini-card" elevation="1">
+        <marked-element markdown="[[data.title]]"></marked-element>
+        <md-viewer id="{{data.title}}" url="{{data.url}}"></md-viewer>
+      </paper-material>
 
-      <paper-material elevation="1">
+      <paper-material class="mini-card" elevation="1">
         <marked-element markdown="[[data.title]]"></marked-element>
         <md-viewer id="{{data.title}}" url="{{data.url}}"></md-viewer>
       </paper-material>
@@ -71,7 +90,7 @@
         </template>
       </paper-tabs>
 
-      <paper-material elevation="1">
+      <paper-material class="content" elevation="1">
         <iron-pages selected-attribute="activated" selected="{{tabSelected}}">
           <template is="dom-repeat" items="{{data.pages}}">
             <md-viewer id="{{item.title}}" url="{{item.url}}"></md-viewer>
