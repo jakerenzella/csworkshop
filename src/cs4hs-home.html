@@ -13,6 +13,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/grid-element/grid-element.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../bower_components/neon-animation/web-animations.html">
+<link rel="import" href="../bower_components/neon-animation/animations/scale-up-animation.html">
+<link rel="import" href="../bower_components/neon-animation/animations/fade-out-animation.html">
 <link rel="import" href="./event-countdown.html">
 
 <dom-module id="cs4hs-home">
@@ -85,14 +90,33 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: inline;
         margin-right: 20px;
       }
+
+      .about-card {
+        color:black;
+        overflow: hidden;
+        font-family: 'Open Sans';
+        margin: 30px;
+      }
     </style>
 
     <grid-element style="margin-bottom: 20px" center ghi gvo gs="10px">
       <iron-image src="../images/icon_white_bg.png" style="width:300px; height:300px;" sizing="cover"></iron-image>
       <grid-col s="12">
         <event-countdown></event-countdown>
+        <paper-card>
+          <div class="about-card">Software Project</div>
+        </paper-card>
       </grid-col>
     </grid-element>
+
+    <paper-button raised on-click="openDialog">open</paper-button>
+    <paper-dialog autofocus id="animated" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
+      <h2>Dialog Title</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </paper-dialog>
 
     <p class="heading">Register & explore</p>
     <grid-element ghi gs="10px">
@@ -141,6 +165,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <script>
     Polymer({
       is: 'cs4hs-home',
+
+      openDialog: function () {
+        this.$.animated.open();
+      }
     });
   </script>
 </dom-module>
