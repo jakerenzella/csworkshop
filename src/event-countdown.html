@@ -101,7 +101,7 @@
 
     <div>
       <!-- <timer-days  target-date="[[targetDate]]"></timer-days> -->
-      <div hidden$=[[shouldHideCountdown]] id="countdown-container" style="width: 100%;margin: 0 auto;max-width: 1160px;">
+      <div id="countdown-container" style="width: 100%;margin: 0 auto;max-width: 1160px;">
         <countdown-timer id="timerElement">
           <svg style="display:none" width="132px" height="132px" viewBox="0 0 132 132" version="1.1" class="style-scope countdown-timer">
             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="style-scope countdown-timer">
@@ -145,6 +145,9 @@
             value: "2018-08-11T16:40:00",
             observer: 'shouldHideCount'
           },
+          countDown: {
+            type: Object
+          },
           shouldHideCountdown: {
             type: Boolean
           }
@@ -174,12 +177,15 @@
         ready: function () {
           this.$.welcomeText.textContent = this.getWelcomeText();
           this.shouldHideCountdown = this.shouldHideCount();
-          var test = new Date(Date.now() + 10 * 24 * 60 * 60 * 1000);
-          var test2 = this.getDate().toDate();
-          var countDown = new IOWA.CountdownTimer.Core(test2, this.$);
-          countDown.setUp(false);
-          countDown.attachEvents();
-          countDown.play(false);
+
+          this.countDown = new IOWA.CountdownTimer.Core(this.getDate().toDate(), this.$);
+          this.countDown.setUp(false);
+          this.countDown.attachEvents();
+          this.countDown.play(false);
+        },
+
+        attached: function () {
+          this.countDown.needsCanvasReset = !0;
         }
       });
     })();

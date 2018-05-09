@@ -28,7 +28,9 @@
     "iron-icons": "polymerElements/iron-icons#^1.2.0",
     "paper-menu": "polymerElements/paper-menu#^1.2.2",
     "neon-animation": "polymerElements/neon-animated-pages#^1.2.4",
-    "timer-days": "^1.0.4"
+    "timer-days": "^1.0.4",
+    "moment": "^2.22.1",
+    "paper-dialog": "PolymerElements/paper-dialog#^2.1.1"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"
