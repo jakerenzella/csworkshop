@@ -40,6 +40,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
       }
 
+      iron-image {
+        width: 60px;
+        height: 60px;
+        margin-top: 60px;
+        margin-left: 60px;
+      }
+
       paper-menu iron-icon {
         margin-right: 33px;
         opacity: 0.54;
@@ -66,6 +73,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       app-header {
+        height: 120px;
         color: black;
         background-color: var(--app-primary-color);
       }
@@ -127,13 +135,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <app-drawer-layout fullbleed>
       <!-- Main content -->
       <app-header-layout id="header" id="main-containter" has-scrolling-region>
-
-        <app-header hidden$="[[onHomepage]]" condenses reveals effects="waterfall">
+        <app-header hidden$="[[onHomepage]]" reveals effects="waterfall">
           <app-toolbar>
-            <!-- <paper-icon-button icon="../images/icon_white_bg.png" ></paper-icon-button> -->
             <a data-route="home" href="{{baseUrl}}home">
               <div main-title>
-                <iron-image src="../images/icon_white_bg.png" style="width:50px; height:50px;" sizing="cover"></iron-image>
+                <iron-image id="home-button" src="../images/icon_white_bg.png" sizing="cover"></iron-image>
               </div>
             </a>
           </app-toolbar>
