@@ -163,14 +163,8 @@
         },
 
         shouldHideCount: function () {
-          // now in user's local time zone
-          var now = moment();
-
-          // Gets event time zone and sets to Melbourne time zone
-          var eventDate = moment(this.targetDate);
-          eventDate.utcOffset(600);
-
-          return now.isSameOrAfter(eventDate, 'day')
+          // get user's current local time zone
+          return moment().isSameOrAfter(this.getDate(), 'day')
         },
 
         getDate: function () {
