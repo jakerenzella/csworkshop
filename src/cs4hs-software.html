@@ -1,7 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="tutorial-viewer.html">
 <link rel="import" href="shared-styles.html">
-<link rel="import" href="configuration.html">
 
 <dom-module id="cs4hs-software">
   <template>
@@ -12,25 +11,14 @@
       }
     </style>
 
-<<<<<<< HEAD
     <iron-meta-query id="appconfig" key="config" value="{{appconfig}}"></iron-meta-query>
     <tutorial-viewer url="{{appconfig.software}}"> </tutorial-viewer>
-=======
-    <tutorial-viewer url="[[burl]]"> </tutorial-viewer>
->>>>>>> origin/SIT782-malcolm
 
   </template>
 
   <script>
     Polymer({
       is: 'cs4hs-software'
-      properties: {
-        // Contains Course 2 URL value from the Configuration.html file.         
-        burl: {
-          type: String,
-          value: Config.COURSE2_URL,
-        },
-      },
     });
   </script>
 </dom-module>
