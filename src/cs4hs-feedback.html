@@ -5,11 +5,10 @@
         <style>
             :host {
                 display: block;
-                padding: 10px 20px;
+                height: 100vh;
             }
         </style>
-
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfSov6b5eMmAIf7v5EA5avUh5OnOHJa5_NBxI0VQwFA_fFYUQ/viewform?embedded=true" frameborder="0" width="100%" height="800px" marginheight="0" marginwidth="0">Loading...</iframe>
+        <iframe id="myIframe" src="https://docs.google.com/forms/d/e/1FAIpQLSfSov6b5eMmAIf7v5EA5avUh5OnOHJa5_NBxI0VQwFA_fFYUQ/viewform?embedded=true" frameborder="0" width="100%" height="100%" scrolling="yes">Loading...</iframe>
     </template>
 
     <script>
@@ -17,8 +16,4 @@
             is: 'cs4hs-feedback',
         });
     </script>
-    <style>
-
-
-    </style>
 </dom-module>
