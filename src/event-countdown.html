@@ -1,6 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/paper-styles/typography.html">
-<link rel="import" href="../bower_components/timer-days/timer-days.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <script src="../bower_components/moment/moment.js"></script>
 <script src="./countdown/TweenMax.js"></script>
@@ -82,25 +81,9 @@
       [hidden] {
         display: none !important;
       }
-
-      timer-days {
-        box-shadow: 0 0px 0px #333;
-        --timer-days-border-color: transparent;
-        --timer-days-background-color: transparent;
-        --timer-days-hover-background-color: transparent;
-        --timer-days-hover-border-color: transparent;
-        --timer-days-font-color: red;
-        --timer-days-hover-font-color: var(--timer-days-font-color);
-        --timer-days-font-number-size: 5em;
-        font-family: 'Arvo', 'Share Tech Mono', 'Roboto';
-        letter-spacing: 1.25em;
-        margin: 16px auto;
-        min-width: 0px;
-      }
     </style>
 
     <div>
-      <!-- <timer-days  target-date="[[targetDate]]"></timer-days> -->
       <div id="countdown-container" style="width: 100%;margin: 0 auto;max-width: 1160px;">
         <countdown-timer id="timerElement">
           <svg style="display:none" width="132px" height="132px" viewBox="0 0 132 132" version="1.1" class="style-scope countdown-timer">
