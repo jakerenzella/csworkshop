@@ -7,8 +7,8 @@
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 
 <dom-module id="md-viewer">
-  <template id="t">
-    <style is "app-theme" include="prism-theme-default">
+  <template>
+    <style include="prism-theme-default">
       pre {
         border-width: 4px;
         border-style: dashed;
@@ -29,8 +29,7 @@
       }
     </style>
 
-    <iron-ajax id="dataAjax" on-response="handleResponse" url="[[url]]" handle-as="text">
-    </iron-ajax>
+    <iron-ajax id="dataAjax" on-response="handleResponse" url="[[url]]" handle-as="text"></iron-ajax>
 
     <prism-highlighter></prism-highlighter>
     <marked-element markdown="[[markdown]]">
@@ -39,32 +38,27 @@
   </template>
 
   <script>
-    (function () {
-      'use strict';
-      Polymer({
-        is: 'md-viewer',
+    Polymer({
+      is: 'md-viewer',
 
-        properties: {
-          url: String,
-          markdown: String,
-          activated: {
-            type: Boolean,
-            value: true,
-            observer: '_activatedChanged'
-          }
-        },
-
-        _activatedChanged: function (newval, oldval) {
-          if (newval) {
-            var ajaxRequest = this.$$('#dataAjax');
-            ajaxRequest.generateRequest()
-          }
-        },
-
-        handleResponse: function (e, request) {
-          this.markdown = request.response;
+      properties: {
+        url: String,
+        markdown: String,
+        activated: {
+          type: Boolean,
+          value: true,
+          observer: '_activatedChanged'
         }
-      });
-    })();
+      },
+      _activatedChanged: function (newval, oldval) {
+        if (newval) {
+          var ajaxRequest = this.$$('#dataAjax');
+          ajaxRequest.generateRequest()
+        }
+      },
+      handleResponse: function (e, request) {
+        this.markdown = request.response;
+      }
+    });
   </script>
 </dom-module>
