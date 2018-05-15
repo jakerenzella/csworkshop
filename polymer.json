@@ -3,6 +3,11 @@
   "shell": "src/cs4hs-app.html",
   "fragments": [
     "src/cs4hs-home.html",
+    "src/cs4hs-app.html",
+    "src/event-countdown.html",
+    "src/md-viewer.html",
+    "src/my-icons.html",
+    "src/tutorial-viewer.html",
     "src/cs4hs-software.html",
     "src/cs4hs-hardware.html",
     "src/cs4hs-view404.html"
