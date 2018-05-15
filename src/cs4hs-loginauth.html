@@ -1,0 +1,41 @@
+<link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<dom-module id="cs4hs-loginauth">
+    <template>
+        <firebase-auth
+            id="auth"
+            user="{{user}}"
+            status-known="{{statusKnown}}"
+            provider="google">
+		</firebase-auth>
+
+        <template is="dom-if" if="[[user]]">
+            Welcome [[user.displayName]]
+            <paper-icon-button icon="exit-to-app" class="giant" on-click="logout"></paper-icon-button>
+        </template>
+        <template is="dom-if" if="[[!user]]">
+            Sign In
+            <paper-icon-button icon="account-circle" class="giant" on-click="login"></paper-icon-button>
+        </template>
+    </template>
+    <script>
+        Polymer({
+            is:'cs4hs-loginauth',
+            properties:{
+                user:{
+                    type: Object
+                },
+                statusKnown:{
+                    type:Object
+                }
+            },
+            behaviors: [Polymer.NoteAppBehavior],
+            login:function(){
+                return this.$.auth.signInWithPopup();
+            },
+            logout: function(){
+                return this.$.auth.signOut();
+            }
+        });
+    </script>
+</dom-module>

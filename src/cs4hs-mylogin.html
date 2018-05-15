@@ -1,0 +1,22 @@
+<link rel="import" href="cs4hs-app.html">
+<link rel="import" href="cs4hs-loginauth.html">
+
+<dom-module id="cs4hs-mylogin">
+    <template>
+        <firebase-app
+            api-key="AIzaSyCzGFV33wkVtDA3XVixSdOxsIgoaiTDENA"
+            auth-domain="csworkshop-b5ac0.firebaseapp.com"
+            database-url="https://csworkshop-b5ac0.firebaseio.com"
+            storage-bucket="csworkshop-b5ac0.appspot.com"
+            messagingSenderId="760171755934">
+        </firebase-app>
+        <cs4hs-loginauth></cs4hs-loginauth>
+    </template>
+    <script>
+        Polymer({
+            is: 'cs4hs-mylogin'
+        });
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+</dom-module>
