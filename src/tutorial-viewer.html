@@ -76,6 +76,7 @@
     </iron-ajax>
 
     <template is="dom-if" if="{{!loading}}">
+      <div id="page"></div>
       <paper-material class="mini-card" elevation="1">
         <marked-element markdown="[[data.title]]"></marked-element>
         <md-viewer id="{{data.title}}" url="{{data.url}}"></md-viewer>
@@ -107,6 +108,10 @@
   <script>
     Polymer({
       is: 'tutorial-viewer',
+      listeners: {
+        'selected-changed': 'updateButtonDisable'
+      },
+
       properties: {
         tabSelected: {
           type: Number,
