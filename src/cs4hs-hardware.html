@@ -12,8 +12,7 @@
         </style>
 
         <iron-meta-query id="appconfig" key="config" value="{{appconfig}}"></iron-meta-query>
-        <tutorial-viewer
-                url="{{appconfig.hardware}}"></tutorial-viewer>
+        <tutorial-viewer url="{{appconfig.hardware}}" cookie-name="hardwareIteration"></tutorial-viewer>
     </template>
 
     <script>
