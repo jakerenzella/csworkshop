@@ -11,12 +11,13 @@
 <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../bower_components/marked-element/marked-element.html">
+<link rel="import" href="../bower_components/iron-cookie/iron-cookie.html">
 <link rel="import" href="md-viewer.html">
 
 <dom-module id="tutorial-viewer">
   <template>
     <style include="shared-styles">
-       :host {
+      :host {
         --paper-tab-ink: var(--paper-red-200);
       }
 
@@ -70,6 +71,7 @@
       }
     </style>
 
+    <iron-cookie name="{{cookieName}}" value="{{value}}" uri-safe></iron-cookie>
     <iron-ajax auto loading="{{loading}}" on-response="handleResponse" url="[[url]]" handle-as="text">
     </iron-ajax>
 
@@ -84,14 +86,14 @@
         <md-viewer id="{{data.title}}" url="{{data.url}}"></md-viewer>
       </paper-material>
 
-      <paper-tabs scrollable fit-container selected="{{tabSelected}}" id="mySelector">
+      <paper-tabs scrollable fit-container selected="{{value}}" id="mySelector">
         <template is="dom-repeat" items="{{data.pages}}">
           <paper-tab>{{item.title}}</paper-tab>
         </template>
       </paper-tabs>
 
       <paper-material class="content" elevation="1">
-        <iron-pages selected-attribute="activated" selected="{{tabSelected}}">
+        <iron-pages selected-attribute="activated" selected="{{value}}">
           <template is="dom-repeat" items="{{data.pages}}">
             <md-viewer id="{{item.title}}" url="{{item.url}}"></md-viewer>
           </template>
@@ -118,6 +120,7 @@
           observer: "updateButtonDisable"
         },
         url: String,
+        cookieName: String,
         ready: false
       },
       handleResponse: function (e, request) {
@@ -125,18 +128,21 @@
         this.loading = false;
       },
       updateButtonDisable: function () {
-
         this.debounce('tab', function () {
           var tab = this.$$("#mySelector");
-          if (tab.selected == 0) {
+          if (tab == null) {
             this.disableLeftButton = true;
           } else {
-            this.disableLeftButton = false;
-          }
-          if (tab.selected == tab.items.length - 1) {
-            this.disableRightButton = true;
-          } else {
-            this.disableRightButton = false;
+            if (tab.selected == 0) {
+              this.disableLeftButton = true;
+            } else {
+              this.disableLeftButton = false;
+            }
+            if (tab.selected == tab.items.length - 1) {
+              this.disableRightButton = true;
+            } else {
+              this.disableRightButton = false;
+            }
           }
         }, 100);
       },
@@ -144,15 +150,16 @@
         var tab = this.$$("#mySelector");
         tab.selectPrevious();
         this.updateButtonDisable();
+        var e = this.$$("#page");
+        e.scrollIntoView();
       },
       handleRightTap: function () {
         var tab = this.$$("#mySelector");
         tab.selectNext();
         this.updateButtonDisable();
+        var e = this.$$("#page");
+        e.scrollIntoView();
       }
     });
   </script>
-</dom-module>
-
-</script>
 </dom-module>
