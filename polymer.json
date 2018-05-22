@@ -15,7 +15,8 @@
   "sources": [
     "src/**/*",
     "images/**/*",
-    "bower.json"
+    "bower.json",
+    "appconfig.json"
   ],
   "extraDependencies": [
     "manifest.json",
