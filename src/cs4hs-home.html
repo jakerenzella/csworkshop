@@ -101,9 +101,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       #bottom-bar ul#menu li {
-        color: #727272;
         display: inline;
         margin-right: 20px;
+      }
+
+      #bottom-bar ul#menu li a {
+        color: #727272;
+        text-decoration: none;
+        cursor: pointer;
       }
 
       .about-card {
@@ -168,9 +173,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <div id="bottom-bar">
       <ul id="menu">
-        <li>Deakin University</li>
-        <li>DSTIL</li>
-        <li>Google</li>
+        <li>
+          <a href="https://deakin.edu.au/" target="_blank">Deakin University</a>
+        </li>
+        <li>
+          <a href="http://dstil.deakin.edu.au/" target="_blank">DSTIL</a>
+        </li>
+        <li>
+          <a href="https://google.com.au/" target="_blank">Google</a>
+        </li>
       </ul>
       <iron-image style="float: right; margin-top: 15px;" src="../images/GoogleLogo.svg" alt="Google logo"></iron-image>
     </div>
