@@ -33,6 +33,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../bower_components/iron-meta/iron-meta.html">
+<link rel="import" href="./cs4hs-caveescape.html">
+<link rel="import" href="./cs4hs-datascience.html">
 
 
 <link rel="import" href="my-icons.html">
@@ -137,8 +139,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <app-location route="{{route}}"></app-location>
     <app-route route="{{route}}" pattern="/:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
-    <iron-ajax auto url="/appconfig.json" handle-as="json" last-response="{{appconfig}}"></iron-ajax>
-    <iron-meta id="appconfig" key="config" value$="{{appconfig}}"></iron-meta>
 
     <app-drawer-layout fullbleed>
       <!-- Main content -->
@@ -156,8 +156,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <neon-animated-pages class="flex" entry-animation="fade-in-animation" exit-animation="fade-out-animation" selected="[[page]]"
           attr-for-selected="name" fallback-selection="view404" role="main">
           <cs4hs-home name="home"></cs4hs-home>
-          <cs4hs-software name="software"></cs4hs-software>
-          <cs4hs-hardware name="hardware"></cs4hs-hardware>
+          <cs4hs-caveescape name="caveescape"></cs4hs-caveescape>
+          <cs4hs-datascience name="datascience"></cs4hs-datascience>
           <cs4hs-view404 name="view404"></cs4hs-view404>
           <neon-animated-pages>
       </app-header-layout>

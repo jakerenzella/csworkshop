@@ -2,7 +2,7 @@
 <link rel="import" href="tutorial-viewer.html">
 <link rel="import" href="shared-styles.html">
 
-<dom-module id="cs4hs-software">
+<dom-module id="cs4hs-datascience">
   <template>
     <style include="shared-styles">
       :host {
@@ -10,15 +10,12 @@
         padding: 60px;
       }
     </style>
-
-    <iron-meta-query id="appconfig" key="config" value="{{appconfig}}"></iron-meta-query>
-    <tutorial-viewer url="{{appconfig.software}}" cookie-name="softwareIteration"> </tutorial-viewer>
-
+    <tutorial-viewer url="https://raw.githubusercontent.com/itco-education/data-science/master/Documentation/data.json" cookie-name="datascience"> </tutorial-viewer>
   </template>
 
   <script>
     Polymer({
-      is: 'cs4hs-software',
+      is: 'cs4hs-datascience',
     });
   </script>
 </dom-module>

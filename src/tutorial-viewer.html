@@ -82,11 +82,6 @@
         <md-viewer id="{{data.title}}" url="{{data.url}}"></md-viewer>
       </paper-material>
 
-      <paper-material class="mini-card" elevation="1">
-        <marked-element markdown="[[data.title]]"></marked-element>
-        <md-viewer id="{{data.title}}" url="{{data.url}}"></md-viewer>
-      </paper-material>
-
       <paper-tabs scrollable fit-container selected="{{value}}" id="mySelector">
         <template is="dom-repeat" items="{{data.pages}}">
           <paper-tab>{{item.title}}</paper-tab>

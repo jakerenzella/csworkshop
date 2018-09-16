@@ -3,7 +3,7 @@
 <link rel="import" href="tutorial-viewer.html">
 <link rel="import" href="shared-styles.html">
 
-<dom-module id="cs4hs-hardware">
+<dom-module id="cs4hs-caveescape">
   <template>
     <style include="shared-styles">
       :host {
@@ -11,13 +11,12 @@
         padding: 60px;
       }
     </style>
-    <iron-meta-query id="appconfig" key="config" value="{{appconfig}}"></iron-meta-query>
-    <tutorial-viewer url="{{appconfig.hardware}}" cookie-name="hardwareIteration"></tutorial-viewer>
+    <tutorial-viewer url="https://raw.githubusercontent.com/itco-education/cave-escape/master/Documentation/data.json" cookie-name="cave_escape"></tutorial-viewer>
   </template>
 
   <script>
     Polymer({
-      is: 'cs4hs-hardware'
+      is: 'cs4hs-caveescape'
     });
   </script>
 </dom-module>

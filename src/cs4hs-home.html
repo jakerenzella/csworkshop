@@ -17,6 +17,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
 <link rel="import" href="../bower_components/paper-styles/typography.html">
 <link rel="import" href="./event-countdown.html">
+<link rel="import" href="./cs4hs-caveescape.html">
+<link rel="import" href="./cs4hs-datascience.html">
 
 <dom-module id="cs4hs-home">
   <template>
@@ -120,11 +122,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </iron-image>
       </grid-col>
 
- <iron-image
-      placeholder="[[placeholderImage]]"
-      sizing="[[imageSizing]]" preload="[[preloadImage]]" fade="[[fadeImage]]"
-      src="[[image]]"
-      alt="[[alt]]"></iron-image>
+      <iron-image placeholder="[[placeholderImage]]" sizing="[[imageSizing]]" preload="[[preloadImage]]" fade="[[fadeImage]]"
+        src="[[image]]" alt="[[alt]]"></iron-image>
       <div hidden$="[[!heading]]" class$="title-text [[_computeHeadingClass(image)]]">[[heading]]</div>
       <grid-col start s="7">
         <event-countdown></event-countdown>
@@ -134,18 +133,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <p class="heading">Register & explore</p>
     <grid-element ghi gs="10px">
       <grid-col s="3">
-        <a data-route="home" href="{{baseUrl}}hardware">
+        <a data-route="home" href="{{baseUrl}}caveescape">
           <paper-card image-sizing="cover" preload-image placeholder-image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAIAAAB4jOjWAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAActpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx4bXA6Q3JlYXRvclRvb2w+QWRvYmUgSW1hZ2VSZWFkeTwveG1wOkNyZWF0b3JUb29sPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KKS7NPQAAAOVJREFUCNdjsA/cCkR2gVudgra4BG9hsN6zsHna+YXFS9smX12avXNS++GZ9QwQFc5BWyz8t1n5b20tXrR3WtOuya1ZKatPzivb1NeTEL8OpAhohqX/NtuArY0FS++vid01ua08e8Xzjf4LmqdX5ix/sDaaAagCiETcdqzp7ru/Jq4kcyXQljPzy7rLF1xcnH96fvmilqkMAm47kxPWAfnHZlfPapg5q37m9ont85qmT66es31S+4qOSU2Fixn6K+edmFu1f3rjqs6JnaULH62L2DKhqz5/6aN1kdsmdHaXLXi+MQAAfHZ0YkDIjzQAAAAASUVORK5CYII="
             fade-image image="images/arduinos.png" style="background-color: #303F9F;" alt="Circuitboards">
-            <div class="card-content">Hardware Project</div>
+            <div class="card-content">Cave Escape</div>
           </paper-card>
         </a>
       </grid-col>
       <grid-col s="3">
-        <a data-route="home" href="{{baseUrl}}software">
+        <a data-route="home" href="{{baseUrl}}datascience">
           <paper-card image-sizing="cover" preload-image placeholder-image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAIAAAB4jOjWAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAActpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx4bXA6Q3JlYXRvclRvb2w+QWRvYmUgSW1hZ2VSZWFkeTwveG1wOkNyZWF0b3JUb29sPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KKS7NPQAAAMpJREFUCB0Vwc0uA1EYBuD3+znTRqQJI0IipeIuRGLjKtyIy3ABVpZdWtsQd2EhFZMYbZGiP3PmnBfPIxeXVwByTjnGJCJFF3+apZIaClUF4BDJMfa2d8q9gQjO7q8T9Pbk3MzHT4+zSa0huEBSG3sbW+XB0XpcHi6e0+prvz9YePFRjUgK4ADVfD77HFejwLbJbLXbTN/qVWzmP2JKwkl6CNO6en99OU6Tb3QQ1vp3wwcrXc3UCDoAAqamwA034+4pwJDawjwDxL9fFD9bnUSgtIoAAAAASUVORK5CYII="
             fade-image image="images/programming.png" style="background-color: #455A64;" alt="woman programming">
-            <div class="card-content">Software Project</div>
+            <div class="card-content">Data Science Project</div>
           </paper-card>
         </a>
       </grid-col>

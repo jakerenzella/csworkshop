@@ -74,15 +74,3 @@ polymer serve
 ### Conclusion
 After these steps all of the required environments and packages should be installed in the specified folder ready for use.
 
-## Configuring the Project
-
-The URL links for the project tutorials are controlled through a central file titled appconfig.json.
-
-If the url for the course is to change the user only needs to navigate to this file and alter the url (see below), this will then flow to all the relevant locations throughout the platform requiring no further alterations.
-
-```
-"software": "...Enter URL here...",
-"hardware": "https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/data.json"
-```
-
-NOTE: Please ensure that all beginning and ending quotes are still present after any editing is done to ensure correct operation.

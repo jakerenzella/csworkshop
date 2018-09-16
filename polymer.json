@@ -8,15 +8,14 @@
     "src/md-viewer.html",
     "src/my-icons.html",
     "src/tutorial-viewer.html",
-    "src/cs4hs-software.html",
-    "src/cs4hs-hardware.html",
+    "src/cs4hs-caveescape.html",
+    "src/cs4hs-datascience.html",
     "src/cs4hs-view404.html"
   ],
   "sources": [
     "src/**/*",
     "images/**/*",
-    "bower.json",
-    "appconfig.json"
+    "bower.json"
   ],
   "extraDependencies": [
     "manifest.json",
