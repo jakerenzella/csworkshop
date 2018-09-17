@@ -114,18 +114,19 @@
         tabSelected: {
           type: Number,
           value: 0,
+          observer: "updateButtonDisable",
           loading: {
             type: Boolean,
             readOnly: true,
             notify: true,
             value: false
           },
-          observer: "updateButtonDisable"
         },
         url: String,
         ready: false
       },
       handleResponse: function (e, request) {
+        console.log(this.tabSelected)
         this.data = JSON.parse(request.response);
         this.loading = false;
       },
