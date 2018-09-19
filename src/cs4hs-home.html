@@ -85,6 +85,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         cursor: auto;
       }
 
+      .iframe-wrapper {
+        z-index: 10;
+        border-radius: 8px;
+        position: relative;
+      }
+
+      .iframe-wrapper iframe {
+        z-index: 9;
+      }
+
       #bottom-bar {
         height: 200px;
         background-color: #fafafa;
@@ -131,9 +141,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <iron-image placeholder="[[placeholderImage]]" sizing="[[imageSizing]]" preload="[[preloadImage]]" fade="[[fadeImage]]"
         src="[[image]]" alt="[[alt]]"></iron-image>
       <div hidden$="[[!heading]]" class$="title-text [[_computeHeadingClass(image)]]">[[heading]]</div>
+
       <grid-col start s="7">
-        <a target="noopner" href="">
-          <!-- <paper-card
+        <!-- <paper-card
             fade-image image="images/ping-loader.gif" style="background-color: white;" alt="ping pong loader">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/OtVfo-HzxTQ?rel=0" frameborder="0" allow="autoplay; encrypted-media"
               allowfullscreen></iframe>
@@ -142,11 +152,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </div>
           </paper-card> -->
 
-          <paper-material item-height="400px" style="height: 400px">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/OtVfo-HzxTQ?rel=0" frameborder="0"
-              allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </paper-material>
-        </a>
+        <paper-material item-height="400px" style="height: 400px">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/OtVfo-HzxTQ?rel=0" frameborder="0" allow="autoplay; encrypted-media"
+            allowfullscreen>
+          </iframe>
+        </paper-material>
         <!-- <event-countdown></event-countdown> -->
       </grid-col>
     </grid-element>
@@ -154,15 +164,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <p class="heading">Stay tuned for the live stream!</p>
     <grid-element ghi gs="10px">
       <grid-col>
-        <a target="noopner" href="">
-          <paper-card image-sizing="contain" preload-image placeholder-image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAYAAAD+Bd/7AAAAd0lEQVQImWWOwQnCQBRE319WYzRJC3Zjl/ZgGSnAFgLRU8iqbMDseHEXxLm9BzOMSRqAFgCtgAMzvgkmSZmII/gO/L4okzSXhf8E94PzxHLtSUpF+dyO95Hn5UzSQLW70RxPuE3dWj75fj1YlagOHSlO2LbBnA8fdG8wra0Q85UAAAAASUVORK5CYII="
-            fade-image image="images/ping-loader.gif" style="background-color: white;" alt="ping pong loader">
-            <div class="card-content">
-            </div>
+        <a data-route="home" href="https://docs.google.com/forms/d/e/1FAIpQLSc_0_QsV6QC51GLQSKmLJYcmXiTRQc_o3yInHh_v9mV2S3evA/viewform" target="_blank">
+          <paper-card image-sizing="contain" fade-image image="images/presurvey.png" style="background-color: white;"
+            alt="Circuitboards">
+            <div class="card-content">Pre-Workshop Survey</div>
           </paper-card>
         </a>
       </grid-col>
+      <grid-col>
+        <paper-material item-height="400px" style="height: 400px">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/jBSoC6NYHmE" frameborder="0" allow="autoplay; encrypted-media"
+            allowfullscreen></iframe>
+        </paper-material>
+      </grid-col>
+
     </grid-element>
+
+
+    <!-- 
+    <grid-element ghi gs="10px">
+      <grid-col>
+        <paper-material item-height="400px" style="height: 400px">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/jBSoC6NYHmE" frameborder="0" allow="autoplay; encrypted-media"
+            allowfullscreen></iframe>
+        
+      </grid-col>
+    </grid-element> -->
 
     <p class="heading">Register & Explore</p>
     <grid-element ghi gs="10px">
