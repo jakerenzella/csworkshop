@@ -86,13 +86,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       .iframe-wrapper {
-        z-index: 10;
-        border-radius: 8px;
-        position: relative;
-      }
-
-      .iframe-wrapper iframe {
-        z-index: 9;
+        overflow: hidden;
       }
 
       #bottom-bar {
@@ -152,7 +146,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </div>
           </paper-card> -->
 
-        <paper-material item-height="400px" style="height: 400px">
+        <paper-material class="iframe-wrapper" item-height="400px" style="height: 400px">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/OtVfo-HzxTQ?rel=0" frameborder="0" allow="autoplay; encrypted-media"
             allowfullscreen>
           </iframe>
@@ -164,15 +158,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <p class="heading">Stay tuned for the live stream!</p>
     <grid-element ghi gs="10px">
       <grid-col>
-        <a data-route="home" href="https://docs.google.com/forms/d/e/1FAIpQLSc_0_QsV6QC51GLQSKmLJYcmXiTRQc_o3yInHh_v9mV2S3evA/viewform" target="_blank">
+        <a data-route="home" href="https://docs.google.com/forms/d/e/1FAIpQLSc_0_QsV6QC51GLQSKmLJYcmXiTRQc_o3yInHh_v9mV2S3evA/viewform"
+          target="_blank">
           <paper-card image-sizing="contain" fade-image image="images/presurvey.png" style="background-color: white;"
-            alt="Circuitboards">
-            <div class="card-content">Pre-Workshop Survey</div>
+            alt="pre workshop survey">
           </paper-card>
         </a>
       </grid-col>
       <grid-col>
-        <paper-material item-height="400px" style="height: 400px">
+        <paper-material item-height="400px" style="height: 400px; overflow: hidden;">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/jBSoC6NYHmE" frameborder="0" allow="autoplay; encrypted-media"
             allowfullscreen></iframe>
         </paper-material>
@@ -222,7 +216,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </grid-element>
 
     <p class="heading">Location</p>
-    <paper-material item-height="400px" style="height: 400px">
+    <paper-material item-height="400px" style="height: 400px; overflow: hidden;">
       <iframe title="Google Map of Deakin" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.460037314288!2d145.11241091531974!3d-37.84952497974587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6405e05ec41af%3A0x40af38421cf09ef7!2sDeakin+Burwood+Corporate+Centre+(BCC)!5e0!3m2!1sen!2sau!4v1537188036295"
         height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
     </paper-material>
