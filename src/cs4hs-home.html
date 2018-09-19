@@ -16,7 +16,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
 <link rel="import" href="../bower_components/paper-styles/typography.html">
-<link rel="import" href="./event-countdown.html">
 <link rel="import" href="./cs4hs-caveescape.html">
 <link rel="import" href="./cs4hs-datascience.html">
 
@@ -133,7 +132,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         src="[[image]]" alt="[[alt]]"></iron-image>
       <div hidden$="[[!heading]]" class$="title-text [[_computeHeadingClass(image)]]">[[heading]]</div>
       <grid-col start s="7">
-        <event-countdown></event-countdown>
+        <a target="noopner" href="">
+          <!-- <paper-card
+            fade-image image="images/ping-loader.gif" style="background-color: white;" alt="ping pong loader">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/OtVfo-HzxTQ?rel=0" frameborder="0" allow="autoplay; encrypted-media"
+              allowfullscreen></iframe>
+            <div class="card-content">
+              Install SplashKit!
+            </div>
+          </paper-card> -->
+
+          <paper-material item-height="400px" style="height: 400px">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/OtVfo-HzxTQ?rel=0" frameborder="0"
+              allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </paper-material>
+        </a>
+        <!-- <event-countdown></event-countdown> -->
       </grid-col>
     </grid-element>
 
